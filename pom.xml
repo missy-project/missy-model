@@ -33,15 +33,4 @@
             
   </dependencies>
 
-  <scm>
-  	<url>http://svn/repo/trunk/missy3/missy-model/</url>
-  	<connection>scm:svn:http://svn/repo/trunk/missy3/missy-model/</connection>
-  	<developerConnection>scm:svn:http://svn/repo/trunk/missy3/missy-model/</developerConnection>
-  	<tag>HEAD</tag>
-  </scm>
-  <ciManagement>
-  	<system>teamcity</system>
-  	<url>http://svkowts-ci/</url>
-  </ciManagement>
-
 </project>
