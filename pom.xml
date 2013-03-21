@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.gesis</groupId>
+    <artifactId>missy-project</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+    <relativePath>../missy-project/pom.xml</relativePath>
+  </parent>
+  <groupId>org.gesis.missy</groupId>
+  <artifactId>missy-model</artifactId>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.hibernate.javax.persistence</groupId>
+  		<artifactId>hibernate-jpa-2.0-api</artifactId>
+  		<version>1.0.0.Final</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.gesis.ddi</groupId>
+  		<artifactId>disco-model</artifactId>
+  		<version>${disco.model.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>commons-lang</groupId>
+  		<artifactId>commons-lang</artifactId>
+  		<version>2.3</version>
+  	</dependency>
+  	<dependency>
+		<groupId>com.google.collections</groupId>
+		<artifactId>google-collections</artifactId>
+		<version>1.0</version>
+	</dependency>
+            
+  </dependencies>
+
+  <scm>
+  	<url>http://svn/repo/trunk/missy3/missy-model/</url>
+  	<connection>scm:svn:http://svn/repo/trunk/missy3/missy-model/</connection>
+  	<developerConnection>scm:svn:http://svn/repo/trunk/missy3/missy-model/</developerConnection>
+  	<tag>HEAD</tag>
+  </scm>
+  <ciManagement>
+  	<system>teamcity</system>
+  	<url>http://svkowts-ci/</url>
+  </ciManagement>
+
+</project>
