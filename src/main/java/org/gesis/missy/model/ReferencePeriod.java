@@ -3,7 +3,7 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import org.gesis.rdf.LangString;
 
@@ -14,26 +14,26 @@ public class ReferencePeriod {
 	@Id
 	private int id;
 
-	@ManyToOne
+	@OneToOne
 	private LangString referencePeriod;
 
 	public ReferencePeriod() {
 	}
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public LangString getReferencePeriod()
 	{
-		return referencePeriod;
+		return this.referencePeriod;
 	}
 
-	public void setMessage( LangString referencePeriod )
+	public void setMessage( final LangString referencePeriod )
 	{
 		this.referencePeriod = referencePeriod;
 	}

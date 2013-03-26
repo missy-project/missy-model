@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import org.gesis.ddi.Note;
+import org.gesis.rdf.LangString;
 
 @Entity
 public class Comment extends Note {
@@ -12,10 +13,10 @@ public class Comment extends Note {
 	// properties
 
 	@Column
-	private String comment;
+	private LangString comment;
 
 	@Column
-	private String authors;
+	private LangString authors;
 
 	// relations
 
@@ -24,32 +25,36 @@ public class Comment extends Note {
 
 	// getter/setter
 
-	public Comment( String agencyId, String objectId, int majorVersion )
+	public Comment( final String agencyId, final String objectId, final int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
 	}
 
-	public String getComment() {
-		return comment;
+	public LangString getComment()
+	{
+		return this.comment;
 	}
 
-	public void setComment(String comment) {
+	public void setComment( final LangString comment )
+	{
 		this.comment = comment;
 	}
 
-	public String getAuthors() {
-		return authors;
+	public LangString getAuthors()
+	{
+		return this.authors;
 	}
 
-	public void setAuthors(String authors) {
+	public void setAuthors( final LangString authors )
+	{
 		this.authors = authors;
 	}
 
 	public CommentType getCommentType() {
-		return commentType;
+		return this.commentType;
 	}
 
-	public void setCommentType(CommentType commentType) {
+	public void setCommentType(final CommentType commentType) {
 		this.commentType = commentType;
 	}
 
