@@ -2,6 +2,7 @@ package org.gesis.missy.model;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity( name = "MUniverse" )
@@ -12,7 +13,7 @@ public class Universe extends org.gesis.ddi.ontology.Universe
 
 	// relations
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn( name = "universeType_id" )
 	private UniverseType universeType;
 
@@ -22,24 +23,24 @@ public class Universe extends org.gesis.ddi.ontology.Universe
 
 	// getter/setter
 
-	public Universe( String agencyId, String objectId, int majorVersion )
+	public Universe( final String agencyId, final String objectId, final int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
 	}
 
 	public UniverseType getUniverseType() {
-		return universeType;
+		return this.universeType;
 	}
 
-	public void setUniverseType(UniverseType universeType) {
+	public void setUniverseType(final UniverseType universeType) {
 		this.universeType = universeType;
 	}
 
 	public FilterInstruction getFilterInstruction() {
-		return filterInstruction;
+		return this.filterInstruction;
 	}
 
-	public void setFilterInstruction(FilterInstruction filterInstruction) {
+	public void setFilterInstruction(final FilterInstruction filterInstruction) {
 		this.filterInstruction = filterInstruction;
 	}
 
