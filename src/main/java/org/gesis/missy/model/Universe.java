@@ -17,7 +17,7 @@ public class Universe extends org.gesis.ddi.ontology.Universe
 	@JoinColumn( name = "universeType_id" )
 	private UniverseType universeType;
 
-	@OneToOne( optional = false )
+	@OneToOne
 	@JoinColumn( name = "filterInstruction_id" )
 	private FilterInstruction filterInstruction;
 
