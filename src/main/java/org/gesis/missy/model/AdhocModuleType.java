@@ -16,7 +16,7 @@ public class AdhocModuleType {
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO )
+	@GeneratedValue( strategy = GenerationType.SEQUENCE )
 	private int id;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )

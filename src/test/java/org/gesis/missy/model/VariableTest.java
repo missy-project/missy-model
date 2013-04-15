@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Set;
 
 import org.gesis.ddi.ontology.AnalysisUnit;
+import org.gesis.rdf.LangString;
 import org.gesis.skos.Concept;
 import org.junit.Test;
 
@@ -20,9 +21,9 @@ public class VariableTest {
 	public void getAnalysisUnit() {
 		AnalysisUnit myAnalysisUnit = new AnalysisUnit( "aid", "oid_analysisUnit", 1 );
 
-		variable.setAnalysisUnit( myAnalysisUnit );
+		this.variable.setAnalysisUnit( myAnalysisUnit );
 
-		AnalysisUnit analysisUnit = variable.getAnalysisUnit();
+		AnalysisUnit analysisUnit = this.variable.getAnalysisUnit();
 
 		assertNotNull( analysisUnit );
 		assertTrue( myAnalysisUnit == analysisUnit );
@@ -32,9 +33,9 @@ public class VariableTest {
 	public void getConcept() {
 		Concept myConcept = new Concept( "aid", "oid_concept", 1 );
 
-		variable.setConcept( myConcept );
+		this.variable.setConcept( myConcept );
 
-		Concept concept = variable.getConcept();
+		Concept concept = this.variable.getConcept();
 
 		assertNotNull( concept );
 		assertTrue( myConcept == concept );
@@ -45,9 +46,9 @@ public class VariableTest {
 	public void getVariableDefinition() {
 		VariableDefinition myDataElement = new VariableDefinition( "aid", "oid_dataElement", 1 );
 
-		variable.setBasedOn( myDataElement );
+		this.variable.setBasedOn( myDataElement );
 
-		org.gesis.ddi.ontology.VariableDefinition dataElement = variable.getBasedOn();
+		org.gesis.ddi.ontology.VariableDefinition dataElement = this.variable.getBasedOn();
 
 		assertNotNull( dataElement );
 		assertTrue( myDataElement == dataElement );
@@ -61,9 +62,9 @@ public class VariableTest {
 		Set<org.gesis.ddi.ontology.Question> questions = Sets.newHashSet();
 		questions.add( myQuestion );
 
-		variable.setQuestion( questions );
+		this.variable.setQuestion( questions );
 
-		Set<org.gesis.ddi.ontology.Question> question = variable.getQuestion();
+		Set<org.gesis.ddi.ontology.Question> question = this.variable.getQuestion();
 
 		assertNotNull( question );
 		assertEquals( 1, question.size() );
@@ -74,11 +75,24 @@ public class VariableTest {
 	public void getUniverse() {
 		Universe myUniverse = new Universe( "aid", "oid_universe", 1 );
 
-		variable.setUniverse( myUniverse );
+		this.variable.setUniverse( myUniverse );
 
-		org.gesis.ddi.ontology.Universe universe = variable.getUniverse();
+		org.gesis.ddi.ontology.Universe universe = this.variable.getUniverse();
 
 		assertNotNull( universe );
 		assertTrue( myUniverse == universe );
 	}
+
+	@Test
+	public void getAdhocModuleType()
+	{
+		AdhocModuleType adhocModuleType = new AdhocModuleType();
+		adhocModuleType.setAdhocModuleType( new LangString() );
+
+		this.variable.setAdhocModuleType( adhocModuleType );
+
+		assertNotNull( this.variable.getAdhocModuleType() );
+
+	}
+
 }
