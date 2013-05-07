@@ -14,17 +14,22 @@ public class Concept extends org.gesis.skos.Concept
 
 	// getter/setter
 
-	public Concept( String agencyId, String objectId, int majorVersion )
+	private Concept()
+	{
+		super( null, null, 0 );
+	}
+
+	public Concept( final String agencyId, final String objectId, final int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
 	}
 
 	public int getOrder()
 	{
-		return order;
+		return this.order;
 	}
 
-	public void setOrder(int order)
+	public void setOrder(final int order)
 	{
 		this.order = order;
 	}

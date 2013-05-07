@@ -1,38 +1,51 @@
 package org.gesis.missy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import org.gesis.rdf.LangString;
 
 @Entity
-public class DataSetSubType {
+public class DataSetSubType
+{
 
 	@Column
 	@Id
+	@GeneratedValue( strategy = GenerationType.SEQUENCE )
 	private int id;
-	
-	@OneToOne
+
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString dataSetSubType;
 
-	public int getId() {
-		return id;
+	public DataSetSubType()
+	{
+
 	}
 
-	public void setId(int id) {
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public void setId( final int id )
+	{
 		this.id = id;
 	}
 
 	public LangString getDatasetSubType()
 	{
-		return dataSetSubType;
+		return this.dataSetSubType;
 	}
 
-	public void setDatasetSubType( LangString datasetSubType )
+	public void setDataSetSubType( final LangString dataSetSubType )
 	{
-		this.dataSetSubType = datasetSubType;
+		this.dataSetSubType = dataSetSubType;
 	}
 
 }

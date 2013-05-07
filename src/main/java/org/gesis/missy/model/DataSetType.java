@@ -12,7 +12,8 @@ import javax.persistence.OneToOne;
 import org.gesis.rdf.LangString;
 
 @Entity
-public class DataSetType {
+public class DataSetType
+{
 
 	@Column
 	@Id
@@ -22,20 +23,27 @@ public class DataSetType {
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString dataSetType;
 
-	public int getId() {
-		return id;
+	public DataSetType()
+	{
+
 	}
 
-	public void setId(int id) {
+	public int getId()
+	{
+		return this.id;
+	}
+
+	public void setId( final int id )
+	{
 		this.id = id;
 	}
 
 	public LangString getDatasetType()
 	{
-		return dataSetType;
+		return this.dataSetType;
 	}
 
-	public void setDatasetType( LangString datasetType )
+	public void setDatasetType( final LangString datasetType )
 	{
 		this.dataSetType = datasetType;
 	}
