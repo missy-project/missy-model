@@ -1,5 +1,6 @@
 package org.gesis.missy.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -7,6 +8,11 @@ import javax.persistence.ManyToOne;
 @Entity( name = "MLogicalDataSet" )
 public class LogicalDataSet extends org.gesis.ddi.ontology.LogicalDataSet
 {
+
+	// properties
+
+	@Column
+	private String owl_versionInfo;
 
 	// relations
 
@@ -20,24 +26,38 @@ public class LogicalDataSet extends org.gesis.ddi.ontology.LogicalDataSet
 
 	// getter/setter
 
-	public LogicalDataSet( String agencyId, String objectId, int majorVersion )
+	public LogicalDataSet( final String agencyId, final String objectId, final int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
 	}
 
-	public DataSetSubType getDataSetSubType() {
-		return dataSetSubType;
+	public String getOwl_versionInfo()
+	{
+		return this.owl_versionInfo;
 	}
 
-	public void setDataSetSubType(DataSetSubType dataSetSubType) {
+	public void setOwl_versionInfo( final String owl_versionInfo )
+	{
+		this.owl_versionInfo = owl_versionInfo;
+	}
+
+	public DataSetSubType getDataSetSubType()
+	{
+		return this.dataSetSubType;
+	}
+
+	public void setDataSetSubType( final DataSetSubType dataSetSubType )
+	{
 		this.dataSetSubType = dataSetSubType;
 	}
 
-	public DataSetType getDataSetType() {
-		return dataSetType;
+	public DataSetType getDataSetType()
+	{
+		return this.dataSetType;
 	}
 
-	public void setDataSetType(DataSetType dataSetType) {
+	public void setDataSetType( final DataSetType dataSetType )
+	{
 		this.dataSetType = dataSetType;
 	}
 
