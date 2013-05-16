@@ -1,7 +1,11 @@
 package org.gesis.missy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -12,9 +16,10 @@ public class SamplingFractionType {
 
 	@Column
 	@Id
+	@GeneratedValue( strategy = GenerationType.SEQUENCE )
 	private int id;
 
-	@OneToOne
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString samplingFaction;
 
 	public int getId() {

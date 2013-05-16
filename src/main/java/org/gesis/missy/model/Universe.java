@@ -1,6 +1,8 @@
 package org.gesis.missy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
@@ -13,11 +15,11 @@ public class Universe extends org.gesis.ddi.ontology.Universe
 
 	// relations
 
-	@ManyToOne
+	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "universeType_id" )
 	private UniverseType universeType;
 
-	@OneToOne
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "filterInstruction_id" )
 	private FilterInstruction filterInstruction;
 

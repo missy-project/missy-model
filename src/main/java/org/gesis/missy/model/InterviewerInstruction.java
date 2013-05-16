@@ -1,7 +1,9 @@
 package org.gesis.missy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 import org.gesis.ddi.Identifiable;
@@ -12,10 +14,10 @@ public class InterviewerInstruction extends Identifiable {
 	@Column
 	private String interviewerInstruction;
 
-	@ManyToOne(optional = false)
+	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Instrument instrument;
 
-	@ManyToOne(optional = false)
+	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Question question;
 
 	public InterviewerInstruction( String agencyId, String objectId, int majorVersion )

@@ -16,7 +16,7 @@ public class Comment extends Note {
 	private LangString comment;
 
 	@Column
-	private LangString authors;
+	private String author;
 
 	// relations
 
@@ -40,14 +40,14 @@ public class Comment extends Note {
 		this.comment = comment;
 	}
 
-	public LangString getAuthors()
+	public String getAuthor()
 	{
-		return this.authors;
+		return this.author;
 	}
 
-	public void setAuthors( final LangString authors )
+	public void setAuthor( final String author )
 	{
-		this.authors = authors;
+		this.author = author;
 	}
 
 	public CommentType getCommentType() {

@@ -2,8 +2,10 @@ package org.gesis.missy.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -24,11 +26,11 @@ public class Question extends org.gesis.ddi.ontology.Question
 
 	// relations
 
-	@OneToMany
+	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "questionText_id" )
 	private Set<LangString> questionText;
 
-	@ManyToOne
+	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "referencePeriod_id" )
 	private ReferencePeriod referencePeriod;
 
