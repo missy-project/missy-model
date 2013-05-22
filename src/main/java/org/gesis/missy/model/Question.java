@@ -1,5 +1,6 @@
 package org.gesis.missy.model;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -36,6 +37,11 @@ public class Question extends org.gesis.ddi.ontology.Question
 
 	// getter/setter
 
+	private Question()
+	{
+		super( null, null, 0 );
+	}
+
 	public Question( String agencyId, String objectId, int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
@@ -70,6 +76,16 @@ public class Question extends org.gesis.ddi.ontology.Question
 	public void setQuestionText( Set<LangString> questionText )
 	{
 		this.questionText = questionText;
+	}
+
+	public Question addQuestionText( final LangString questionText )
+	{
+		if ( this.questionText == null )
+			this.questionText = new LinkedHashSet<LangString>();
+
+		this.questionText.add( questionText );
+
+		return this;
 	}
 
 	public ReferencePeriod getReferencePeriod() {
