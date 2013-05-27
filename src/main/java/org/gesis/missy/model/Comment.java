@@ -1,18 +1,22 @@
 package org.gesis.missy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import org.gesis.ddi.Note;
 import org.gesis.rdf.LangString;
 
 @Entity
-public class Comment extends Note {
+public class Comment extends Note
+{
 
 	// properties
 
-	@Column
+	@OneToOne( cascade = CascadeType.ALL )
 	private LangString comment;
 
 	@Column
@@ -20,10 +24,16 @@ public class Comment extends Note {
 
 	// relations
 
-	@ManyToOne(optional = true)
+	@ManyToOne
+	@JoinColumn( name = "commentType_id" )
 	private CommentType commentType;
 
 	// getter/setter
+
+	public Comment()
+	{
+		super( null, null, 0 );
+	}
 
 	public Comment( final String agencyId, final String objectId, final int majorVersion )
 	{
@@ -50,11 +60,13 @@ public class Comment extends Note {
 		this.author = author;
 	}
 
-	public CommentType getCommentType() {
+	public CommentType getCommentType()
+	{
 		return this.commentType;
 	}
 
-	public void setCommentType(final CommentType commentType) {
+	public void setCommentType( final CommentType commentType )
+	{
 		this.commentType = commentType;
 	}
 
