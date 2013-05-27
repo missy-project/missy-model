@@ -25,6 +25,11 @@ public class Universe extends org.gesis.ddi.ontology.Universe
 
 	// getter/setter
 
+	public Universe()
+	{
+		super( null, null, 0 );
+	}
+
 	public Universe( final String agencyId, final String objectId, final int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
