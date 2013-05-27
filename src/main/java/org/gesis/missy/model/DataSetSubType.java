@@ -17,7 +17,7 @@ public class DataSetSubType
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE )
+	@GeneratedValue( strategy = GenerationType.AUTO )
 	private int id;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )

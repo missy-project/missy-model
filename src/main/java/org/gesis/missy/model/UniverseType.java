@@ -11,25 +11,25 @@ public class UniverseType {
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE )
+	@GeneratedValue( strategy = GenerationType.AUTO )
 	private int id;
 
 	@Column
 	private String universeType;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public String getUniverseType() {
-		return universeType;
+		return this.universeType;
 	}
 
-	public void setUniverseType(String universeType) {
+	public void setUniverseType(final String universeType) {
 		this.universeType = universeType;
 	}
 

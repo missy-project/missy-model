@@ -16,26 +16,26 @@ public class SummaryStatisticsType {
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE )
+	@GeneratedValue( strategy = GenerationType.AUTO )
 	private int id;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString summaryStatisticsType;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public LangString getSummaryStatisticsType()
 	{
-		return summaryStatisticsType;
+		return this.summaryStatisticsType;
 	}
 
-	public void setSummaryStatisticsType( LangString summaryStatisticsType )
+	public void setSummaryStatisticsType( final LangString summaryStatisticsType )
 	{
 		this.summaryStatisticsType = summaryStatisticsType;
 	}

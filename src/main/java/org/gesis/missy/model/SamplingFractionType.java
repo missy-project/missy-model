@@ -16,26 +16,26 @@ public class SamplingFractionType {
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE )
+	@GeneratedValue( strategy = GenerationType.AUTO )
 	private int id;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString samplingFaction;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public LangString getSamplingFaction()
 	{
-		return samplingFaction;
+		return this.samplingFaction;
 	}
 
-	public void setSamplingFaction( LangString samplingFaction )
+	public void setSamplingFaction( final LangString samplingFaction )
 	{
 		this.samplingFaction = samplingFaction;
 	}

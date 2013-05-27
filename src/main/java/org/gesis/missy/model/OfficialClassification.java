@@ -11,25 +11,25 @@ public class OfficialClassification {
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE )
+	@GeneratedValue( strategy = GenerationType.AUTO )
 	private int id;
 
 	@Column
 	private String officialClassification;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public String getOfficialClassification() {
-		return officialClassification;
+		return this.officialClassification;
 	}
 
-	public void setOfficialClassification(String officialClassification) {
+	public void setOfficialClassification(final String officialClassification) {
 		this.officialClassification = officialClassification;
 	}
 

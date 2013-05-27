@@ -16,26 +16,26 @@ public class AdhocModuleType {
 
 	@Column
 	@Id
-	@GeneratedValue( strategy = GenerationType.SEQUENCE )
+	@GeneratedValue( strategy = GenerationType.AUTO )
 	private int id;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString adhocModuleType;
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(final int id) {
 		this.id = id;
 	}
 
 	public LangString getAdhocModuleType()
 	{
-		return adhocModuleType;
+		return this.adhocModuleType;
 	}
 
-	public void setAdhocModuleType( LangString adhocModuleType )
+	public void setAdhocModuleType( final LangString adhocModuleType )
 	{
 		this.adhocModuleType = adhocModuleType;
 	}
