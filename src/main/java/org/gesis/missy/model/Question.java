@@ -1,5 +1,6 @@
 package org.gesis.missy.model;
 
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -42,38 +43,44 @@ public class Question extends org.gesis.ddi.ontology.Question
 		super( null, null, 0 );
 	}
 
-	public Question( String agencyId, String objectId, int majorVersion )
+	public Question( final String agencyId, final String objectId, final int majorVersion )
 	{
 		super( agencyId, objectId, majorVersion );
 	}
 
 	public String getQuestionNumber() {
-		return questionNumber;
+		return this.questionNumber;
 	}
 
-	public void setQuestionNumber(String questionNumber) {
+	public void setQuestionNumber(final String questionNumber) {
 		this.questionNumber = questionNumber;
 	}
 
 	public int isMandatory()
 	{
-		return mandatory;
+		return this.mandatory;
 	}
 
-	public void setMandatory(int mandatory)
+	public void setMandatory(final int mandatory)
 	{
 		this.mandatory = mandatory;
 	}
 
 	@Override
-	public Object getQuestionText() {
+	public Set<LangString> getQuestionText()
+	{
 		if ( this.questionText != null )
-			return questionText;
+			return this.questionText;
 		
-		return super.getQuestionText();
+		Set<LangString> ret = new HashSet<LangString>();
+
+		if ( super.getQuestionText() instanceof LangString )
+			ret.add( (LangString) super.getQuestionText() );
+
+		return ret;
 	}
 
-	public void setQuestionText( Set<LangString> questionText )
+	public void setQuestionText( final Set<LangString> questionText )
 	{
 		this.questionText = questionText;
 	}
@@ -89,10 +96,10 @@ public class Question extends org.gesis.ddi.ontology.Question
 	}
 
 	public ReferencePeriod getReferencePeriod() {
-		return referencePeriod;
+		return this.referencePeriod;
 	}
 
-	public void setReferencePeriod(ReferencePeriod referencePeriod) {
+	public void setReferencePeriod(final ReferencePeriod referencePeriod) {
 		this.referencePeriod = referencePeriod;
 	}
 
