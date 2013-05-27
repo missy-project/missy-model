@@ -25,7 +25,7 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 	private String variableLabelLong;
 
 	@Column
-	private int derived;
+	private boolean derived;
 
 	// relations
 
@@ -73,12 +73,12 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 		this.variableLabelLong = variableLabelLong;
 	}
 
-	public int isDerived()
+	public boolean isDerived()
 	{
 		return this.derived;
 	}
 
-	public void setDerived(final int derived)
+	public void setDerived( final boolean derived )
 	{
 		this.derived = derived;
 	}
