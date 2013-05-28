@@ -14,17 +14,17 @@ import com.google.common.collect.Sets;
 
 public class LogicalDataSetTest {
 
-	LogicalDataSet dataset = new LogicalDataSet( "aid", "oid_logicalDataSet", 1 );
+	LogicalDataSet dataset = new LogicalDataSet();
 
 	@Test
 	public void getAggregation() {
-		DataSet myDataSet = new DataSet( "aid", "oid_dataSet", 1 );
+		DataSet myDataSet = new DataSet();
 
 		Set<DataSet> dataSets = Sets.newHashSet( myDataSet );
 
-		dataset.setDataCube( dataSets );
+		this.dataset.setDataCube( dataSets );
 
-		Set<DataSet> dataSet = dataset.getAggregation();
+		Set<DataSet> dataSet = this.dataset.getAggregation();
 
 		assertNotNull( dataSet );
 		assertEquals( 1, dataSet.size() );
@@ -35,32 +35,32 @@ public class LogicalDataSetTest {
 	public void getDataSetSubType() {
 		DataSetSubType mySubType = new DataSetSubType();
 
-		dataset.setDataSetSubType( mySubType );
+		this.dataset.setDataSetSubType( mySubType );
 
-		assertNotNull( dataset.getDataSetSubType() );
-		assertTrue( mySubType == dataset.getDataSetSubType() );
+		assertNotNull( this.dataset.getDataSetSubType() );
+		assertTrue( mySubType == this.dataset.getDataSetSubType() );
 	}
 
 	@Test
 	public void getDataSetType() {
 		DataSetType myType = new DataSetType();
 
-		dataset.setDataSetType( myType );
+		this.dataset.setDataSetType( myType );
 
-		assertNotNull( dataset.getDataSetType() );
-		assertTrue( myType == dataset.getDataSetType() );
+		assertNotNull( this.dataset.getDataSetType() );
+		assertTrue( myType == this.dataset.getDataSetType() );
 	}
 
 	@Test
 	public void getInstrument() {
-		Instrument myInstrument = new Instrument( "aid", "oid_instrument", 1 );
+		Instrument myInstrument = new Instrument();
 
 		Set<org.gesis.ddi.ontology.Instrument> instruments = new HashSet<org.gesis.ddi.ontology.Instrument>();
 		instruments.add( myInstrument );
 
-		dataset.setInstrument( instruments );
+		this.dataset.setInstrument( instruments );
 
-		Set<org.gesis.ddi.ontology.Instrument> instrument = dataset.getInstrument();
+		Set<org.gesis.ddi.ontology.Instrument> instrument = this.dataset.getInstrument();
 
 		assertNotNull( instrument );
 		assertEquals( 1, instrument.size() );
@@ -69,11 +69,11 @@ public class LogicalDataSetTest {
 
 	@Test
 	public void getUniverse() {
-		Universe myUniverse = new Universe( "aid", "oid_universe", 1 );
+		Universe myUniverse = new Universe();
 
-		dataset.setDataSetUniverse( myUniverse );
+		this.dataset.setDataSetUniverse( myUniverse );
 
-		org.gesis.ddi.ontology.Universe universe = dataset.getDataSetUniverse();
+		org.gesis.ddi.ontology.Universe universe = this.dataset.getDataSetUniverse();
 
 		assertNotNull( universe );
 		assertTrue( myUniverse == universe );

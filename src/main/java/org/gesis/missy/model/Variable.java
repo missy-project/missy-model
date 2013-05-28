@@ -47,16 +47,6 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 
 	// getter/setter
 
-	private Variable()
-	{
-		super( null, null, 0 );
-	}
-
-	public Variable( final String agencyId, final String objectId, final int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public String getVariableShortName() {
 		return this.variableShortName;
 	}

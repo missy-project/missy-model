@@ -26,11 +26,6 @@ public class LogicalDataSet extends org.gesis.ddi.ontology.LogicalDataSet
 
 	// getter/setter
 
-	public LogicalDataSet( final String agencyId, final String objectId, final int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public String getOwl_versionInfo()
 	{
 		return this.owl_versionInfo;

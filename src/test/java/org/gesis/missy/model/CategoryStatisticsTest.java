@@ -14,17 +14,17 @@ import com.google.common.collect.Sets;
 
 public class CategoryStatisticsTest {
 
-	CategoryStatistics categoryStatistics = new CategoryStatistics( "aid", "oid_categoryStatistics", 1 );
+	CategoryStatistics categoryStatistics = new CategoryStatistics();
 
 	@Test
 	public void getStatisticsDataFile() {
-		DataFile myDataFile = new DataFile( "aid", "oid_dataFile", 1 );
+		DataFile myDataFile = new DataFile();
 
 		Set<DataFile> dataFiles = Sets.newHashSet( myDataFile );
 
-		categoryStatistics.setStatisticsDataFile( dataFiles );
+		this.categoryStatistics.setStatisticsDataFile( dataFiles );
 
-		Set<DataFile> dataFile = categoryStatistics.getStatisticsDataFile();
+		Set<DataFile> dataFile = this.categoryStatistics.getStatisticsDataFile();
 
 		assertNotNull( dataFile );
 		assertEquals( 1, dataFile.size() );

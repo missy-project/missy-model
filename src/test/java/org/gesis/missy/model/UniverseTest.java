@@ -14,17 +14,17 @@ import com.google.common.collect.Sets;
 
 public class UniverseTest {
 
-	Universe universe = new Universe( "aid", "oid_universe", 1 );
+	Universe universe = new Universe();
 
 	@Test
 	public void inScheme() {
-		ConceptScheme myConcept = new ConceptScheme( "aid", "oid_conceptScheme", 1 );
+		ConceptScheme myConcept = new ConceptScheme();
 
 		Set<ConceptScheme> schemes = Sets.newHashSet( myConcept );
 
-		universe.setSkos_inScheme( schemes );
+		this.universe.setSkos_inScheme( schemes );
 
-		Set<ConceptScheme> scheme = universe.getSkos_inScheme();
+		Set<ConceptScheme> scheme = this.universe.getSkos_inScheme();
 
 		assertNotNull( scheme );
 		assertEquals( 1, scheme.size() );
@@ -33,13 +33,13 @@ public class UniverseTest {
 
 	@Test
 	public void broader() {
-		Concept myConcept = new Concept( "aid", "oid_concept", 1 );
+		Concept myConcept = new Concept();
 
 		Set<Concept> broaders = Sets.newHashSet( myConcept );
 
-		universe.setSkos_broader( broaders );
+		this.universe.setSkos_broader( broaders );
 
-		Set<Concept> broader = universe.getSkos_broader();
+		Set<Concept> broader = this.universe.getSkos_broader();
 
 		assertNotNull( broader );
 		assertEquals( 1, broader.size() );
@@ -48,13 +48,13 @@ public class UniverseTest {
 
 	@Test
 	public void narrower() {
-		Concept myConcept = new Concept( "aid", "oid_concept", 1 );
+		Concept myConcept = new Concept();
 
 		Set<Concept> narrowers = Sets.newHashSet( myConcept );
 
-		universe.setSkos_narrower( narrowers );
+		this.universe.setSkos_narrower( narrowers );
 
-		Set<Concept> narrower = universe.getSkos_narrower();
+		Set<Concept> narrower = this.universe.getSkos_narrower();
 
 		assertNotNull( narrower );
 		assertEquals( 1, narrower.size() );

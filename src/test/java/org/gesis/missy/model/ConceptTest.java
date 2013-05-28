@@ -14,17 +14,17 @@ import com.google.common.collect.Sets;
 
 public class ConceptTest {
 
-	Concept concept = new Concept( "aid", "oid_concept", 1 );
+	Concept concept = new Concept();
 
 	@Test
 	public void inScheme() {
-		ConceptScheme myConcept = new ConceptScheme( "aid", "oid_conceptScheme", 1 );
+		ConceptScheme myConcept = new ConceptScheme();
 
 		Set<ConceptScheme> schemes = Sets.newHashSet( myConcept );
 
-		concept.setSkos_inScheme( schemes );
+		this.concept.setSkos_inScheme( schemes );
 
-		Set<ConceptScheme> scheme = concept.getSkos_inScheme();
+		Set<ConceptScheme> scheme = this.concept.getSkos_inScheme();
 
 		assertNotNull( scheme );
 		assertEquals( 1, scheme.size() );
@@ -33,13 +33,13 @@ public class ConceptTest {
 
 	@Test
 	public void broader() {
-		Concept myConcept = new Concept( "aid", "oid_concept", 1 );
+		Concept myConcept = new Concept();
 
 		Set<Concept> broaders = Sets.newHashSet( myConcept );
 
-		concept.setSkos_broader( broaders );
+		this.concept.setSkos_broader( broaders );
 
-		Set<Concept> broader = concept.getSkos_broader();
+		Set<Concept> broader = this.concept.getSkos_broader();
 
 		assertNotNull( broader );
 		assertEquals( 1, broader.size() );
@@ -48,13 +48,13 @@ public class ConceptTest {
 
 	@Test
 	public void narrower() {
-		Concept myConcept = new Concept( "aid", "oid_concept", 1 );
+		Concept myConcept = new Concept();
 
 		Set<Concept> narrowers = Sets.newHashSet( myConcept );
 
-		concept.setSkos_narrower( narrowers );
+		this.concept.setSkos_narrower( narrowers );
 
-		Set<Concept> narrower = concept.getSkos_narrower();
+		Set<Concept> narrower = this.concept.getSkos_narrower();
 
 		assertNotNull( narrower );
 		assertEquals( 1, narrower.size() );

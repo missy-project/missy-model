@@ -14,15 +14,15 @@ import com.google.common.collect.Sets;
 
 public class VariableDefinitionTest {
 
-	VariableDefinition variableDefinition = new VariableDefinition( "aid", "oid_dataElement", 1 );
+	VariableDefinition variableDefinition = new VariableDefinition();
 
 	@Test
 	public void getUniverse() {
-		Universe universe = new Universe( "aid", "oid_universe", 1 );
+		Universe universe = new Universe();
 
-		variableDefinition.setUniverse( Sets.newHashSet( universe ) );
+		this.variableDefinition.setUniverse( Sets.newHashSet( universe ) );
 
-		Set<Universe> universes = variableDefinition.getUniverse();
+		Set<Universe> universes = this.variableDefinition.getUniverse();
 
 		assertNotNull( universes );
 		assertEquals( 1, universes.size() );
@@ -31,11 +31,11 @@ public class VariableDefinitionTest {
 
 	@Test
 	public void getConcept() {
-		Concept newConcept = new Concept( "aid", "oid_concept", 1 );
+		Concept newConcept = new Concept();
 
-		variableDefinition.setConcept( newConcept );
+		this.variableDefinition.setConcept( newConcept );
 
-		Concept concept = variableDefinition.getConcept();
+		Concept concept = this.variableDefinition.getConcept();
 
 		assertNotNull( newConcept );
 		assertTrue( newConcept == concept );

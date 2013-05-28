@@ -12,19 +12,19 @@ import org.junit.Test;
 
 public class InstrumentTest {
 
-	Questionnaire instrument = new Questionnaire( "aid", "oid_questionnaire", 1 );
+	Questionnaire instrument = new Questionnaire();
 
 	@Test
 	public void question() {
-		Question myQuestion = new Question( "aid", "oid_question", 1 );
+		Question myQuestion = new Question();
 		myQuestion.setQuestionNumber( "questionNumber" );
 
 		Set<org.gesis.ddi.ontology.Question> questions = new HashSet<org.gesis.ddi.ontology.Question>();
 		questions.add( myQuestion );
 
-		instrument.setQuestion( questions );
+		this.instrument.setQuestion( questions );
 
-		Set<org.gesis.ddi.ontology.Question> question = instrument.getQuestion();
+		Set<org.gesis.ddi.ontology.Question> question = this.instrument.getQuestion();
 
 		assertNotNull( question );
 		assertEquals( 1, question.size() );

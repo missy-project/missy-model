@@ -30,16 +30,6 @@ public class Comment extends Note
 
 	// getter/setter
 
-	public Comment()
-	{
-		super( null, null, 0 );
-	}
-
-	public Comment( final String agencyId, final String objectId, final int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public LangString getComment()
 	{
 		return this.comment;

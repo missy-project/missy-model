@@ -10,16 +10,11 @@ public class Instrument extends org.gesis.ddi.ontology.Instrument
 	@Column
 	private String instrumentName;
 
-	public Instrument( String agencyId, String objectId, int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public String getInstrumentName() {
-		return instrumentName;
+		return this.instrumentName;
 	}
 
-	public void setInstrumentName(String instrumentName) {
+	public void setInstrumentName(final String instrumentName) {
 		this.instrumentName = instrumentName;
 	}
 

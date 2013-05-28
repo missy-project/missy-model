@@ -15,11 +15,11 @@ import com.google.common.collect.Sets;
 
 public class VariableTest {
 
-	Variable variable = new Variable( "aid", "oid_variable", 1 );
+	Variable variable = new Variable();
 
 	@Test
 	public void getAnalysisUnit() {
-		AnalysisUnit myAnalysisUnit = new AnalysisUnit( "aid", "oid_analysisUnit", 1 );
+		AnalysisUnit myAnalysisUnit = new AnalysisUnit();
 
 		this.variable.setAnalysisUnit( myAnalysisUnit );
 
@@ -31,7 +31,7 @@ public class VariableTest {
 
 	@Test
 	public void getConcept() {
-		Concept myConcept = new Concept( "aid", "oid_concept", 1 );
+		Concept myConcept = new Concept();
 
 		this.variable.setConcept( myConcept );
 
@@ -44,7 +44,7 @@ public class VariableTest {
 
 	@Test
 	public void getVariableDefinition() {
-		VariableDefinition myDataElement = new VariableDefinition( "aid", "oid_dataElement", 1 );
+		VariableDefinition myDataElement = new VariableDefinition();
 
 		this.variable.setBasedOn( myDataElement );
 
@@ -57,7 +57,7 @@ public class VariableTest {
 
 	@Test
 	public void getQuestion() {
-		Question myQuestion = new Question( "aid", "oid_question", 1 );
+		Question myQuestion = new Question();
 
 		Set<org.gesis.ddi.ontology.Question> questions = Sets.newHashSet();
 		questions.add( myQuestion );
@@ -73,7 +73,7 @@ public class VariableTest {
 
 	@Test
 	public void getUniverse() {
-		Universe myUniverse = new Universe( "aid", "oid_universe", 1 );
+		Universe myUniverse = new Universe();
 
 		this.variable.setUniverse( myUniverse );
 

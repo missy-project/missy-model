@@ -20,21 +20,11 @@ public class VariableDefinition extends org.gesis.ddi.ontology.VariableDefinitio
 
 	// getter/setter
 
-	private VariableDefinition()
-	{
-		super( null, null, 0 );
-	}
-
-	public VariableDefinition( String agencyId, String objectId, int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public OfficialClassification getOfficialClassification() {
-		return officialClassification;
+		return this.officialClassification;
 	}
 
-	public void setOfficialClassification(OfficialClassification officialClassification) {
+	public void setOfficialClassification(final OfficialClassification officialClassification) {
 		this.officialClassification = officialClassification;
 	}
 

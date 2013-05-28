@@ -14,28 +14,28 @@ import com.google.common.collect.Sets;
 
 public class SummaryStatisticsTest {
 
-	SummaryStatistics summaryStatistics = new SummaryStatistics( "aid", "oid_ss", 1 );
+	SummaryStatistics summaryStatistics = new SummaryStatistics();
 
 	@Test
 	public void getSummaryStatisticsType() {
 		SummaryStatisticsType type = new SummaryStatisticsType();
 
-		summaryStatistics.setSummaryStatisticsType( type );
+		this.summaryStatistics.setSummaryStatisticsType( type );
 
-		assertNotNull( summaryStatistics.getSummaryStatisticsType() );
-		assertTrue( type == summaryStatistics.getSummaryStatisticsType() );
+		assertNotNull( this.summaryStatistics.getSummaryStatisticsType() );
+		assertTrue( type == this.summaryStatistics.getSummaryStatisticsType() );
 	}
 
 	@Test
 	public void getVariable() {
-		Variable myVariable = new Variable( "aid", "oid_variable", 1 );
+		Variable myVariable = new Variable();
 
 		Set<org.gesis.ddi.ontology.Variable> variables = new HashSet<org.gesis.ddi.ontology.Variable>();
 		variables.add( myVariable );
 
-		summaryStatistics.setStatisticsVariable( variables );
+		this.summaryStatistics.setStatisticsVariable( variables );
 
-		Set<org.gesis.ddi.ontology.Variable> variable = summaryStatistics.getStatisticsVariable();
+		Set<org.gesis.ddi.ontology.Variable> variable = this.summaryStatistics.getStatisticsVariable();
 
 		assertNotNull( variable );
 		assertEquals( 1, variable.size() );
@@ -44,13 +44,13 @@ public class SummaryStatisticsTest {
 
 	@Test
 	public void getDataFile() {
-		DataFile myDataFile = new DataFile( "aid", "oid_dataFile", 1 );
+		DataFile myDataFile = new DataFile();
 
 		Set<DataFile> dataFiles = Sets.newHashSet( myDataFile );
 
-		summaryStatistics.setStatisticsDataFile( dataFiles );
+		this.summaryStatistics.setStatisticsDataFile( dataFiles );
 
-		Set<DataFile> dataFile = summaryStatistics.getStatisticsDataFile();
+		Set<DataFile> dataFile = this.summaryStatistics.getStatisticsDataFile();
 
 		assertNotNull( dataFile );
 		assertEquals( 1, dataFile.size() );

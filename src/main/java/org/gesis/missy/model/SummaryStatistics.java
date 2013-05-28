@@ -14,16 +14,11 @@ public class SummaryStatistics extends org.gesis.ddi.ontology.SummaryStatistics
 	@JoinColumn( name = "summaryStatisticsType_id" )
 	private SummaryStatisticsType summaryStatisticsType;
 
-	public SummaryStatistics( String agencyId, String objectId, int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public SummaryStatisticsType getSummaryStatisticsType() {
-		return summaryStatisticsType;
+		return this.summaryStatisticsType;
 	}
 
-	public void setSummaryStatisticsType(SummaryStatisticsType summaryStatisticsType) {
+	public void setSummaryStatisticsType(final SummaryStatisticsType summaryStatisticsType) {
 		this.summaryStatisticsType = summaryStatisticsType;
 	}
 
