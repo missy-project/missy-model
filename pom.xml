@@ -17,7 +17,7 @@
   	</dependency>
   	<dependency>
   		<groupId>org.gesis.ddi</groupId>
-  		<artifactId>disco-model</artifactId>
+  		<artifactId>gesis-ddi</artifactId>
   		<version>${disco.model.version}</version>
   	</dependency>
   	<dependency>
