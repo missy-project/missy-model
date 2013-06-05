@@ -27,6 +27,9 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 	@Column
 	private boolean derived;
 
+	@ManyToMany( mappedBy = "containsVariable" )
+	private Set<org.gesis.ddi.ontology.LogicalDataSet> logicalDataSet;
+
 	// relations
 
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
@@ -95,6 +98,16 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 
 	public void setSummaryStatistics(final Set<SummaryStatistics> summaryStatistics) {
 		this.summaryStatistics = summaryStatistics;
+	}
+
+	public Set<org.gesis.ddi.ontology.LogicalDataSet> getLogicalDataSet()
+	{
+		return this.logicalDataSet;
+	}
+
+	public void setLogicalDataSet( final Set<org.gesis.ddi.ontology.LogicalDataSet> logicalDataSet )
+	{
+		this.logicalDataSet = logicalDataSet;
 	}
 
 }
