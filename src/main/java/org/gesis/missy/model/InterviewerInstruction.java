@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
-import org.gesis.ddi.Identifiable;
+import org.gesis.ddi.IdentifiableImpl;
 
 @Entity
-public class InterviewerInstruction extends Identifiable {
+public class InterviewerInstruction extends IdentifiableImpl
+{
 
 	@Column
 	private String interviewerInstruction;
@@ -20,32 +21,27 @@ public class InterviewerInstruction extends Identifiable {
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Question question;
 
-	public InterviewerInstruction( String agencyId, String objectId, int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public String getInterviewerInstruction() {
-		return interviewerInstruction;
+		return this.interviewerInstruction;
 	}
 
-	public void setInterviewerInstruction(String interviewerInstruction) {
+	public void setInterviewerInstruction(final String interviewerInstruction) {
 		this.interviewerInstruction = interviewerInstruction;
 	}
 
 	public Instrument getInstrument() {
-		return instrument;
+		return this.instrument;
 	}
 
-	public void setInstrument(Instrument instrument) {
+	public void setInstrument(final Instrument instrument) {
 		this.instrument = instrument;
 	}
 
 	public Question getQuestion() {
-		return question;
+		return this.question;
 	}
 
-	public void setQuestion(Question question) {
+	public void setQuestion(final Question question) {
 		this.question = question;
 	}
 

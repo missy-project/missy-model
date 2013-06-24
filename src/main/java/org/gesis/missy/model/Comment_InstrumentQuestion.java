@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import org.gesis.ddi.Identifiable;
+import org.gesis.ddi.IdentifiableImpl;
 
 @Entity
-public class Comment_InstrumentQuestion extends Identifiable
+public class Comment_InstrumentQuestion extends IdentifiableImpl
 {
 
 	// properties
@@ -25,37 +25,32 @@ public class Comment_InstrumentQuestion extends Identifiable
 
 	// getter/setter
 
-	public Comment_InstrumentQuestion( String agencyId, String objectId, int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public String getComment()
 	{
-		return comment;
+		return this.comment;
 	}
 
-	public void setComment( String comment )
+	public void setComment( final String comment )
 	{
 		this.comment = comment;
 	}
 
 	public Instrument getInstrument()
 	{
-		return instrument;
+		return this.instrument;
 	}
 
-	public void setInstrument( Instrument instrument )
+	public void setInstrument( final Instrument instrument )
 	{
 		this.instrument = instrument;
 	}
 
 	public Question getQuestion()
 	{
-		return question;
+		return this.question;
 	}
 
-	public void setQuestion( Question question )
+	public void setQuestion( final Question question )
 	{
 		this.question = question;
 	}

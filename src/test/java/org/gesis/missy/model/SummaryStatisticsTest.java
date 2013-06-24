@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.gesis.ddi.ontology.DataFile;
+import org.gesis.discovery.DataFile;
 import org.junit.Test;
 
 import com.google.common.collect.Sets;
@@ -30,12 +30,12 @@ public class SummaryStatisticsTest {
 	public void getVariable() {
 		Variable myVariable = new Variable();
 
-		Set<org.gesis.ddi.ontology.Variable> variables = new HashSet<org.gesis.ddi.ontology.Variable>();
+		Set<org.gesis.discovery.Variable> variables = new HashSet<org.gesis.discovery.Variable>();
 		variables.add( myVariable );
 
 		this.summaryStatistics.setStatisticsVariable( variables );
 
-		Set<org.gesis.ddi.ontology.Variable> variable = this.summaryStatistics.getStatisticsVariable();
+		Set<org.gesis.discovery.Variable> variable = this.summaryStatistics.getStatisticsVariable();
 
 		assertNotNull( variable );
 		assertEquals( 1, variable.size() );

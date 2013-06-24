@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.gesis.ddi.ontology.Study;
+import org.gesis.discovery.Study;
 import org.gesis.foaf.Agent;
 import org.junit.Test;
 
@@ -21,12 +21,12 @@ public class StudyTest {
 	public void getVariable() {
 		Variable myVariable = new Variable();
 
-		Set<org.gesis.ddi.ontology.Variable> variables = new HashSet<org.gesis.ddi.ontology.Variable>();
+		Set<org.gesis.discovery.Variable> variables = new HashSet<org.gesis.discovery.Variable>();
 		variables.add( myVariable );
 
 		this.myStudy.setVariable( variables );
 
-		Set<org.gesis.ddi.ontology.Variable> variable = this.myStudy.getVariable();
+		Set<org.gesis.discovery.Variable> variable = this.myStudy.getVariable();
 
 		assertNotNull( variable );
 		assertEquals( 1, variable.size() );
@@ -37,12 +37,12 @@ public class StudyTest {
 	public void getInstrument() {
 		Instrument myInstrument = new Instrument();
 
-		Set<org.gesis.ddi.ontology.Instrument> instruments = new HashSet<org.gesis.ddi.ontology.Instrument>();
+		Set<org.gesis.discovery.Instrument> instruments = new HashSet<org.gesis.discovery.Instrument>();
 		instruments.add( myInstrument );
 
 		this.myStudy.setInstrument( instruments );
 
-		Set<org.gesis.ddi.ontology.Instrument> instrument = this.myStudy.getInstrument();
+		Set<org.gesis.discovery.Instrument> instrument = this.myStudy.getInstrument();
 
 		assertNotNull( instrument );
 		assertEquals( 1, instrument.size() );

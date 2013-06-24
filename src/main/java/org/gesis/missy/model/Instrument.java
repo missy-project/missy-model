@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity( name = "MInstrument" )
-public class Instrument extends org.gesis.ddi.ontology.Instrument
+public class Instrument extends org.gesis.discovery.Instrument
 {
 
 	@Column

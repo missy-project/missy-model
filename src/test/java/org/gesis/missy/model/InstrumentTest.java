@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.gesis.ddi.ontology.Questionnaire;
+import org.gesis.discovery.Questionnaire;
 import org.junit.Test;
 
 public class InstrumentTest {
@@ -19,12 +19,12 @@ public class InstrumentTest {
 		Question myQuestion = new Question();
 		myQuestion.setQuestionNumber( "questionNumber" );
 
-		Set<org.gesis.ddi.ontology.Question> questions = new HashSet<org.gesis.ddi.ontology.Question>();
+		Set<org.gesis.discovery.Question> questions = new HashSet<org.gesis.discovery.Question>();
 		questions.add( myQuestion );
 
 		this.instrument.setQuestion( questions );
 
-		Set<org.gesis.ddi.ontology.Question> question = this.instrument.getQuestion();
+		Set<org.gesis.discovery.Question> question = this.instrument.getQuestion();
 
 		assertNotNull( question );
 		assertEquals( 1, question.size() );

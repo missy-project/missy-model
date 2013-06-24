@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import org.gesis.rdf.LangString;
 
 @Entity( name = "MQuestion" )
-public class Question extends org.gesis.ddi.ontology.Question
+public class Question extends org.gesis.discovery.Question
 {
 
 	// properties

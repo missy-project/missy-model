@@ -6,7 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity( name = "MLogicalDataSet" )
-public class LogicalDataSet extends org.gesis.ddi.ontology.LogicalDataSet
+public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 {
 
 	// properties

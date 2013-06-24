@@ -6,23 +6,24 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
-import org.gesis.ddi.ontology.Universe;
 import org.gesis.skos.Concept;
 import org.junit.Test;
 
 import com.google.common.collect.Sets;
 
-public class VariableDefinitionTest {
+public class VariableDefinitionTest
+{
 
 	VariableDefinition variableDefinition = new VariableDefinition();
 
 	@Test
-	public void getUniverse() {
-		Universe universe = new Universe();
+	public void getUniverse()
+	{
+		org.gesis.discovery.Universe universe = new Universe();
 
 		this.variableDefinition.setUniverse( Sets.newHashSet( universe ) );
 
-		Set<Universe> universes = this.variableDefinition.getUniverse();
+		Set<org.gesis.discovery.Universe> universes = this.variableDefinition.getUniverse();
 
 		assertNotNull( universes );
 		assertEquals( 1, universes.size() );
@@ -30,7 +31,8 @@ public class VariableDefinitionTest {
 	}
 
 	@Test
-	public void getConcept() {
+	public void getConcept()
+	{
 		Concept newConcept = new Concept();
 
 		this.variableDefinition.setConcept( newConcept );

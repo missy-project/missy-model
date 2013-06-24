@@ -7,7 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity( name = "MSummaryStatistics" )
-public class SummaryStatistics extends org.gesis.ddi.ontology.SummaryStatistics
+public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
 {
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )

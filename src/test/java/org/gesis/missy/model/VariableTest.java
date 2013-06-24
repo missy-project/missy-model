@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
-import org.gesis.ddi.ontology.AnalysisUnit;
+import org.gesis.discovery.AnalysisUnit;
 import org.gesis.rdf.LangString;
 import org.gesis.skos.Concept;
 import org.junit.Test;
@@ -48,7 +48,7 @@ public class VariableTest {
 
 		this.variable.setBasedOn( myDataElement );
 
-		org.gesis.ddi.ontology.VariableDefinition dataElement = this.variable.getBasedOn();
+		org.gesis.discovery.VariableDefinition dataElement = this.variable.getBasedOn();
 
 		assertNotNull( dataElement );
 		assertTrue( myDataElement == dataElement );
@@ -59,12 +59,12 @@ public class VariableTest {
 	public void getQuestion() {
 		Question myQuestion = new Question();
 
-		Set<org.gesis.ddi.ontology.Question> questions = Sets.newHashSet();
+		Set<org.gesis.discovery.Question> questions = Sets.newHashSet();
 		questions.add( myQuestion );
 
 		this.variable.setQuestion( questions );
 
-		Set<org.gesis.ddi.ontology.Question> question = this.variable.getQuestion();
+		Set<org.gesis.discovery.Question> question = this.variable.getQuestion();
 
 		assertNotNull( question );
 		assertEquals( 1, question.size() );
@@ -77,7 +77,7 @@ public class VariableTest {
 
 		this.variable.setUniverse( myUniverse );
 
-		org.gesis.ddi.ontology.Universe universe = this.variable.getUniverse();
+		org.gesis.discovery.Universe universe = this.variable.getUniverse();
 
 		assertNotNull( universe );
 		assertTrue( myUniverse == universe );

@@ -6,8 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
 
-import org.gesis.ddi.ontology.CategoryStatistics;
-import org.gesis.ddi.ontology.DataFile;
+import org.gesis.discovery.CategoryStatistics;
+import org.gesis.discovery.DataFile;
 import org.junit.Test;
 
 import com.google.common.collect.Sets;

@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity( name = "MUniverse" )
-public class Universe extends org.gesis.ddi.ontology.Universe
+public class Universe extends org.gesis.discovery.Universe
 {
 
 	// properties

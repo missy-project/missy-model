@@ -3,10 +3,11 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import org.gesis.ddi.Identifiable;
+import org.gesis.ddi.IdentifiableImpl;
 
 @Entity
-public class FilterInstruction extends Identifiable {
+public class FilterInstruction extends IdentifiableImpl
+{
 
 	@Column
 	private String filterInstruction;
@@ -14,24 +15,19 @@ public class FilterInstruction extends Identifiable {
 	@Column
 	private String filterInstructionFormal;
 
-	public FilterInstruction( String agencyId, String objectId, int majorVersion )
-	{
-		super( agencyId, objectId, majorVersion );
-	}
-
 	public String getFilterInstruction() {
-		return filterInstruction;
+		return this.filterInstruction;
 	}
 
-	public void setFilterInstruction(String filterInstruction) {
+	public void setFilterInstruction(final String filterInstruction) {
 		this.filterInstruction = filterInstruction;
 	}
 
 	public String getFilterInstructionFormal() {
-		return filterInstructionFormal;
+		return this.filterInstructionFormal;
 	}
 
-	public void setFilterInstructionFormal(String filterInstructionFormal) {
+	public void setFilterInstructionFormal(final String filterInstructionFormal) {
 		this.filterInstructionFormal = filterInstructionFormal;
 	}
 

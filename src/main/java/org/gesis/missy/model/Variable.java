@@ -1,19 +1,20 @@
 package org.gesis.missy.model;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity( name = "MVariable" )
-public class Variable extends org.gesis.ddi.ontology.Variable
+public class Variable extends org.gesis.discovery.Variable
 {
 
 	// properties
@@ -28,7 +29,7 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 	private boolean derived;
 
 	@ManyToMany( mappedBy = "containsVariable" )
-	private Set<org.gesis.ddi.ontology.LogicalDataSet> logicalDataSet;
+	private Set<org.gesis.discovery.LogicalDataSet> logicalDataSet;
 
 	// relations
 
@@ -40,13 +41,15 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 	@JoinColumn( name = "samplingFraction_id" )
 	private SamplingFractionType samplingFraction;
 
-	@ElementCollection
 	@ManyToMany( cascade = CascadeType.ALL )
 	@JoinTable(
 			name = "MVariable_SummaryStatistics",
 			joinColumns=@JoinColumn(name="variable_id"),
 			inverseJoinColumns=@JoinColumn( name = "summaryStatistics_id" ))
 	private Set<SummaryStatistics> summaryStatistics;
+
+	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Set<Comment> comments;
 
 	// getter/setter
 
@@ -100,14 +103,33 @@ public class Variable extends org.gesis.ddi.ontology.Variable
 		this.summaryStatistics = summaryStatistics;
 	}
 
-	public Set<org.gesis.ddi.ontology.LogicalDataSet> getLogicalDataSet()
+	public Set<org.gesis.discovery.LogicalDataSet> getLogicalDataSet()
 	{
 		return this.logicalDataSet;
 	}
 
-	public void setLogicalDataSet( final Set<org.gesis.ddi.ontology.LogicalDataSet> logicalDataSet )
+	public void setLogicalDataSet( final Set<org.gesis.discovery.LogicalDataSet> logicalDataSet )
 	{
 		this.logicalDataSet = logicalDataSet;
 	}
 
+	public Set<Comment> getComments()
+	{
+		return this.comments;
+	}
+
+	public void setComments( final Set<Comment> comments )
+	{
+		this.comments = comments;
+	}
+
+	public Variable addComment( final Comment comment )
+	{
+		if ( this.comments == null )
+			this.comments = new LinkedHashSet<Comment>();
+
+		this.comments.add( comment );
+
+		return this;
+	}
 }

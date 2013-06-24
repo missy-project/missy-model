@@ -7,7 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity( name = "MVariableDefinition" )
-public class VariableDefinition extends org.gesis.ddi.ontology.VariableDefinition
+public class VariableDefinition extends org.gesis.discovery.VariableDefinition
 {
 
 	// properties

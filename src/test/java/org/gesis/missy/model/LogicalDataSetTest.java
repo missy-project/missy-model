@@ -55,12 +55,12 @@ public class LogicalDataSetTest {
 	public void getInstrument() {
 		Instrument myInstrument = new Instrument();
 
-		Set<org.gesis.ddi.ontology.Instrument> instruments = new HashSet<org.gesis.ddi.ontology.Instrument>();
+		Set<org.gesis.discovery.Instrument> instruments = new HashSet<org.gesis.discovery.Instrument>();
 		instruments.add( myInstrument );
 
 		this.dataset.setInstrument( instruments );
 
-		Set<org.gesis.ddi.ontology.Instrument> instrument = this.dataset.getInstrument();
+		Set<org.gesis.discovery.Instrument> instrument = this.dataset.getInstrument();
 
 		assertNotNull( instrument );
 		assertEquals( 1, instrument.size() );
@@ -73,7 +73,7 @@ public class LogicalDataSetTest {
 
 		this.dataset.setDataSetUniverse( myUniverse );
 
-		org.gesis.ddi.ontology.Universe universe = this.dataset.getDataSetUniverse();
+		org.gesis.discovery.Universe universe = this.dataset.getDataSetUniverse();
 
 		assertNotNull( universe );
 		assertTrue( myUniverse == universe );
