@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.gesis</groupId>
     <artifactId>missy-project</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <relativePath>../missy-project/pom.xml</relativePath>
   </parent>
   <groupId>org.gesis.missy</groupId>
@@ -17,8 +17,8 @@
   	</dependency>
   	<dependency>
   		<groupId>org.gesis.ddi</groupId>
-  		<artifactId>gesis-ddi</artifactId>
-  		<version>${disco.model.version}</version>
+  		<artifactId>gesis-ddi-model</artifactId>
+  		<version>${gesis-ddi.model.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>commons-lang</groupId>
