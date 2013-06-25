@@ -2,30 +2,19 @@ package org.gesis.missy.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import org.gesis.ddi.util.AbstractBaseEntity;
 
 @Entity
-public class CommentType
+public class CommentType extends AbstractBaseEntity
 {
 
-	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO )
-	private int id;
+	// properties
 
 	@Column
 	private String commentType;
 
-	public int getId()
-	{
-		return this.id;
-	}
-
-	public void setId( final int id )
-	{
-		this.id = id;
-	}
+	// getter / setter
 
 	public String getCommentType()
 	{

@@ -1,34 +1,22 @@
 package org.gesis.missy.model;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import org.gesis.ddi.util.AbstractBaseEntity;
 import org.gesis.rdf.LangString;
 
 @Entity
-public class AdhocModuleType {
-
-	@Column
-	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO )
-	private int id;
+public class AdhocModuleType extends AbstractBaseEntity
+{
+	// relations
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private LangString adhocModuleType;
 
-	public int getId() {
-		return this.id;
-	}
-
-	public void setId(final int id) {
-		this.id = id;
-	}
+	// getter / setter
 
 	public LangString getAdhocModuleType()
 	{

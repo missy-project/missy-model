@@ -3,10 +3,10 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import org.gesis.ddi.IdentifiableImpl;
+import org.gesis.ddi.util.AbstractBaseEntity;
 
 @Entity
-public class FilterInstruction extends IdentifiableImpl
+public class FilterInstruction extends AbstractBaseEntity
 {
 
 	@Column

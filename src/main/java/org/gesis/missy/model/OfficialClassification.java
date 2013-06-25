@@ -2,34 +2,27 @@ package org.gesis.missy.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import org.gesis.ddi.util.AbstractBaseEntity;
 
 @Entity
-public class OfficialClassification {
+public class OfficialClassification extends AbstractBaseEntity
+{
 
-	@Column
-	@Id
-	@GeneratedValue( strategy = GenerationType.AUTO )
-	private int id;
+	// properties
 
 	@Column
 	private String officialClassification;
 
-	public int getId() {
-		return this.id;
-	}
+	// getter / setter
 
-	public void setId(final int id) {
-		this.id = id;
-	}
-
-	public String getOfficialClassification() {
+	public String getOfficialClassification()
+	{
 		return this.officialClassification;
 	}
 
-	public void setOfficialClassification(final String officialClassification) {
+	public void setOfficialClassification( final String officialClassification )
+	{
 		this.officialClassification = officialClassification;
 	}
 
