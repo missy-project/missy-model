@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.gesis.skos.ConceptScheme;
+
 @Entity( name = "MLogicalDataSet" )
 public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 {
@@ -23,6 +25,10 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 	@ManyToOne
 	@JoinColumn( name = "dataSetType_id" )
 	private DataSetType dataSetType;
+
+	@ManyToOne
+	@JoinColumn( name = "conceptScheme_id" )
+	private ConceptScheme conceptScheme;
 
 	// getter/setter
 
@@ -54,6 +60,16 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 	public void setDataSetType( final DataSetType dataSetType )
 	{
 		this.dataSetType = dataSetType;
+	}
+
+	public ConceptScheme getConceptScheme()
+	{
+		return this.conceptScheme;
+	}
+
+	public void setConceptScheme( final ConceptScheme conceptScheme )
+	{
+		this.conceptScheme = conceptScheme;
 	}
 
 }
