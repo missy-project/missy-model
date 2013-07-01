@@ -8,10 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import org.gesis.ddi.util.AbstractBaseEntity;
+import org.gesis.persistence.PersistableResource;
 
 @Entity
-public class User extends AbstractBaseEntity{
+public class User extends PersistableResource{
 
 	// properties
 

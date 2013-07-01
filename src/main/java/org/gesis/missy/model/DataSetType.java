@@ -5,11 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
-import org.gesis.ddi.util.AbstractBaseEntity;
+import org.gesis.persistence.PersistableResource;
 import org.gesis.rdf.LangString;
 
 @Entity
-public class DataSetType extends AbstractBaseEntity
+public class DataSetType extends PersistableResource
 {
 
 	// relations

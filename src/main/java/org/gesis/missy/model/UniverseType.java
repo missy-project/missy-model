@@ -3,10 +3,10 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import org.gesis.ddi.util.AbstractBaseEntity;
+import org.gesis.persistence.PersistableResource;
 
 @Entity
-public class UniverseType extends AbstractBaseEntity
+public class UniverseType extends PersistableResource
 {
 
 	@Column

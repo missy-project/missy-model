@@ -3,10 +3,10 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-import org.gesis.ddi.util.AbstractBaseEntity;
+import org.gesis.persistence.PersistableResource;
 
 @Entity
-public class SessionDataSet extends AbstractBaseEntity
+public class SessionDataSet extends PersistableResource
 {
 
 	@Column

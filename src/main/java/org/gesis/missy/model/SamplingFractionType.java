@@ -9,11 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.gesis.ddi.util.AbstractBaseEntity;
+import org.gesis.persistence.PersistableResource;
 import org.gesis.rdf.LangString;
 
 @Entity
-public class SamplingFractionType extends AbstractBaseEntity
+public class SamplingFractionType extends PersistableResource
 {
 
 	// relations

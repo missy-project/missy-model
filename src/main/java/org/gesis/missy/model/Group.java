@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.gesis.ddi.util.AbstractBaseEntity;
+import org.gesis.persistence.PersistableResource;
 
 @Entity
-public class Group extends AbstractBaseEntity{
+public class Group extends PersistableResource{
 
 	// properties
 
