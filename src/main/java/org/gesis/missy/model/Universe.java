@@ -7,7 +7,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-@Entity( name = "MUniverse" )
+@Entity( name = "Missy_Universe" )
 public class Universe extends org.gesis.discovery.Universe
 {
 

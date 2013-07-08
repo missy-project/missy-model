@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 import org.gesis.ddi.IdentifiableImpl;
 
-@Entity
+@Entity( name = "Missy_InterviewerInstruction" )
 public class InterviewerInstruction extends IdentifiableImpl
 {
 

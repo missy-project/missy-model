@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 
 import org.gesis.skos.ConceptScheme;
 
-@Entity( name = "MLogicalDataSet" )
+@Entity( name = "Missy_LogicalDataSet" )
 public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 {
 

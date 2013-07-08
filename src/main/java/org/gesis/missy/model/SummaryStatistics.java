@@ -6,7 +6,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
-@Entity( name = "MSummaryStatistics" )
+@Entity( name = "Missy_SummaryStatistics" )
 public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
 {
 

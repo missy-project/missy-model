@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 
 import org.gesis.rdf.LangString;
 
-@Entity( name = "MQuestion" )
+@Entity( name = "Missy_Question" )
 public class Question extends org.gesis.discovery.Question
 {
 

@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-@Entity( name = "MVariable" )
+@Entity( name = "Missy_Variable" )
 public class Variable extends org.gesis.discovery.Variable
 {
 

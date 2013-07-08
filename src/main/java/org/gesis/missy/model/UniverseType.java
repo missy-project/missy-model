@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 
 import org.gesis.persistence.PersistableResource;
 
-@Entity
+@Entity( name = "Missy_UniverseType" )
 public class UniverseType extends PersistableResource
 {
 

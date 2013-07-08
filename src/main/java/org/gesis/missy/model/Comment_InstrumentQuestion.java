@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 
 import org.gesis.ddi.IdentifiableImpl;
 
-@Entity
+@Entity( name = "Missy_Comment_InstrumentQueryion" )
 public class Comment_InstrumentQuestion extends IdentifiableImpl
 {
 

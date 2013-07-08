@@ -6,7 +6,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity( name = "MVariableDefinition" )
+@Entity( name = "Missy_VariableDefinition" )
 public class VariableDefinition extends org.gesis.discovery.VariableDefinition
 {
 

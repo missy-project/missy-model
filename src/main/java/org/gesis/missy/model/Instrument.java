@@ -3,7 +3,7 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity( name = "MInstrument" )
+@Entity( name = "Missy_Instrument" )
 public class Instrument extends org.gesis.discovery.Instrument
 {
 

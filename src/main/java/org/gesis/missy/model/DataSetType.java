@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 import org.gesis.persistence.PersistableResource;
 import org.gesis.rdf.LangString;
 
-@Entity
+@Entity( name = "Missy_DataSetType" )
 public class DataSetType extends PersistableResource
 {
 

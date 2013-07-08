@@ -3,7 +3,7 @@ package org.gesis.missy.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity( name = "MConcept" )
+@Entity( name = "Missy_Concept" )
 public class Concept extends org.gesis.skos.Concept
 {
 

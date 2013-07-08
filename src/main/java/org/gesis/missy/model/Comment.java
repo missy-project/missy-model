@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import org.gesis.ddi.Note;
 import org.gesis.rdf.LangString;
 
-@Entity
+@Entity( name = "Missy_" )
 public class Comment extends Note
 {
 
