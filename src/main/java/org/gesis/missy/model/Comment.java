@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import org.gesis.ddi.Note;
 import org.gesis.rdf.LangString;
 
-@Entity( name = "Missy_" )
+@Entity( name = "Missy_Comment" )
 public class Comment extends Note
 {
 
@@ -32,7 +32,7 @@ public class Comment extends Note
 
 	public LangString getComment()
 	{
-		return this.comment;
+		return comment;
 	}
 
 	public void setComment( final LangString comment )
@@ -42,7 +42,7 @@ public class Comment extends Note
 
 	public String getAuthor()
 	{
-		return this.author;
+		return author;
 	}
 
 	public void setAuthor( final String author )
@@ -52,7 +52,7 @@ public class Comment extends Note
 
 	public CommentType getCommentType()
 	{
-		return this.commentType;
+		return commentType;
 	}
 
 	public void setCommentType( final CommentType commentType )
