@@ -39,4 +39,14 @@ public class Identification
 	{
 		this.versionMinor = versionMinor;
 	}
+
+	public static Identification create( final String agencyId, final String versionRelease, final String versionMinor )
+	{
+		Identification identification = new Identification();
+		identification.setAgencyID( agencyId );
+		identification.setVersionRelease( versionRelease );
+		identification.setVersionMinor( versionMinor );
+
+		return identification;
+	}
 }
