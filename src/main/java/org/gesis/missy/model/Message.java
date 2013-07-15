@@ -6,12 +6,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 
+import org.apache.commons.lang.StringUtils;
 import org.gesis.ddi.util.Locales;
 import org.gesis.persistence.PersistableResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Entity
 public class Message extends PersistableResource
 {
+
+	private static Logger log = LoggerFactory.getLogger( Message.class );
 
 	@Column( unique = true, name = "message_key" )
 	private String messageKey;
@@ -33,7 +38,7 @@ public class Message extends PersistableResource
 
 	}
 
-	public Message( final Locale locale, final String value )
+	public Message( final String key, final Locale locale, final String value )
 	{
 		if ( locale == null )
 			return;
@@ -48,6 +53,8 @@ public class Message extends PersistableResource
 			this.uk = value;
 		else if ( Locales.isEqual( Locales.FRANCE, locale ) )
 			this.fr = value;
+
+		this.messageKey = key;
 	}
 
 	public String getMessageKey()
@@ -105,15 +112,32 @@ public class Message extends PersistableResource
 		if ( locale == null )
 			return null;
 
-		// first try to match from own fields
+		// try to match the locale
 		if ( Locales.isEqual( Locales.UNITED_KINGDOM, locale ) )
 			return this.uk;
-		else if ( Locales.isEqual( Locales.GERMANY, locale ) )
-			return this.de;
-		else if ( Locales.isEqual( Locales.FRANCE, locale ) )
-			return this.fr;
 
-		return null;
+		else if ( Locales.isEqual( Locales.GERMANY, locale ) )
+		{
+			// return german but only is not empty
+			if ( StringUtils.isEmpty( this.de ) )
+			{
+				log.warn( "No value for locale 'de' with key '" + this.messageKey + "' found. Falling back to uk." );
+				return this.uk;
+			}
+			else
+				return this.de;
+		}
+		else if ( Locales.isEqual( Locales.FRANCE, locale ) )
+			// return french but only is not empty
+			if ( StringUtils.isEmpty( this.fr ) )
+			{
+				log.warn( "No value for locale 'fr' with key '" + this.messageKey + "' found. Falling back to uk." );
+				return this.uk;
+			}
+			else
+				return this.fr;
+
+		return "";
 	}
 
 	/**
@@ -133,12 +157,12 @@ public class Message extends PersistableResource
 	 * @param value
 	 * @return
 	 */
-	public static Message createMessage( final Locale locale, final String value )
+	public static Message createMessage( final String key, final Locale locale, final String value )
 	{
-		if ( locale == null || value == null )
+		if ( key == null || locale == null || value == null )
 			return null;
 
-		return new Message( locale, value );
+		return new Message( key, locale, value );
 	}
 
 }
