@@ -5,16 +5,16 @@ import org.gesis.missy.model.Identification;
 /**
  * This class provides methods in order to create consistent URNs in a
  * convenient way.
- * 
+ *
  * @author matthaeus
- * 
+ *
  */
 public class URNFactory
 {
 
 	/**
 	 * Creates the URN for LogicalDataSet.
-	 * 
+	 *
 	 * @param identification
 	 * @param studyName
 	 * @param year
@@ -44,7 +44,7 @@ public class URNFactory
 
 	/**
 	 * Creates the URN for Study.
-	 * 
+	 *
 	 * @param identification
 	 * @param studyName
 	 * @param year
@@ -68,7 +68,7 @@ public class URNFactory
 
 	/**
 	 * Creates the URN for Variable.
-	 * 
+	 *
 	 * @param identification
 	 * @param studyName
 	 * @param year
@@ -97,6 +97,27 @@ public class URNFactory
 		urn.append( dataSetVersion );
 		urn.append( "-" );
 		urn.append( variableName );
+		urn.append( createURNSuffix( identification ) );
+
+		return urn.toString();
+	}
+
+	/**
+	 * Creates the URN for Concept.
+	 *
+	 * @param identification
+	 * @param nextSequenceNumber
+	 * @return
+	 */
+	public static String createConceptURN( final Identification identification, final int nextSequenceNumber )
+	{
+		if ( nextSequenceNumber == -1 )
+			return null;
+
+		final StringBuilder urn = new StringBuilder();
+
+		urn.append( createURNPrefix( identification, "concept" ) );
+		urn.append( nextSequenceNumber );
 		urn.append( createURNSuffix( identification ) );
 
 		return urn.toString();
