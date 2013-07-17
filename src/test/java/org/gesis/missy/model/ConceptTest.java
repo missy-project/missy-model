@@ -22,9 +22,9 @@ public class ConceptTest {
 
 		Set<ConceptScheme> schemes = Sets.newHashSet( myConcept );
 
-		this.concept.setSkos_inScheme( schemes );
+		this.concept.setInScheme( schemes );
 
-		Set<ConceptScheme> scheme = this.concept.getSkos_inScheme();
+		Set<ConceptScheme> scheme = this.concept.getInScheme();
 
 		assertNotNull( scheme );
 		assertEquals( 1, scheme.size() );
@@ -37,9 +37,9 @@ public class ConceptTest {
 
 		Set<Concept> broaders = Sets.newHashSet( myConcept );
 
-		this.concept.setSkos_broader( broaders );
+		this.concept.setBroader( broaders );
 
-		Set<Concept> broader = this.concept.getSkos_broader();
+		Set<Concept> broader = this.concept.getBroader();
 
 		assertNotNull( broader );
 		assertEquals( 1, broader.size() );
@@ -52,9 +52,9 @@ public class ConceptTest {
 
 		Set<Concept> narrowers = Sets.newHashSet( myConcept );
 
-		this.concept.setSkos_narrower( narrowers );
+		this.concept.setNarrower( narrowers );
 
-		Set<Concept> narrower = this.concept.getSkos_narrower();
+		Set<Concept> narrower = this.concept.getNarrower();
 
 		assertNotNull( narrower );
 		assertEquals( 1, narrower.size() );

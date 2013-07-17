@@ -56,9 +56,9 @@ public class StudyTest {
 		Set<Agent> creators = Sets.newHashSet();
 		creators.add( myCreator );
 
-		this.myStudy.setDcterms_creator( creators );
+		this.myStudy.setCreator( creators );
 
-		Set<Agent> creator = this.myStudy.getDcterms_creator();
+		Set<Agent> creator = this.myStudy.getCreator();
 
 		assertNotNull( creator );
 		assertEquals( 1, creator.size() );
@@ -72,9 +72,9 @@ public class StudyTest {
 		Set<Agent> publishers = Sets.newHashSet();
 		publishers.add( myPublisher );
 
-		this.myStudy.setDcterms_publisher( publishers );
+		this.myStudy.setPublisher( publishers );
 
-		Set<Agent> publisher = this.myStudy.getDcterms_publisher();
+		Set<Agent> publisher = this.myStudy.getPublisher();
 
 		assertNotNull( publisher );
 		assertEquals( 1, publisher.size() );
@@ -88,9 +88,9 @@ public class StudyTest {
 		Set<Agent> contributors = Sets.newHashSet();
 		contributors.add( myContributor );
 
-		this.myStudy.setDcterms_contributer( contributors );
+		this.myStudy.setContributer( contributors );
 
-		Set<Agent> contributor = this.myStudy.getDcterms_contributer();
+		Set<Agent> contributor = this.myStudy.getContributer();
 
 		assertNotNull( contributor );
 		assertEquals( 1, contributor.size() );

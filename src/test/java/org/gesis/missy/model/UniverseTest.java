@@ -22,9 +22,9 @@ public class UniverseTest {
 
 		Set<ConceptScheme> schemes = Sets.newHashSet( myConcept );
 
-		this.universe.setSkos_inScheme( schemes );
+		this.universe.setInScheme( schemes );
 
-		Set<ConceptScheme> scheme = this.universe.getSkos_inScheme();
+		Set<ConceptScheme> scheme = this.universe.getInScheme();
 
 		assertNotNull( scheme );
 		assertEquals( 1, scheme.size() );
@@ -37,9 +37,9 @@ public class UniverseTest {
 
 		Set<Concept> broaders = Sets.newHashSet( myConcept );
 
-		this.universe.setSkos_broader( broaders );
+		this.universe.setBroader( broaders );
 
-		Set<Concept> broader = this.universe.getSkos_broader();
+		Set<Concept> broader = this.universe.getBroader();
 
 		assertNotNull( broader );
 		assertEquals( 1, broader.size() );
@@ -52,9 +52,9 @@ public class UniverseTest {
 
 		Set<Concept> narrowers = Sets.newHashSet( myConcept );
 
-		this.universe.setSkos_narrower( narrowers );
+		this.universe.setNarrower( narrowers );
 
-		Set<Concept> narrower = this.universe.getSkos_narrower();
+		Set<Concept> narrower = this.universe.getNarrower();
 
 		assertNotNull( narrower );
 		assertEquals( 1, narrower.size() );
