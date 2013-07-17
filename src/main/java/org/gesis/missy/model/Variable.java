@@ -28,9 +28,6 @@ public class Variable extends org.gesis.discovery.Variable
 	@Column
 	private boolean derived;
 
-	@ManyToMany( mappedBy = "containsVariable" )
-	private Set<org.gesis.discovery.LogicalDataSet> logicalDataSet;
-
 	// relations
 
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
@@ -41,9 +38,9 @@ public class Variable extends org.gesis.discovery.Variable
 	@JoinColumn( name = "samplingFraction_id" )
 	private SamplingFractionType samplingFraction;
 
-	@ManyToMany( cascade = CascadeType.ALL )
+	@ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinTable(
-			name = "MVariable_SummaryStatistics",
+			name = "Missy_Variable_SummaryStatistics",
 			joinColumns=@JoinColumn(name="variable_id"),
 			inverseJoinColumns=@JoinColumn( name = "summaryStatistics_id" ))
 	private Set<SummaryStatistics> summaryStatistics;
@@ -101,16 +98,6 @@ public class Variable extends org.gesis.discovery.Variable
 
 	public void setSummaryStatistics(final Set<SummaryStatistics> summaryStatistics) {
 		this.summaryStatistics = summaryStatistics;
-	}
-
-	public Set<org.gesis.discovery.LogicalDataSet> getLogicalDataSet()
-	{
-		return this.logicalDataSet;
-	}
-
-	public void setLogicalDataSet( final Set<org.gesis.discovery.LogicalDataSet> logicalDataSet )
-	{
-		this.logicalDataSet = logicalDataSet;
 	}
 
 	public Set<Comment> getComments()
