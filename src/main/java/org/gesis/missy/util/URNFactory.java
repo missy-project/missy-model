@@ -123,6 +123,25 @@ public class URNFactory
 		return urn.toString();
 	}
 
+	/**
+	 * @param identification
+	 * @param nextSequenceNumber
+	 * @return
+	 */
+	public static String createListURN( final Identification identification, final int nextSequenceNumber )
+	{
+		if ( nextSequenceNumber == -1 )
+			return null;
+
+		final StringBuilder urn = new StringBuilder();
+
+		urn.append( createURNPrefix( identification, "list" ) );
+		urn.append( nextSequenceNumber );
+		urn.append( createURNSuffix( identification ) );
+
+		return urn.toString();
+	}
+
 	public static String createURNPrefix( final Identification identification, final String className )
 	{
 		return identification.getAgencyID() + ":" + className + "_";

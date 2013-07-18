@@ -19,21 +19,19 @@ public class URNMapper
 		studyNames.put( "evs", "EU-EVS" );
 		studyNames.put( "mikrozensus", "MZ" );
 
-		datasets.put( "panel", "panel" );
-		datasets.put( "cross-sec", "cross-sectional" );
-		datasets.put( "c", "cross-sectional" );
+		datasets.put( "panel", "Panel" );
+		datasets.put( "cross-sec", "Cross-sectional" );
+		datasets.put( "c", "Cross-sectional" );
 
-		filetypes.put( "hhr", "Household register" );
-		filetypes.put( "hr", "Household register" );
-		filetypes.put( "hhd", "Household data" );
-		filetypes.put( "hd", "Household data" );
-		filetypes.put( "pd", "Personal data" );
-		filetypes.put( "pr", "Personal register" );
+		filetypes.put( "hh-reg", "Household Register" );
+		filetypes.put( "hh-data", "Household Data" );
+		filetypes.put( "p-data", "Personal Data" );
+		filetypes.put( "p-reg", "Personal Register" );
 	}
 
 	/**
 	 * Returns the proper study name representation that is found in the URNs.
-	 * 
+	 *
 	 * @param study
 	 * @return
 	 */
