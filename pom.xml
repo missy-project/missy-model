@@ -19,12 +19,18 @@
   		<groupId>org.gesis.ddi</groupId>
   		<artifactId>gesis-ddi-model</artifactId>
   		<version>${gesis-ddi.model.version}</version>
+  		<exclusions>
+  			<exclusion>
+  				<groupId>org.gesis.disco</groupId>
+  				<artifactId>disco-model</artifactId>
+  			</exclusion>
+  		</exclusions>
   	</dependency>
   	
   	<dependency>
   		<groupId>org.gesis.disco</groupId>
   		<artifactId>disco-model</artifactId>
-  		<version>0.0.13-SNAPSHOT</version>
+  		<version>${disco.model.version}</version>
   	</dependency>
   	
   	<dependency>
