@@ -19,14 +19,14 @@ public class URNMapper
 		studyNames.put( "evs", "EU-EVS" );
 		studyNames.put( "mikrozensus", "MZ" );
 
-		datasets.put( "panel", "Panel" );
-		datasets.put( "cross-sec", "Cross-sectional" );
-		datasets.put( "c", "Cross-sectional" );
+		datasets.put( "panel", "panel" );
+		datasets.put( "cross-sec", "cross-sec" );
+		datasets.put( "c", "cross-sec" );
 
-		filetypes.put( "hh-reg", "Household Register" );
-		filetypes.put( "hh-data", "Household Data" );
-		filetypes.put( "p-data", "Personal Data" );
-		filetypes.put( "p-reg", "Personal Register" );
+		filetypes.put( "hh-reg", "hh-reg" );
+		filetypes.put( "hh-data", "hh-data" );
+		filetypes.put( "p-data", "p-data" );
+		filetypes.put( "p-reg", "p-reg" );
 	}
 
 	/**
