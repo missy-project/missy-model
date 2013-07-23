@@ -43,9 +43,9 @@ public class Variable extends org.gesis.discovery.Variable
 
 	@ManyToMany( cascade = CascadeType.ALL )
 	@JoinTable(
-			name = "MVariable_SummaryStatistics",
-			joinColumns=@JoinColumn(name="variable_id"),
-			inverseJoinColumns=@JoinColumn( name = "summaryStatistics_id" ))
+			name = "Missy_Variable_SummaryStatistics",
+			joinColumns = @JoinColumn( name = "variable_id" ),
+			inverseJoinColumns = @JoinColumn( name = "summaryStatistics_id" ) )
 	private Set<SummaryStatistics> summaryStatistics;
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
