@@ -1,7 +1,6 @@
 package org.gesis.missy.model;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,8 +10,6 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-import org.gesis.rdf.LangString;
 
 @Entity( name = "Missy_Question" )
 public class Question extends org.gesis.discovery.Question
@@ -30,7 +27,7 @@ public class Question extends org.gesis.discovery.Question
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "questionText_id" )
-	private Set<LangString> questionText;
+	private Set<QuestionText> questionTexts;
 
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "referencePeriod_id" )
@@ -56,31 +53,22 @@ public class Question extends org.gesis.discovery.Question
 		this.mandatory = mandatory;
 	}
 
-	@Override
-	public Set<LangString> getQuestionText()
+	public Set<QuestionText> getQuestionTexts()
 	{
-		if ( this.questionText != null )
-			return this.questionText;
-		
-		Set<LangString> ret = new HashSet<LangString>();
-
-		if ( super.getQuestionText() instanceof LangString )
-			ret.add( (LangString) super.getQuestionText() );
-
-		return ret;
+		return questionTexts;
 	}
 
-	public void setQuestionText( final Set<LangString> questionText )
+	public void setQuestionTexts( final Set<QuestionText> questionTexts )
 	{
-		this.questionText = questionText;
+		this.questionTexts = questionTexts;
 	}
 
-	public Question addQuestionText( final LangString questionText )
+	public Question addQuestionText( final QuestionText questionText )
 	{
-		if ( this.questionText == null )
-			this.questionText = new LinkedHashSet<LangString>();
+		if ( this.questionTexts == null )
+			this.questionTexts = new HashSet<QuestionText>();
 
-		this.questionText.add( questionText );
+		this.questionTexts.add( questionText );
 
 		return this;
 	}
