@@ -14,7 +14,7 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 	// properties
 
 	@Column
-	private String owl_versionInfo;
+	private String versionInfo;
 
 	// relations
 
@@ -32,14 +32,14 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 
 	// getter/setter
 
-	public String getOwl_versionInfo()
+	public String getVersionInfo()
 	{
-		return this.owl_versionInfo;
+		return this.versionInfo;
 	}
 
-	public void setOwl_versionInfo( final String owl_versionInfo )
+	public void setVersionInfo( final String owl_versionInfo )
 	{
-		this.owl_versionInfo = owl_versionInfo;
+		this.versionInfo = owl_versionInfo;
 	}
 
 	public DataSetSubType getDataSetSubType()
