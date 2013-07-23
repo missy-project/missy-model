@@ -1,6 +1,5 @@
 package org.gesis.missy.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,9 +11,6 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 {
 
 	// properties
-
-	@Column
-	private String versionInfo;
 
 	// relations
 
@@ -31,16 +27,6 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 	private ConceptScheme conceptScheme;
 
 	// getter/setter
-
-	public String getVersionInfo()
-	{
-		return this.versionInfo;
-	}
-
-	public void setVersionInfo( final String owl_versionInfo )
-	{
-		this.versionInfo = owl_versionInfo;
-	}
 
 	public DataSetSubType getDataSetSubType()
 	{
