@@ -26,7 +26,7 @@ public class Question extends org.gesis.discovery.Question
 	// relations
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinColumn( name = "questionText_id" )
+	@JoinColumn( name = "question_id" )
 	private Set<QuestionText> questionTexts;
 
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
