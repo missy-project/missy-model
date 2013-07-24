@@ -51,4 +51,12 @@ public class URNFactoryTest
 		assertNotNull( urn );
 		assertEquals( "de.gesis:concept_1:1.2", urn );
 	}
+
+	@Test
+	public void getConceptSchemeURN()
+	{
+		final String urn = URNFactory.createConceptSchemeURN( identification, "PB100" );
+		assertNotNull( urn );
+		assertEquals( "de.gesis:conceptScheme_PB100:1.2", urn );
+	}
 }

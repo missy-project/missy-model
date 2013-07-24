@@ -125,6 +125,25 @@ public class URNFactory
 
 	/**
 	 * @param identification
+	 * @param variableName
+	 * @return
+	 */
+	public static String createConceptSchemeURN( final Identification identification, final String variableName )
+	{
+		if ( identification == null )
+			return null;
+
+		final StringBuilder urn = new StringBuilder();
+
+		urn.append( createURNPrefix( identification, "conceptScheme" ) );
+		urn.append( variableName );
+		urn.append( createURNSuffix( identification ) );
+
+		return urn.toString();
+	}
+
+	/**
+	 * @param identification
 	 * @param nextSequenceNumber
 	 * @return
 	 */
