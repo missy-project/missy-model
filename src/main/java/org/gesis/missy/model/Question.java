@@ -23,6 +23,9 @@ public class Question extends org.gesis.discovery.Question
 	@Column
 	private int mandatory;
 
+	@Column
+	private int position;
+
 	// relations
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
@@ -51,6 +54,16 @@ public class Question extends org.gesis.discovery.Question
 	public void setMandatory(final int mandatory)
 	{
 		this.mandatory = mandatory;
+	}
+
+	public int getPosition()
+	{
+		return position;
+	}
+
+	public void setPosition( final int position )
+	{
+		this.position = position;
 	}
 
 	public Set<QuestionText> getQuestionTexts()
