@@ -12,6 +12,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import org.gesis.skos.OrderedCollection;
 
 @Entity( name = "Missy_Variable" )
 public class Variable extends org.gesis.discovery.Variable
@@ -28,8 +31,8 @@ public class Variable extends org.gesis.discovery.Variable
 	@Column
 	private boolean derived;
 
-	@ManyToMany( mappedBy = "containsVariable" )
-	private Set<org.gesis.discovery.LogicalDataSet> logicalDataSet;
+	@Column
+	private int position;
 
 	// relations
 
@@ -50,6 +53,9 @@ public class Variable extends org.gesis.discovery.Variable
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Set<Comment> comments;
+
+	@OneToOne( cascade = CascadeType.ALL )
+	private OrderedCollection orderedCollection;
 
 	// getter/setter
 
@@ -79,6 +85,16 @@ public class Variable extends org.gesis.discovery.Variable
 		this.derived = derived;
 	}
 
+	public int getPosition()
+	{
+		return position;
+	}
+
+	public void setPosition( final int position )
+	{
+		this.position = position;
+	}
+
 	public AdhocModuleType getAdhocModuleType() {
 		return this.adhocModuleType;
 	}
@@ -103,16 +119,6 @@ public class Variable extends org.gesis.discovery.Variable
 		this.summaryStatistics = summaryStatistics;
 	}
 
-	public Set<org.gesis.discovery.LogicalDataSet> getLogicalDataSet()
-	{
-		return this.logicalDataSet;
-	}
-
-	public void setLogicalDataSet( final Set<org.gesis.discovery.LogicalDataSet> logicalDataSet )
-	{
-		this.logicalDataSet = logicalDataSet;
-	}
-
 	public Set<Comment> getComments()
 	{
 		return this.comments;
@@ -132,4 +138,21 @@ public class Variable extends org.gesis.discovery.Variable
 
 		return this;
 	}
+
+	public OrderedCollection getOrderedCollection()
+	{
+		return orderedCollection;
+	}
+
+	public void setOrderedCollection( final OrderedCollection orderedCollection )
+	{
+		this.orderedCollection = orderedCollection;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "Variable [getId()=" + getId() + ", getURN()=" + getURN() + "]";
+	}
+
 }
