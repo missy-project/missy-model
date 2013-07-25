@@ -34,6 +34,9 @@ public class SessionDataSet extends PersistableResource
 	@Transient
 	private String filetypeDisplayName;
 
+	@Column
+	private String dataSetVersion;
+
 	public SessionDataSet() {
 
 	}
@@ -116,6 +119,16 @@ public class SessionDataSet extends PersistableResource
 	public void setFiletypeDisplayName( final String filetypeDisplayName )
 	{
 		this.filetypeDisplayName = filetypeDisplayName;
+	}
+
+	public String getDataSetVersion()
+	{
+		return dataSetVersion;
+	}
+
+	public void setDataSetVersion( final String dataSetVersion )
+	{
+		this.dataSetVersion = dataSetVersion;
 	}
 
 }
