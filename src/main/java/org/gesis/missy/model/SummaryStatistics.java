@@ -1,25 +1,29 @@
 package org.gesis.missy.model;
 
-import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 
 @Entity( name = "Missy_SummaryStatistics" )
 public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
 {
 
-	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinColumn( name = "summaryStatisticsType_id" )
-	private SummaryStatisticsType summaryStatisticsType;
+	// properties
 
-	public SummaryStatisticsType getSummaryStatisticsType() {
-		return this.summaryStatisticsType;
+	@Column
+	private String country;
+
+	// relations
+
+	// getter / setter
+
+	public String getCountry()
+	{
+		return country;
 	}
 
-	public void setSummaryStatisticsType(final SummaryStatisticsType summaryStatisticsType) {
-		this.summaryStatisticsType = summaryStatisticsType;
+	public void setCountry( final String country )
+	{
+		this.country = country;
 	}
 
 }
