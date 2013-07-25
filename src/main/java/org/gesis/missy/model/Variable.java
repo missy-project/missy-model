@@ -40,14 +40,15 @@ public class Variable extends org.gesis.discovery.Variable
 	private SamplingFractionType samplingFraction;
 
 	@OneToMany( cascade = CascadeType.ALL )
-	@JoinColumn( name = "summaryStatistics_id" )
+	@JoinColumn( name = "variable_id" )
 	private Set<SummaryStatistics> summaryStatistics;
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	@JoinColumn( name = "variable_id" )
 	private Set<Comment> comments;
 
 	@OneToMany( cascade = CascadeType.ALL )
-	@JoinColumn( name = "conceptScheme_id" )
+	@JoinColumn( name = "variable_id" )
 	private Set<ConceptScheme> conceptScheme;
 
 	// getter/setter

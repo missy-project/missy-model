@@ -20,7 +20,7 @@ public class Concept extends org.gesis.skos.Concept
 	// relations
 
 	@OneToMany( cascade = CascadeType.ALL )
-	@JoinColumn( name = "categoryStatistics_id" )
+	@JoinColumn( name = "concept_id" )
 	private Set<CategoryStatistics> categoryStatistics;
 
 	// getter / setter
