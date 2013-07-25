@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import org.gesis.skos.OrderedCollection;
+import org.gesis.skos.ConceptScheme;
 
 @Entity( name = "Missy_Variable" )
 public class Variable extends org.gesis.discovery.Variable
@@ -55,7 +55,7 @@ public class Variable extends org.gesis.discovery.Variable
 	private Set<Comment> comments;
 
 	@OneToOne( cascade = CascadeType.ALL )
-	private OrderedCollection orderedCollection;
+	private ConceptScheme conceptScheme;
 
 	// getter/setter
 
@@ -139,14 +139,14 @@ public class Variable extends org.gesis.discovery.Variable
 		return this;
 	}
 
-	public OrderedCollection getOrderedCollection()
+	public ConceptScheme getConceptScheme()
 	{
-		return orderedCollection;
+		return conceptScheme;
 	}
 
-	public void setOrderedCollection( final OrderedCollection orderedCollection )
+	public void setConceptScheme( final ConceptScheme conceptScheme )
 	{
-		this.orderedCollection = orderedCollection;
+		this.conceptScheme = conceptScheme;
 	}
 
 	@Override
