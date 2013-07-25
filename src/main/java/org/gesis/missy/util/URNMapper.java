@@ -27,6 +27,11 @@ public class URNMapper
 		filetypes.put( "hh-data", "hh-data" );
 		filetypes.put( "p-data", "p-data" );
 		filetypes.put( "p-reg", "p-reg" );
+
+		filetypes.put( "HH", "hh-reg" );
+		filetypes.put( "HD", "hh-data" );
+		filetypes.put( "PD", "p-data" );
+		filetypes.put( "PR", "p-reg" );
 	}
 
 	/**
