@@ -1,5 +1,6 @@
 package org.gesis.missy.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,15 +15,15 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 
 	// relations
 
-	@ManyToOne
+	@ManyToOne( cascade = CascadeType.ALL )
 	@JoinColumn( name = "dataSetSubType_id" )
 	private DataSetSubType dataSetSubType;
 
-	@ManyToOne
+	@ManyToOne( cascade = CascadeType.ALL )
 	@JoinColumn( name = "dataSetType_id" )
 	private DataSetType dataSetType;
 
-	@ManyToOne
+	@ManyToOne( cascade = CascadeType.ALL )
 	@JoinColumn( name = "conceptScheme_id" )
 	private ConceptScheme conceptScheme;
 
