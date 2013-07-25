@@ -17,16 +17,6 @@ public class SummaryStatisticsTest {
 	SummaryStatistics summaryStatistics = new SummaryStatistics();
 
 	@Test
-	public void getSummaryStatisticsType() {
-		SummaryStatisticsType type = new SummaryStatisticsType();
-
-		this.summaryStatistics.setSummaryStatisticsType( type );
-
-		assertNotNull( this.summaryStatistics.getSummaryStatisticsType() );
-		assertTrue( type == this.summaryStatistics.getSummaryStatisticsType() );
-	}
-
-	@Test
 	public void getVariable() {
 		Variable myVariable = new Variable();
 
