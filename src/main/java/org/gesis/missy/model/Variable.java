@@ -8,13 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
-import org.gesis.skos.ConceptScheme;
 
 @Entity( name = "Missy_Variable" )
 public class Variable extends org.gesis.discovery.Variable
@@ -44,18 +39,16 @@ public class Variable extends org.gesis.discovery.Variable
 	@JoinColumn( name = "samplingFraction_id" )
 	private SamplingFractionType samplingFraction;
 
-	@ManyToMany( cascade = CascadeType.ALL )
-	@JoinTable(
-			name = "Missy_Variable_SummaryStatistics",
-			joinColumns = @JoinColumn( name = "variable_id" ),
-			inverseJoinColumns = @JoinColumn( name = "summaryStatistics_id" ) )
+	@OneToMany( cascade = CascadeType.ALL )
+	@JoinColumn( name = "summaryStatistics_id" )
 	private Set<SummaryStatistics> summaryStatistics;
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Set<Comment> comments;
 
-	@OneToOne( cascade = CascadeType.ALL )
-	private ConceptScheme conceptScheme;
+	@OneToMany( cascade = CascadeType.ALL )
+	@JoinColumn( name = "conceptScheme_id" )
+	private Set<ConceptScheme> conceptScheme;
 
 	// getter/setter
 
@@ -139,12 +132,12 @@ public class Variable extends org.gesis.discovery.Variable
 		return this;
 	}
 
-	public ConceptScheme getConceptScheme()
+	public Set<ConceptScheme> getConceptScheme()
 	{
 		return conceptScheme;
 	}
 
-	public void setConceptScheme( final ConceptScheme conceptScheme )
+	public void setConceptScheme( final Set<ConceptScheme> conceptScheme )
 	{
 		this.conceptScheme = conceptScheme;
 	}
