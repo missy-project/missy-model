@@ -38,9 +38,9 @@ public class URNFactoryTest
 	@Test
 	public void getLogicalDataSetURN()
 	{
-		final String urn = URNFactory.createLogicalDataSetURN( identification, "EU-SILC", "2002", "panel", "hhd" );
+		final String urn = URNFactory.createLogicalDataSetURN( identification, "EU-SILC", "2002", "panel", "hhd", "2002-1" );
 		assertNotNull( urn );
-		assertEquals( "de.gesis:logicalDataSet_EU-SILC-2002-panel-hhd:1.2", urn );
+		assertEquals( "de.gesis:logicalDataSet_EU-SILC-2002-panel-hhd-2002-1:1.2", urn );
 
 	}
 

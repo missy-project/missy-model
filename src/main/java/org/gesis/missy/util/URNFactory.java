@@ -1,5 +1,6 @@
 package org.gesis.missy.util;
 
+import org.gesis.ddi.util.IdentifierFactory;
 import org.gesis.missy.model.Identification;
 
 /**
@@ -13,6 +14,28 @@ public class URNFactory
 {
 
 	/**
+	 * Creates an URN of this form:
+	 * <Agency-ID>:<Object-ID>:<Version-Release>.<Version-Minor>, with a UUID as
+	 * object-id.
+	 * 
+	 * @param identification
+	 * @return
+	 */
+	public static String createUUIDURN( final Identification identification )
+	{
+		if ( identification == null )
+			return null;
+
+		final StringBuilder urn = new StringBuilder();
+
+		urn.append( createURNPrefix( identification ) );
+		urn.append( IdentifierFactory.getNextDefaultIdentifier() );
+		urn.append( createURNSuffix( identification ) );
+
+		return urn.toString();
+	}
+
+	/**
 	 * Creates the URN for LogicalDataSet.
 	 *
 	 * @param identification
@@ -22,7 +45,7 @@ public class URNFactory
 	 * @param dataSetSubType
 	 * @return
 	 */
-	public static String createLogicalDataSetURN( final Identification identification, final String studyName, final String year, final String dataSetType, final String dataSetSubType )
+	public static String createLogicalDataSetURN( final Identification identification, final String studyName, final String year, final String dataSetType, final String dataSetSubType, final String dataSetVersion )
 	{
 		if ( identification == null )
 			return null;
@@ -37,6 +60,8 @@ public class URNFactory
 		urn.append( dataSetType );
 		urn.append( "-" );
 		urn.append( dataSetSubType );
+		urn.append( "-" );
+		urn.append( dataSetVersion );
 		urn.append( createURNSuffix( identification ) );
 
 		return urn.toString();
@@ -83,6 +108,9 @@ public class URNFactory
 		if ( identification == null )
 			return null;
 
+		if ( variableName == null )
+			return null;
+
 		final StringBuilder urn = new StringBuilder();
 
 		urn.append( createURNPrefix( identification, "variable" ) );
@@ -96,7 +124,7 @@ public class URNFactory
 		urn.append( "-" );
 		urn.append( dataSetVersion );
 		urn.append( "-" );
-		urn.append( variableName );
+		urn.append( variableName.trim() );
 		urn.append( createURNSuffix( identification ) );
 
 		return urn.toString();
@@ -159,6 +187,11 @@ public class URNFactory
 		urn.append( createURNSuffix( identification ) );
 
 		return urn.toString();
+	}
+
+	public static String createURNPrefix( final Identification identification )
+	{
+		return identification.getAgencyID() + ":";
 	}
 
 	public static String createURNPrefix( final Identification identification, final String className )
