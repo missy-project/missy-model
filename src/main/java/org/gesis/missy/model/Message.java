@@ -18,7 +18,7 @@ public class Message extends PersistableResource
 
 	private static Logger log = LoggerFactory.getLogger( Message.class );
 
-	@Column( unique = true, name = "message_key" )
+	@Column( name = "message_key" )
 	private String messageKey;
 
 	@Column
