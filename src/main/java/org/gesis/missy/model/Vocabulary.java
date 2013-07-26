@@ -44,7 +44,7 @@ public class Vocabulary extends PersistableResource
 	@Column
 	private Boolean inEulfs = false;
 
-	@Column( length = 3 )
+	@Column( name = "index_", length = 4 )
 	private String index;
 
 	@Column( length = 32 )
