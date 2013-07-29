@@ -1,51 +1,37 @@
 package org.gesis.missy.model;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-@Entity( name = "Missy_SummaryStatistics" )
-public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
+@Entity( name = "Missy_CategoryStatistics" )
+public class CategoryStatistics extends org.gesis.discovery.CategoryStatistics
 {
-
 	// properties
 
-	@Column
-	private String country;
-
 	// relations
-	
+
 	@ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinTable(
-			name = "Missy_SummaryStatistics_ComputationBaseType",
-			joinColumns = @JoinColumn( name = "summaryStatistics_id" ),
+			name = "Missy_CategoryStatistics_ComputationBaseType",
+			joinColumns = @JoinColumn( name = "categoryStatistics_id" ),
 			inverseJoinColumns = @JoinColumn( name = "computationBaseType_id" ) )
 	private ComputationBaseType computationBaseType;
 
 	// getter / setter
-
-	public String getCountry()
-	{
-		return country;
-	}
-
-	public void setCountry( final String country )
-	{
-		this.country = country;
-	}
 
 	public ComputationBaseType getComputationBaseType()
 	{
 		return computationBaseType;
 	}
 
-	public void setComputationBaseType( final ComputationBaseType computationBaseType )
+	public void setComputationBaseType( ComputationBaseType computationBaseType )
 	{
 		this.computationBaseType = computationBaseType;
 	}
+
 
 }
