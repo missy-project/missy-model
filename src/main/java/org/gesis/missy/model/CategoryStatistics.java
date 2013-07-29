@@ -4,8 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity( name = "Missy_CategoryStatistics" )
 public class CategoryStatistics extends org.gesis.discovery.CategoryStatistics
@@ -14,11 +13,8 @@ public class CategoryStatistics extends org.gesis.discovery.CategoryStatistics
 
 	// relations
 
-	@ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinTable(
-			name = "Missy_CategoryStatistics_ComputationBaseType",
-			joinColumns = @JoinColumn( name = "categoryStatistics_id" ),
-			inverseJoinColumns = @JoinColumn( name = "computationBaseType_id" ) )
+	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	@JoinColumn( name = "computationBaseType_id" )
 	private ComputationBaseType computationBaseType;
 
 	// getter / setter
@@ -28,7 +24,7 @@ public class CategoryStatistics extends org.gesis.discovery.CategoryStatistics
 		return computationBaseType;
 	}
 
-	public void setComputationBaseType( ComputationBaseType computationBaseType )
+	public void setComputationBaseType( final ComputationBaseType computationBaseType )
 	{
 		this.computationBaseType = computationBaseType;
 	}

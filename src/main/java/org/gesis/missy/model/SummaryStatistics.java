@@ -5,8 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity( name = "Missy_SummaryStatistics" )
 public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
@@ -19,11 +18,8 @@ public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
 
 	// relations
 	
-	@ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinTable(
-			name = "Missy_SummaryStatistics_ComputationBaseType",
-			joinColumns = @JoinColumn( name = "summaryStatistics_id" ),
-			inverseJoinColumns = @JoinColumn( name = "computationBaseType_id" ) )
+	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	@JoinColumn( name = "computationBaseType_id" )
 	private ComputationBaseType computationBaseType;
 
 	// getter / setter

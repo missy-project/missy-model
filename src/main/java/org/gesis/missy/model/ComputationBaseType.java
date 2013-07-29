@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
 
+import org.gesis.persistence.PersistableResource;
 import org.gesis.rdf.LangString;
 
 @Entity( name = "Missy_ComputationBaseType" )
-public class ComputationBaseType
+public class ComputationBaseType extends PersistableResource
 {
 
 	// properties
