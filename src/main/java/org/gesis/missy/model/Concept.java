@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
-import org.gesis.discovery.CategoryStatistics;
-
 @Entity( name = "Missy_Concept" )
 public class Concept extends org.gesis.skos.Concept
 {
