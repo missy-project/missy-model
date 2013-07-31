@@ -92,8 +92,32 @@ public class URNFactory
 	}
 
 	/**
+	 * Creates the URN for Universe.
+	 * 
+	 * @param identification
+	 * @param studyName
+	 * @param year
+	 * @return
+	 */
+	public static String createUniverseURN( final Identification identification, final String studyName, final String year )
+	{
+		if ( identification == null )
+			return null;
+
+		final StringBuilder urn = new StringBuilder();
+
+		urn.append( createURNPrefix( identification, "universe" ) );
+		urn.append( studyName );
+		urn.append( "-" );
+		urn.append( year );
+		urn.append( createURNSuffix( identification ) );
+
+		return urn.toString();
+	}
+
+	/**
 	 * Creates the URN for Variable.
-	 *
+	 * 
 	 * @param identification
 	 * @param studyName
 	 * @param year
