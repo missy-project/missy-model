@@ -1,11 +1,9 @@
 package org.gesis.missy.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity( name = "Missy_SummaryStatistics" )
 public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
@@ -18,8 +16,8 @@ public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
 
 	// relations
 	
-	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinColumn( name = "computationBaseType_id" )
+	@Enumerated( EnumType.STRING )
+	@Column
 	private ComputationBaseType computationBaseType;
 
 	// getter / setter
