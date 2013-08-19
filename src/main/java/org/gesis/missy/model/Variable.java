@@ -1,5 +1,6 @@
 package org.gesis.missy.model;
 
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -141,6 +142,16 @@ public class Variable extends org.gesis.discovery.Variable
 	public void setConceptScheme( final Set<ConceptScheme> conceptScheme )
 	{
 		this.conceptScheme = conceptScheme;
+	}
+
+	public Variable addConceptScheme( final ConceptScheme conceptScheme )
+	{
+		if ( this.conceptScheme == null )
+			this.conceptScheme = new HashSet<ConceptScheme>();
+
+		this.conceptScheme.add( conceptScheme );
+
+		return this;
 	}
 
 	@Override
