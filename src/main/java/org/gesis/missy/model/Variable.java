@@ -114,6 +114,16 @@ public class Variable extends org.gesis.discovery.Variable
 		this.summaryStatistics = summaryStatistics;
 	}
 
+	public Variable addSummaryStatistics( final SummaryStatistics summaryStatistics )
+	{
+		if ( this.summaryStatistics == null )
+			this.summaryStatistics = new HashSet<SummaryStatistics>();
+
+		this.summaryStatistics.add( summaryStatistics );
+
+		return this;
+	}
+
 	public Set<Comment> getComments()
 	{
 		return this.comments;
@@ -157,7 +167,7 @@ public class Variable extends org.gesis.discovery.Variable
 	@Override
 	public String toString()
 	{
-		return "Variable [getId()=" + getId() + ", getURN()=" + getURN() + "]";
+		return "Variable [notation: " + getNotation() + ", urn: " + getURN() + ", id:" + getId() + "]";
 	}
 
 }
