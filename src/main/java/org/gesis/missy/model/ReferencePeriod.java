@@ -1,6 +1,7 @@
 package org.gesis.missy.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToOne;
@@ -12,21 +13,36 @@ import org.gesis.rdf.LangString;
 public class ReferencePeriod extends PersistableResource
 {
 
+	// properties
+
+	@Column
+	private String code;
+
 	// relations
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	private LangString referencePeriod;
+	private LangString prefLabel;
 
 	// getter / setter
 
-	public LangString getReferencePeriod()
+	public String getCode()
 	{
-		return this.referencePeriod;
+		return code;
 	}
 
-	public void setReferencePeriod( final LangString referencePeriod )
+	public void setCode( final String code )
 	{
-		this.referencePeriod = referencePeriod;
+		this.code = code;
+	}
+
+	public LangString getPrefLabel()
+	{
+		return prefLabel;
+	}
+
+	public void setPrefLabel( final LangString prefLabel )
+	{
+		this.prefLabel = prefLabel;
 	}
 
 }
