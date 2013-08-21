@@ -1,16 +1,18 @@
 package org.gesis.missy.model;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity( name = "Missy_Variable" )
 public class Variable extends org.gesis.discovery.Variable
@@ -30,11 +32,11 @@ public class Variable extends org.gesis.discovery.Variable
 	@Column
 	private int position;
 
-	// relations
-
-	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinColumn( name = "adhocModuleType_id" )
+	@Enumerated( EnumType.STRING )
+	@Column
 	private AdhocModuleType adhocModuleType;
+
+	// relations
 
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "samplingFraction_id" )
@@ -44,9 +46,11 @@ public class Variable extends org.gesis.discovery.Variable
 	@JoinColumn( name = "variable_id" )
 	private Set<SummaryStatistics> summaryStatistics;
 
-	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinColumn( name = "variable_id" )
-	private Set<Comment> comments;
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Comment countrySpecificComment;
+
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Comment otherComment;
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "variable_id" )
@@ -124,24 +128,24 @@ public class Variable extends org.gesis.discovery.Variable
 		return this;
 	}
 
-	public Set<Comment> getComments()
+	public Comment getCountrySpecificComment()
 	{
-		return this.comments;
+		return countrySpecificComment;
 	}
 
-	public void setComments( final Set<Comment> comments )
+	public void setCountrySpecificComment( final Comment countrySpecificComments )
 	{
-		this.comments = comments;
+		this.countrySpecificComment = countrySpecificComments;
 	}
 
-	public Variable addComment( final Comment comment )
+	public Comment getOtherComment()
 	{
-		if ( this.comments == null )
-			this.comments = new LinkedHashSet<Comment>();
+		return otherComment;
+	}
 
-		this.comments.add( comment );
-
-		return this;
+	public void setOtherComment( final Comment otherComments )
+	{
+		this.otherComment = otherComments;
 	}
 
 	public Set<ConceptScheme> getConceptScheme()

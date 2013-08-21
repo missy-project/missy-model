@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity( name = "Missy_Question" )
 public class Question extends org.gesis.discovery.Question
@@ -31,6 +32,9 @@ public class Question extends org.gesis.discovery.Question
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "question_id" )
 	private Set<QuestionText> questionTexts;
+
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Comment comment;
 
 	@ManyToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "referencePeriod_id" )
@@ -84,6 +88,16 @@ public class Question extends org.gesis.discovery.Question
 		this.questionTexts.add( questionText );
 
 		return this;
+	}
+
+	public Comment getComment()
+	{
+		return comment;
+	}
+
+	public void setComment( final Comment comment )
+	{
+		this.comment = comment;
 	}
 
 	public ReferencePeriod getReferencePeriod() {

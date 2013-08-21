@@ -3,15 +3,15 @@ package org.gesis.missy.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 
-import org.gesis.ddi.Note;
+import org.gesis.persistence.PersistableResource;
 import org.gesis.rdf.LangString;
 
 @Entity( name = "Missy_Comment" )
-public class Comment extends Note
+public class Comment extends PersistableResource
 {
 
 	// properties
@@ -24,8 +24,8 @@ public class Comment extends Note
 
 	// relations
 
-	@ManyToOne
-	@JoinColumn( name = "commentType_id" )
+	@Enumerated( EnumType.STRING )
+	@Column
 	private CommentType commentType;
 
 	// getter/setter

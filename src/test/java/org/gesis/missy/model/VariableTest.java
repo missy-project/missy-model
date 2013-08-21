@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 import java.util.Set;
 
 import org.gesis.discovery.AnalysisUnit;
-import org.gesis.rdf.LangString;
 import org.gesis.skos.Concept;
 import org.junit.Test;
 
@@ -86,10 +85,7 @@ public class VariableTest {
 	@Test
 	public void getAdhocModuleType()
 	{
-		AdhocModuleType adhocModuleType = new AdhocModuleType();
-		adhocModuleType.setAdhocModuleType( new LangString() );
-
-		this.variable.setAdhocModuleType( adhocModuleType );
+		this.variable.setAdhocModuleType( AdhocModuleType.X );
 
 		assertNotNull( this.variable.getAdhocModuleType() );
 
