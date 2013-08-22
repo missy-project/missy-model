@@ -14,8 +14,8 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 
 	// properties
 
-	@Column
-	private boolean active;
+	@Column( nullable = false )
+	private boolean active = false;
 
 	// relations
 
