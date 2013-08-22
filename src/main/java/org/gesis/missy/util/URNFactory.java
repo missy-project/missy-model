@@ -45,7 +45,7 @@ public class URNFactory
 	 * @param dataSetSubType
 	 * @return
 	 */
-	public static String createLogicalDataSetURN( final Identification identification, final String studyName, final String year, final String dataSetType, final String dataSetSubType, final String dataSetVersion )
+	public static String createLogicalDataSetURN( final Identification identification, final String studyName, final String year, String dataSetType, String dataSetSubType, final String dataSetVersion )
 	{
 		if ( identification == null )
 			return null;
@@ -57,6 +57,13 @@ public class URNFactory
 		urn.append( "-" );
 		urn.append( year );
 		urn.append( "-" );
+
+		if ( dataSetType == null )
+			dataSetType = "";
+
+		if ( dataSetSubType == null )
+			dataSetSubType = "";
+
 		urn.append( dataSetType );
 		urn.append( "-" );
 		urn.append( dataSetSubType );
