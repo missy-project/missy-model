@@ -1,6 +1,7 @@
 package org.gesis.missy.model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +13,9 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 {
 
 	// properties
+
+	@Column
+	private boolean active;
 
 	// relations
 
@@ -28,6 +32,16 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 	private ConceptScheme conceptScheme;
 
 	// getter/setter
+
+	public boolean isActive()
+	{
+		return active;
+	}
+
+	public void setActive( final boolean active )
+	{
+		this.active = active;
+	}
 
 	public DataSetSubType getDataSetSubType()
 	{
