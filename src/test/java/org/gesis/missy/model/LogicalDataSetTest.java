@@ -71,9 +71,9 @@ public class LogicalDataSetTest {
 	public void getUniverse() {
 		Universe myUniverse = new Universe();
 
-		this.dataset.setDataSetUniverse( myUniverse );
+		this.dataset.setUniverse( myUniverse );
 
-		org.gesis.discovery.Universe universe = this.dataset.getDataSetUniverse();
+		org.gesis.discovery.Universe universe = this.dataset.getUniverse();
 
 		assertNotNull( universe );
 		assertTrue( myUniverse == universe );
