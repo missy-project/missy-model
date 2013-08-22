@@ -1,7 +1,7 @@
 package org.gesis.missy.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +31,7 @@ public class Question extends org.gesis.discovery.Question
 
 	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "question_id" )
-	private Set<QuestionText> questionTexts;
+	private List<QuestionText> questionTexts;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Comment comment;
@@ -70,12 +70,12 @@ public class Question extends org.gesis.discovery.Question
 		this.position = position;
 	}
 
-	public Set<QuestionText> getQuestionTexts()
+	public List<QuestionText> getQuestionTexts()
 	{
 		return questionTexts;
 	}
 
-	public void setQuestionTexts( final Set<QuestionText> questionTexts )
+	public void setQuestionTexts( final List<QuestionText> questionTexts )
 	{
 		this.questionTexts = questionTexts;
 	}
@@ -83,7 +83,7 @@ public class Question extends org.gesis.discovery.Question
 	public Question addQuestionText( final QuestionText questionText )
 	{
 		if ( this.questionTexts == null )
-			this.questionTexts = new HashSet<QuestionText>();
+			this.questionTexts = new ArrayList<QuestionText>();
 
 		this.questionTexts.add( questionText );
 
