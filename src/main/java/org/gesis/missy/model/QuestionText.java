@@ -15,41 +15,41 @@ public class QuestionText extends PersistableResource
 	// properties
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	private LangString questionText;
+	private LangString prefLabel;
 
 	// getter / setter
 
-	public LangString getQuestionText()
+	public LangString getPrefLabel()
 	{
-		return questionText;
+		return prefLabel;
 	}
 
-	public void setQuestionText( final LangString questionText )
+	public void setPrefLabel( final LangString prefLabel )
 	{
-		this.questionText = questionText;
+		this.prefLabel = prefLabel;
 	}
 
 	public String getDe()
 	{
-		if ( questionText == null )
+		if ( prefLabel == null )
 			return null;
 
-		return questionText.getDe();
+		return prefLabel.getDe();
 	}
 
 	public String getEn()
 	{
-		if ( questionText == null )
+		if ( prefLabel == null )
 			return null;
 
-		return questionText.getEn();
+		return prefLabel.getEn();
 	}
 
 	public String getFr()
 	{
-		if ( questionText == null )
+		if ( prefLabel == null )
 			return null;
 
-		return questionText.getFr();
+		return prefLabel.getFr();
 	}
 }
