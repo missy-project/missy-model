@@ -37,6 +37,9 @@ public class SessionDataSet extends PersistableResource
 	@Column
 	private String dataSetVersion;
 
+	@Transient
+	private String countryForFrequencies = "ALL";
+
 	public SessionDataSet() {
 
 	}
@@ -129,6 +132,16 @@ public class SessionDataSet extends PersistableResource
 	public void setDataSetVersion( final String dataSetVersion )
 	{
 		this.dataSetVersion = dataSetVersion;
+	}
+
+	public String getCountryForFrequencies()
+	{
+		return countryForFrequencies;
+	}
+
+	public void setCountryForFrequencies( final String countryForFrequencies )
+	{
+		this.countryForFrequencies = countryForFrequencies;
 	}
 
 }
