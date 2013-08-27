@@ -1,5 +1,6 @@
 package org.gesis.missy.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -41,6 +42,16 @@ public class Concept extends org.gesis.skos.Concept
 	public void setCategoryStatistics( final Set<CategoryStatistics> categoryStatistics )
 	{
 		this.categoryStatistics = categoryStatistics;
+	}
+
+	public Concept addCategoryStatistics( final CategoryStatistics categoryStatistics )
+	{
+		if ( this.categoryStatistics == null )
+			this.categoryStatistics = new HashSet<CategoryStatistics>();
+
+		this.categoryStatistics.add( categoryStatistics );
+
+		return this;
 	}
 
 }
