@@ -134,7 +134,7 @@ public class URNFactory
 	 * @param variableName
 	 * @return
 	 */
-	public static String createVariableURN( final Identification identification, final String studyName, final String year, final String dataSetType, final String dataSetSubType, final String dataSetVersion, final String variableName )
+	public static String createVariableURN( final Identification identification, final String studyName, final String year, String dataSetType, String dataSetSubType, final String dataSetVersion, final String variableName )
 	{
 		if ( identification == null )
 			return null;
@@ -149,6 +149,13 @@ public class URNFactory
 		urn.append( "-" );
 		urn.append( year );
 		urn.append( "-" );
+
+		if ( dataSetType == null )
+			dataSetType = "";
+
+		if ( dataSetSubType == null )
+			dataSetSubType = "";
+
 		urn.append( dataSetType );
 		urn.append( "-" );
 		urn.append( dataSetSubType );
