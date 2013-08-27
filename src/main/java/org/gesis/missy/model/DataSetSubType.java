@@ -15,18 +15,18 @@ public class DataSetSubType extends PersistableResource
 	// relations
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	private LangString dataSetSubType;
+	private LangString prefLabel;
 
 	// getter / setter
 
-	public LangString getDatasetSubType()
+	public LangString getPrefLabel()
 	{
-		return this.dataSetSubType;
+		return this.prefLabel;
 	}
 
-	public void setDataSetSubType( final LangString dataSetSubType )
+	public void setPrefLabel( final LangString dataSetSubType )
 	{
-		this.dataSetSubType = dataSetSubType;
+		this.prefLabel = dataSetSubType;
 	}
 
 }
