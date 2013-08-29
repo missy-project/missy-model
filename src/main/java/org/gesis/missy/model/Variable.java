@@ -56,6 +56,12 @@ public class Variable extends org.gesis.discovery.Variable
 	@JoinColumn( name = "variable_id" )
 	private Set<ConceptScheme> conceptScheme;
 
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Universe filterStatement;
+
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Universe subSample;
+
 	// getter/setter
 
 	public String getVariableShortName() {
@@ -166,6 +172,26 @@ public class Variable extends org.gesis.discovery.Variable
 		this.conceptScheme.add( conceptScheme );
 
 		return this;
+	}
+
+	public Universe getFilterStatement()
+	{
+		return filterStatement;
+	}
+
+	public void setFilterStatement( final Universe filterStatement )
+	{
+		this.filterStatement = filterStatement;
+	}
+
+	public Universe getSubSample()
+	{
+		return subSample;
+	}
+
+	public void setSubSample( final Universe subSample )
+	{
+		this.subSample = subSample;
 	}
 
 	@Override
