@@ -44,6 +44,9 @@ public class Vocabulary extends PersistableResource
 	@Column
 	private Boolean inEulfs = false;
 
+	@Column
+	private Boolean inMz = false;
+
 	@Column( name = "index_", length = 4 )
 	private String index;
 
@@ -214,6 +217,16 @@ public class Vocabulary extends PersistableResource
 	public void setInEulfs( final Boolean eulfs )
 	{
 		this.inEulfs = eulfs;
+	}
+
+	public Boolean isInMz()
+	{
+		return inMz;
+	}
+
+	public void setInMz( final Boolean inMz )
+	{
+		this.inMz = inMz;
 	}
 
 	public String getIndex()
