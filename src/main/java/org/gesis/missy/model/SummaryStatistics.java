@@ -1,9 +1,9 @@
 package org.gesis.missy.model;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 
 @Entity( name = "Missy_SummaryStatistics" )
 public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
@@ -11,35 +11,21 @@ public class SummaryStatistics extends org.gesis.discovery.SummaryStatistics
 
 	// properties
 
-	@Column
-	private String country;
-
 	// relations
 	
-	@Enumerated( EnumType.STRING )
-	@Column
-	private ComputationBaseType computationBaseType;
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private Country country;
 
 	// getter / setter
 
-	public String getCountry()
+	public Country getCountry()
 	{
 		return country;
 	}
 
-	public void setCountry( final String country )
+	public void setCountry( final Country country )
 	{
 		this.country = country;
-	}
-
-	public ComputationBaseType getComputationBaseType()
-	{
-		return computationBaseType;
-	}
-
-	public void setComputationBaseType( final ComputationBaseType computationBaseType )
-	{
-		this.computationBaseType = computationBaseType;
 	}
 
 }
