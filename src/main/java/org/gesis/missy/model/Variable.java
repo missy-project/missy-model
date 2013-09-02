@@ -1,7 +1,7 @@
 package org.gesis.missy.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.gesis.skos.ConceptScheme;
 
 @Entity( name = "Missy_Variable" )
 public class Variable extends org.gesis.discovery.Variable
@@ -44,7 +46,7 @@ public class Variable extends org.gesis.discovery.Variable
 
 	@OneToMany( cascade = CascadeType.ALL )
 	@JoinColumn( name = "variable_id" )
-	private Set<SummaryStatistics> summaryStatistics;
+	private List<SummaryStatistics> summaryStatistics;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Comment countrySpecificComment;
@@ -52,9 +54,9 @@ public class Variable extends org.gesis.discovery.Variable
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Comment otherComment;
 
-	@OneToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	@JoinColumn( name = "variable_id" )
-	private Set<ConceptScheme> conceptScheme;
+	private ConceptScheme conceptScheme;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
 	private Universe filterStatement;
@@ -116,18 +118,20 @@ public class Variable extends org.gesis.discovery.Variable
 		this.samplingFraction = samplingFraction;
 	}
 
-	public Set<SummaryStatistics> getSummaryStatistics() {
+	public List<SummaryStatistics> getSummaryStatistics()
+	{
 		return this.summaryStatistics;
 	}
 
-	public void setSummaryStatistics(final Set<SummaryStatistics> summaryStatistics) {
+	public void setSummaryStatistics( final List<SummaryStatistics> summaryStatistics )
+	{
 		this.summaryStatistics = summaryStatistics;
 	}
 
 	public Variable addSummaryStatistics( final SummaryStatistics summaryStatistics )
 	{
 		if ( this.summaryStatistics == null )
-			this.summaryStatistics = new HashSet<SummaryStatistics>();
+			this.summaryStatistics = new ArrayList<SummaryStatistics>();
 
 		this.summaryStatistics.add( summaryStatistics );
 
@@ -154,24 +158,14 @@ public class Variable extends org.gesis.discovery.Variable
 		this.otherComment = otherComments;
 	}
 
-	public Set<ConceptScheme> getConceptScheme()
+	public ConceptScheme getConceptScheme()
 	{
 		return conceptScheme;
 	}
 
-	public void setConceptScheme( final Set<ConceptScheme> conceptScheme )
+	public void setConceptScheme( final ConceptScheme conceptScheme )
 	{
 		this.conceptScheme = conceptScheme;
-	}
-
-	public Variable addConceptScheme( final ConceptScheme conceptScheme )
-	{
-		if ( this.conceptScheme == null )
-			this.conceptScheme = new HashSet<ConceptScheme>();
-
-		this.conceptScheme.add( conceptScheme );
-
-		return this;
 	}
 
 	public Universe getFilterStatement()
