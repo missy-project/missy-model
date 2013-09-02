@@ -1,11 +1,13 @@
 package org.gesis.missy.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity( name = "Missy_Concept" )
@@ -20,7 +22,10 @@ public class Concept extends org.gesis.skos.Concept
 
 	@OneToMany( cascade = CascadeType.ALL )
 	@JoinColumn( name = "concept_id" )
-	private Set<CategoryStatistics> categoryStatistics;
+	private List<CategoryStatistics> categoryStatistics;
+
+	@ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	private List<Country> country;
 
 	// getter / setter
 
@@ -34,12 +39,32 @@ public class Concept extends org.gesis.skos.Concept
 		this.position = position;
 	}
 
-	public Set<CategoryStatistics> getCategoryStatistics()
+	public List<Country> getCountry()
+	{
+		return country;
+	}
+
+	public void setCountry( final List<Country> country )
+	{
+		this.country = country;
+	}
+
+	public Concept addCountry( final Country country )
+	{
+		if ( this.country == null )
+			this.country = new ArrayList<Country>( 32 );
+
+		this.country.add( country );
+
+		return this;
+	}
+
+	public List<CategoryStatistics> getCategoryStatistics()
 	{
 		return categoryStatistics;
 	}
 
-	public void setCategoryStatistics( final Set<CategoryStatistics> categoryStatistics )
+	public void setCategoryStatistics( final List<CategoryStatistics> categoryStatistics )
 	{
 		this.categoryStatistics = categoryStatistics;
 	}
@@ -47,7 +72,7 @@ public class Concept extends org.gesis.skos.Concept
 	public Concept addCategoryStatistics( final CategoryStatistics categoryStatistics )
 	{
 		if ( this.categoryStatistics == null )
-			this.categoryStatistics = new HashSet<CategoryStatistics>();
+			this.categoryStatistics = new ArrayList<CategoryStatistics>();
 
 		this.categoryStatistics.add( categoryStatistics );
 
