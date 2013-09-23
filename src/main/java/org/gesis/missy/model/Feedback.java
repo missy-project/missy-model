@@ -10,6 +10,8 @@ import org.gesis.persistence.PersistableResource;
 public class Feedback extends PersistableResource
 {
 
+	// properties
+
 	@Column( length = 20 )
 	private String type;
 
@@ -24,6 +26,8 @@ public class Feedback extends PersistableResource
 
 	@Column( length = 20 )
 	private String username;
+
+	// getter / setter
 
 	public String getType()
 	{
