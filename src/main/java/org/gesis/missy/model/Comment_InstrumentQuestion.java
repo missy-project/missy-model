@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-import org.gesis.ddi.IdentifiableImpl;
+import org.gesis.persistence.PersistableResource;
 
 @Entity( name = "Missy_Comment_InstrumentQueryion" )
-public class Comment_InstrumentQuestion extends IdentifiableImpl
+public class Comment_InstrumentQuestion extends PersistableResource
 {
 
 	// properties

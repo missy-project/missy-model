@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
-import org.gesis.ddi.IdentifiableImpl;
+import org.gesis.persistence.PersistableResource;
 
 @Entity( name = "Missy_InterviewerInstruction" )
-public class InterviewerInstruction extends IdentifiableImpl
+public class InterviewerInstruction extends PersistableResource
 {
 
 	@Column
