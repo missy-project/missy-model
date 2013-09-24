@@ -28,7 +28,7 @@ public class Weighting extends PersistableResource
 	private String initialCalibrationMethod;
 
 	@Column
-	private String weighting;
+	private String weightingMethod;
 
 	// getter / setter
 
@@ -72,14 +72,14 @@ public class Weighting extends PersistableResource
 		this.initialCalibrationMethod = initialCalibrationMethod;
 	}
 
-	public String getWeighting()
+	public String getWeightingMethod()
 	{
-		return weighting;
+		return weightingMethod;
 	}
 
-	public void setWeighting( final String weighting )
+	public void setWeightingMethod( final String weightingMethod )
 	{
-		this.weighting = weighting;
+		this.weightingMethod = weightingMethod;
 	}
 
 }
