@@ -34,34 +34,13 @@ public class CountrySpecificInformation extends PersistableResource
 	private String availableData;
 
 	@Column
-	private boolean participationMandatory;
-
-	@Column
-	private String sourceOfSamplingFrame;
-
-	@Column
-	private String samplingDesign;
-
-	@Column
-	private String primarySamplingUnits;
-
-	@Column
-	private String secondarySamplingUnits;
-
-	@Column
-	private String stratificationCriteria;
-
-	@Column
-	private String samplingMethod;
-
-	@Column
 	private int numberOfRotationalGroups;
 
 	@Column
 	private String unitsOfObservation;
 
 	@Column
-	private String starDateOfDataCollection;
+	private String startDateOfDataCollection;
 
 	@Column
 	private String endDateOfDataCollection;
@@ -90,6 +69,9 @@ public class CountrySpecificInformation extends PersistableResource
 	@OneToMany( cascade = CascadeType.ALL )
 	@JoinColumn( name = "countrySpecificInformation_id" )
 	private List<TargetSampleSize> targetSampleSize;
+
+	@OneToOne( cascade = CascadeType.ALL )
+	private SamplingProcedure samplingProcedure;
 
 	@OneToOne( cascade = CascadeType.ALL )
 	private ModeOfCollection modeOfCollection;
@@ -126,76 +108,6 @@ public class CountrySpecificInformation extends PersistableResource
 		this.availableData = availableData;
 	}
 
-	public boolean isParticipationMandatory()
-	{
-		return participationMandatory;
-	}
-
-	public void setParticipationMandatory( final boolean participationMandatory )
-	{
-		this.participationMandatory = participationMandatory;
-	}
-
-	public String getSourceOfSamplingFrame()
-	{
-		return sourceOfSamplingFrame;
-	}
-
-	public void setSourceOfSamplingFrame( final String sourceOfSamplingFrame )
-	{
-		this.sourceOfSamplingFrame = sourceOfSamplingFrame;
-	}
-
-	public String getSamplingDesign()
-	{
-		return samplingDesign;
-	}
-
-	public void setSamplingDesign( final String samplingDesign )
-	{
-		this.samplingDesign = samplingDesign;
-	}
-
-	public String getPrimarySamplingUnits()
-	{
-		return primarySamplingUnits;
-	}
-
-	public void setPrimarySamplingUnits( final String primarySamplingUnits )
-	{
-		this.primarySamplingUnits = primarySamplingUnits;
-	}
-
-	public String getSecondarySamplingUnits()
-	{
-		return secondarySamplingUnits;
-	}
-
-	public void setSecondarySamplingUnits( final String secondarySamplingUnits )
-	{
-		this.secondarySamplingUnits = secondarySamplingUnits;
-	}
-
-	public String getStratificationCriteria()
-	{
-		return stratificationCriteria;
-	}
-
-	public void setStratificationCriteria( final String stratificationCriteria )
-	{
-		this.stratificationCriteria = stratificationCriteria;
-	}
-
-	public String getSamplingMethod()
-	{
-		return samplingMethod;
-	}
-
-	public void setSamplingMethod( final String samplingMethod )
-	{
-		this.samplingMethod = samplingMethod;
-	}
-
 	public int getNumberOfRotationalGroups()
 	{
 		return numberOfRotationalGroups;
@@ -216,14 +128,14 @@ public class CountrySpecificInformation extends PersistableResource
 		this.unitsOfObservation = unitsOfObservation;
 	}
 
-	public String getStarDateOfDataCollection()
+	public String getStartDateOfDataCollection()
 	{
-		return starDateOfDataCollection;
+		return startDateOfDataCollection;
 	}
 
-	public void setStarDateOfDataCollection( final String starDateOfDataCollection )
+	public void setStartDateOfDataCollection( final String startDateOfDataCollection )
 	{
-		this.starDateOfDataCollection = starDateOfDataCollection;
+		this.startDateOfDataCollection = startDateOfDataCollection;
 	}
 
 	public String getEndDateOfDataCollection()
@@ -304,6 +216,16 @@ public class CountrySpecificInformation extends PersistableResource
 	public void setTargetSampleSize( final List<TargetSampleSize> targetSampleSize )
 	{
 		this.targetSampleSize = targetSampleSize;
+	}
+
+	public SamplingProcedure getSamplingProcedure()
+	{
+		return samplingProcedure;
+	}
+
+	public void setSamplingProcedure( final SamplingProcedure samplingProcedure )
+	{
+		this.samplingProcedure = samplingProcedure;
 	}
 
 	public ModeOfCollection getModeOfCollection()
