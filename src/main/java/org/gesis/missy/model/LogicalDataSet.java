@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import org.gesis.skos.ConceptScheme;
@@ -16,6 +17,15 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 
 	@Column( nullable = false )
 	private boolean active = false;
+
+	@Column
+	private String weighting;
+
+	@Lob
+	private String note;
+
+	@Lob
+	private String citation;
 
 	// relations
 
