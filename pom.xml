@@ -15,17 +15,6 @@
   		<artifactId>hibernate-jpa-2.0-api</artifactId>
   		<version>1.0.0.Final</version>
   	</dependency>
-  	<dependency>
-  		<groupId>org.gesis.ddi</groupId>
-  		<artifactId>gesis-ddi-model</artifactId>
-  		<version>${gesis-ddi.model.version}</version>
-  		<exclusions>
-  			<exclusion>
-  				<groupId>org.gesis.disco</groupId>
-  				<artifactId>disco-model</artifactId>
-  			</exclusion>
-  		</exclusions>
-  	</dependency>
   	
   	<dependency>
   		<groupId>org.gesis.disco</groupId>
