@@ -55,7 +55,6 @@ public class Variable extends org.gesis.discovery.Variable
 	private Comment otherComment;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-	@JoinColumn( name = "variable_id" )
 	private ConceptScheme conceptScheme;
 
 	@OneToOne( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
