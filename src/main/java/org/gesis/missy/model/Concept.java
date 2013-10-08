@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
@@ -25,6 +26,10 @@ public class Concept extends org.gesis.skos.Concept
 	private List<CategoryStatistics> categoryStatistics;
 
 	@ManyToMany( cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+	@JoinTable(
+			name = "Missy_Concept_Country",
+			joinColumns = @JoinColumn( name = "concept_id" ),
+			inverseJoinColumns = @JoinColumn( name = "country_id" ) )
 	private List<Country> country;
 
 	// getter / setter
