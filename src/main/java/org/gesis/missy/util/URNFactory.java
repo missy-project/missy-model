@@ -2,6 +2,9 @@ package org.gesis.missy.util;
 
 import org.gesis.ddi.util.IdentifierFactory;
 import org.gesis.missy.model.Identification;
+import org.gesis.persistence.PersistableResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class provides methods in order to create consistent URNs in a
@@ -13,10 +16,12 @@ import org.gesis.missy.model.Identification;
 public class URNFactory
 {
 
+	private final static Logger log = LoggerFactory.getLogger( URNFactory.class );
+
 	/**
-	 * Creates an URN of this form:
-	 * <Agency-ID>:<Object-ID>:<Version-Release>.<Version-Minor>, with a UUID as
-	 * object-id.
+	 * Creates a URN of this form:
+	 * <Agency-ID>:<Object-ID>:<Version-Release>.<Version-Minor>, with a freshly
+	 * created UUID as Object-ID.
 	 * 
 	 * @param identification
 	 * @return
@@ -33,6 +38,55 @@ public class URNFactory
 		urn.append( createURNSuffix( identification ) );
 
 		return urn.toString();
+	}
+
+	/**
+	 * Creates a URN of this form:
+	 * <Agency-ID>:<Object-ID>:<Version-Release>.<Version-Minor>, where the
+	 * Object-ID is set to the id of <i>persistableResource</i>. For example,
+	 * with the id being "1abc" of <i>persistableResource</i>, the URN will
+	 * become <AgencyID>:1abc:<Version-Release>.<Version-Minor>.
+	 * 
+	 * @param persistableResource
+	 * @param identification
+	 * @return
+	 */
+	public static <T extends PersistableResource> String createUUIDURN( final T persistableResource, final Identification identification )
+	{
+		if ( identification == null )
+			return null;
+
+		if ( persistableResource == null )
+			return null;
+
+		final StringBuilder urn = new StringBuilder();
+
+		urn.append( createURNPrefix( identification ) );
+		urn.append( persistableResource.getId() );
+		urn.append( createURNSuffix( identification ) );
+
+		return urn.toString();
+	}
+
+	/**
+	 * @param persistableResource
+	 * @param identification
+	 * @return
+	 */
+	public static <T extends PersistableResource> T createAndSetUUIDURN( final T persistableResource, final Identification identification )
+	{
+		String urn = createUUIDURN( persistableResource, identification );
+
+		if ( urn == null )
+		{
+			log.warn( "Something went wrong. urn is null. Cannot set urn for object." );
+			return persistableResource;
+		}
+
+		persistableResource.setURN( urn );
+
+		return persistableResource;
+
 	}
 
 	/**
