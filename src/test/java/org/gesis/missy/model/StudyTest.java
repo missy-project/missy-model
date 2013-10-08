@@ -87,9 +87,9 @@ public class StudyTest {
 		List<Agent> contributors = Lists.newArrayList();
 		contributors.add( myContributor );
 
-		this.myStudy.setContributer( contributors );
+		this.myStudy.setContributor( contributors );
 
-		List<Agent> contributor = this.myStudy.getContributer();
+		List<Agent> contributor = this.myStudy.getContributor();
 
 		assertNotNull( contributor );
 		assertEquals( 1, contributor.size() );
