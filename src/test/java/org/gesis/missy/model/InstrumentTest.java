@@ -4,11 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.discovery.Questionnaire;
 import org.junit.Test;
+
+import com.google.common.collect.Lists;
 
 public class InstrumentTest {
 
@@ -19,17 +20,17 @@ public class InstrumentTest {
 		Question myQuestion = new Question();
 		myQuestion.setQuestionNumber( "questionNumber" );
 
-		Set<org.gesis.discovery.Question> questions = new HashSet<org.gesis.discovery.Question>();
+		List<org.gesis.discovery.Question> questions = Lists.newArrayList();
 		questions.add( myQuestion );
 
 		this.instrument.setQuestion( questions );
 
-		Set<org.gesis.discovery.Question> question = this.instrument.getQuestion();
+		List<org.gesis.discovery.Question> question = this.instrument.getQuestion();
 
 		assertNotNull( question );
 		assertEquals( 1, question.size() );
 
-		Question nextQuestion = (Question) question.iterator().next();
+		Question nextQuestion = (Question) question.get( 0 );
 		assertTrue( myQuestion == nextQuestion );
 
 		assertEquals( "questionNumber", nextQuestion.getQuestionNumber() );

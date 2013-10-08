@@ -4,13 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.discovery.DataFile;
 import org.junit.Test;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 
 public class SummaryStatisticsTest {
 
@@ -20,12 +19,12 @@ public class SummaryStatisticsTest {
 	public void getVariable() {
 		Variable myVariable = new Variable();
 
-		Set<org.gesis.discovery.Variable> variables = new HashSet<org.gesis.discovery.Variable>();
+		List<org.gesis.discovery.Variable> variables = Lists.newArrayList();
 		variables.add( myVariable );
 
 		this.summaryStatistics.setStatisticsVariable( variables );
 
-		Set<org.gesis.discovery.Variable> variable = this.summaryStatistics.getStatisticsVariable();
+		List<org.gesis.discovery.Variable> variable = this.summaryStatistics.getStatisticsVariable();
 
 		assertNotNull( variable );
 		assertEquals( 1, variable.size() );
@@ -36,11 +35,11 @@ public class SummaryStatisticsTest {
 	public void getDataFile() {
 		DataFile myDataFile = new DataFile();
 
-		Set<DataFile> dataFiles = Sets.newHashSet( myDataFile );
+		List<DataFile> dataFiles = Lists.newArrayList();
 
 		this.summaryStatistics.setStatisticsDataFile( dataFiles );
 
-		Set<DataFile> dataFile = this.summaryStatistics.getStatisticsDataFile();
+		List<DataFile> dataFile = this.summaryStatistics.getStatisticsDataFile();
 
 		assertNotNull( dataFile );
 		assertEquals( 1, dataFile.size() );

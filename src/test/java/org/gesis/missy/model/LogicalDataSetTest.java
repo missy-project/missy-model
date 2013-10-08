@@ -4,13 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.datacube.DataSet;
 import org.junit.Test;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 
 public class LogicalDataSetTest {
 
@@ -20,11 +19,11 @@ public class LogicalDataSetTest {
 	public void getAggregation() {
 		DataSet myDataSet = new DataSet();
 
-		Set<DataSet> dataSets = Sets.newHashSet( myDataSet );
+		List<DataSet> dataSets = Lists.newArrayList( myDataSet );
 
 		this.dataset.setDataCube( dataSets );
 
-		Set<DataSet> dataSet = this.dataset.getAggregation();
+		List<DataSet> dataSet = this.dataset.getAggregation();
 
 		assertNotNull( dataSet );
 		assertEquals( 1, dataSet.size() );
@@ -55,12 +54,12 @@ public class LogicalDataSetTest {
 	public void getInstrument() {
 		Instrument myInstrument = new Instrument();
 
-		Set<org.gesis.discovery.Instrument> instruments = new HashSet<org.gesis.discovery.Instrument>();
+		List<org.gesis.discovery.Instrument> instruments = Lists.newArrayList();
 		instruments.add( myInstrument );
 
 		this.dataset.setInstrument( instruments );
 
-		Set<org.gesis.discovery.Instrument> instrument = this.dataset.getInstrument();
+		List<org.gesis.discovery.Instrument> instrument = this.dataset.getInstrument();
 
 		assertNotNull( instrument );
 		assertEquals( 1, instrument.size() );

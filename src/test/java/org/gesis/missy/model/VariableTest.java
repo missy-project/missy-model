@@ -4,13 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.discovery.AnalysisUnit;
 import org.gesis.skos.Concept;
 import org.junit.Test;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 
 public class VariableTest {
 
@@ -58,12 +58,12 @@ public class VariableTest {
 	public void getQuestion() {
 		Question myQuestion = new Question();
 
-		Set<org.gesis.discovery.Question> questions = Sets.newHashSet();
+		List<org.gesis.discovery.Question> questions = Lists.newArrayList();
 		questions.add( myQuestion );
 
 		this.variable.setQuestion( questions );
 
-		Set<org.gesis.discovery.Question> question = this.variable.getQuestion();
+		List<org.gesis.discovery.Question> question = this.variable.getQuestion();
 
 		assertNotNull( question );
 		assertEquals( 1, question.size() );

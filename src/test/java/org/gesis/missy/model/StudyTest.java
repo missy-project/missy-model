@@ -4,14 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.discovery.Study;
 import org.gesis.foaf.Agent;
 import org.junit.Test;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 
 public class StudyTest {
 
@@ -21,12 +20,12 @@ public class StudyTest {
 	public void getVariable() {
 		Variable myVariable = new Variable();
 
-		Set<org.gesis.discovery.Variable> variables = new HashSet<org.gesis.discovery.Variable>();
+		List<org.gesis.discovery.Variable> variables = Lists.newArrayList();
 		variables.add( myVariable );
 
 		this.myStudy.setVariable( variables );
 
-		Set<org.gesis.discovery.Variable> variable = this.myStudy.getVariable();
+		List<org.gesis.discovery.Variable> variable = this.myStudy.getVariable();
 
 		assertNotNull( variable );
 		assertEquals( 1, variable.size() );
@@ -37,12 +36,12 @@ public class StudyTest {
 	public void getInstrument() {
 		Instrument myInstrument = new Instrument();
 
-		Set<org.gesis.discovery.Instrument> instruments = new HashSet<org.gesis.discovery.Instrument>();
+		List<org.gesis.discovery.Instrument> instruments = Lists.newArrayList();
 		instruments.add( myInstrument );
 
 		this.myStudy.setInstrument( instruments );
 
-		Set<org.gesis.discovery.Instrument> instrument = this.myStudy.getInstrument();
+		List<org.gesis.discovery.Instrument> instrument = this.myStudy.getInstrument();
 
 		assertNotNull( instrument );
 		assertEquals( 1, instrument.size() );
@@ -53,12 +52,12 @@ public class StudyTest {
 	public void getCreator() {
 		Agent myCreator = new Agent();
 
-		Set<Agent> creators = Sets.newHashSet();
+		List<Agent> creators = Lists.newArrayList();
 		creators.add( myCreator );
 
 		this.myStudy.setCreator( creators );
 
-		Set<Agent> creator = this.myStudy.getCreator();
+		List<Agent> creator = this.myStudy.getCreator();
 
 		assertNotNull( creator );
 		assertEquals( 1, creator.size() );
@@ -69,12 +68,12 @@ public class StudyTest {
 	public void getPublisher() {
 		Agent myPublisher = new Agent();
 
-		Set<Agent> publishers = Sets.newHashSet();
+		List<Agent> publishers = Lists.newArrayList();
 		publishers.add( myPublisher );
 
 		this.myStudy.setPublisher( publishers );
 
-		Set<Agent> publisher = this.myStudy.getPublisher();
+		List<Agent> publisher = this.myStudy.getPublisher();
 
 		assertNotNull( publisher );
 		assertEquals( 1, publisher.size() );
@@ -85,12 +84,12 @@ public class StudyTest {
 	public void getContributor() {
 		Agent myContributor = new Agent();
 
-		Set<Agent> contributors = Sets.newHashSet();
+		List<Agent> contributors = Lists.newArrayList();
 		contributors.add( myContributor );
 
 		this.myStudy.setContributer( contributors );
 
-		Set<Agent> contributor = this.myStudy.getContributer();
+		List<Agent> contributor = this.myStudy.getContributer();
 
 		assertNotNull( contributor );
 		assertEquals( 1, contributor.size() );

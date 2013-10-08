@@ -4,12 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.skos.Concept;
 import org.junit.Test;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 
 public class VariableDefinitionTest
 {
@@ -21,9 +21,9 @@ public class VariableDefinitionTest
 	{
 		org.gesis.discovery.Universe universe = new Universe();
 
-		this.variableDefinition.setUniverse( Sets.newHashSet( universe ) );
+		this.variableDefinition.setUniverse( Lists.newArrayList( universe ) );
 
-		Set<org.gesis.discovery.Universe> universes = this.variableDefinition.getUniverse();
+		List<org.gesis.discovery.Universe> universes = this.variableDefinition.getUniverse();
 
 		assertNotNull( universes );
 		assertEquals( 1, universes.size() );

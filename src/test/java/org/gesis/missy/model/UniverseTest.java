@@ -4,13 +4,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Set;
+import java.util.List;
 
 import org.gesis.skos.Concept;
 import org.gesis.skos.ConceptScheme;
 import org.junit.Test;
 
-import com.google.common.collect.Sets;
+import com.google.common.collect.Lists;
 
 public class UniverseTest {
 
@@ -20,11 +20,11 @@ public class UniverseTest {
 	public void inScheme() {
 		ConceptScheme myConcept = new ConceptScheme();
 
-		Set<ConceptScheme> schemes = Sets.newHashSet( myConcept );
+		List<ConceptScheme> schemes = Lists.newArrayList( myConcept );
 
 		this.universe.setInScheme( schemes );
 
-		Set<ConceptScheme> scheme = this.universe.getInScheme();
+		List<ConceptScheme> scheme = this.universe.getInScheme();
 
 		assertNotNull( scheme );
 		assertEquals( 1, scheme.size() );
@@ -35,11 +35,11 @@ public class UniverseTest {
 	public void broader() {
 		Concept myConcept = new Concept();
 
-		Set<Concept> broaders = Sets.newHashSet( myConcept );
+		List<Concept> broaders = Lists.newArrayList( myConcept );
 
 		this.universe.setBroader( broaders );
 
-		Set<Concept> broader = this.universe.getBroader();
+		List<Concept> broader = this.universe.getBroader();
 
 		assertNotNull( broader );
 		assertEquals( 1, broader.size() );
@@ -50,11 +50,11 @@ public class UniverseTest {
 	public void narrower() {
 		Concept myConcept = new Concept();
 
-		Set<Concept> narrowers = Sets.newHashSet( myConcept );
+		List<Concept> narrowers = Lists.newArrayList( myConcept );
 
 		this.universe.setNarrower( narrowers );
 
-		Set<Concept> narrower = this.universe.getNarrower();
+		List<Concept> narrower = this.universe.getNarrower();
 
 		assertNotNull( narrower );
 		assertEquals( 1, narrower.size() );
