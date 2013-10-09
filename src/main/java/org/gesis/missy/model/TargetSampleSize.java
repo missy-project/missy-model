@@ -25,7 +25,7 @@ public class TargetSampleSize extends PersistableResource
 	private String samplingUnits;
 
 	@Column
-	private int mininum;
+	private int minimum;
 
 	@Column
 	private int actual;
@@ -61,14 +61,14 @@ public class TargetSampleSize extends PersistableResource
 		this.samplingUnits = samplingUnits;
 	}
 
-	public int getMininum()
+	public int getMinimum()
 	{
-		return mininum;
+		return minimum;
 	}
 
-	public void setMininum( final int mininum )
+	public void setMinimum( final int minimum )
 	{
-		this.mininum = mininum;
+		this.minimum = minimum;
 	}
 
 	public int getActual()
