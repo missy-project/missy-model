@@ -45,4 +45,14 @@ public class Country extends PersistableResource
 		this.prefLabel = prefLabel;
 	}
 
+	public static Country withCode( final String code )
+	{
+		if ( code == null )
+			return null;
+
+		Country country = new Country();
+		country.setCode( code );
+
+		return country;
+	}
 }
