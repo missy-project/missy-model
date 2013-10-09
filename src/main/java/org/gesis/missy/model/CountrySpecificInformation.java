@@ -6,9 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -57,12 +55,9 @@ public class CountrySpecificInformation extends PersistableResource
 	@OneToOne( cascade = CascadeType.ALL )
 	private Weighting weighting;
 
-	@ManyToMany( cascade = CascadeType.ALL )
-	@JoinTable(
-			name = "Missy_CountrySpecificInformation_Study",
-			joinColumns = @JoinColumn( name = "countrySpecificInformation_id" ),
-			inverseJoinColumns = @JoinColumn( name = "study_id" ) )
-	private List<Study> study;
+	@ManyToOne( cascade = CascadeType.ALL )
+	@JoinColumn( name = "study_id" )
+	private Study study;
 
 	@OneToOne( cascade = CascadeType.ALL )
 	private Country country;
@@ -183,12 +178,12 @@ public class CountrySpecificInformation extends PersistableResource
 		this.weighting = weighting;
 	}
 
-	public List<Study> getStudy()
+	public Study getStudy()
 	{
 		return study;
 	}
 
-	public void setStudy( final List<Study> study )
+	public void setStudy( final Study study )
 	{
 		this.study = study;
 	}
