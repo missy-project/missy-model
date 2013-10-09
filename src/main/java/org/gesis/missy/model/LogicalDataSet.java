@@ -83,4 +83,34 @@ public class LogicalDataSet extends org.gesis.discovery.LogicalDataSet
 		this.conceptScheme = conceptScheme;
 	}
 
+	public String getWeighting()
+	{
+		return weighting;
+	}
+
+	public void setWeighting( final String weighting )
+	{
+		this.weighting = weighting;
+	}
+
+	public String getNote()
+	{
+		return note;
+	}
+
+	public void setNote( final String note )
+	{
+		this.note = note;
+	}
+
+	public String getCitation()
+	{
+		return citation;
+	}
+
+	public void setCitation( final String citation )
+	{
+		this.citation = citation;
+	}
+
 }
