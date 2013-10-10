@@ -45,7 +45,7 @@
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
   <class id="6" language="java" name="org.gesis.missy.model.Study" project="missy-model" 
@@ -69,7 +69,7 @@
   <class id="8" language="java" name="org.gesis.missy.model.CountrySpecificInformation" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/CountrySpecificInformation.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="773" y="693"/>    
+    <position height="-1" width="-1" x="935" y="665"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -78,7 +78,7 @@
   </class>  
   <class id="9" language="java" name="org.gesis.missy.model.Weighting" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/Weighting.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1091" y="500"/>    
+    <position height="-1" width="-1" x="1253" y="472"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -87,7 +87,7 @@
   </class>  
   <class id="10" language="java" name="org.gesis.missy.model.Country" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/Country.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1075" y="694"/>    
+    <position height="-1" width="-1" x="1237" y="666"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -96,7 +96,7 @@
   </class>  
   <class id="11" language="java" name="org.gesis.missy.model.TargetSampleSize" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/TargetSampleSize.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="490" y="872"/>    
+    <position height="-1" width="-1" x="682" y="870"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -106,7 +106,7 @@
   <enumeration id="12" language="java" name="org.gesis.missy.model.TargetSampleSizeType" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/TargetSampleSizeType.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1080" y="871"/>    
+    <position height="-1" width="-1" x="1048" y="882"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -115,7 +115,7 @@
   </enumeration>  
   <class id="13" language="java" name="org.gesis.missy.model.ModeOfCollection" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/ModeOfCollection.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="188" y="779"/>    
+    <position height="-1" width="-1" x="422" y="825"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -124,135 +124,144 @@
   </class>  
   <class id="14" language="java" name="org.gesis.missy.model.SamplingProcedure" project="missy-model" 
     file="/missy-model/src/main/java/org/gesis/missy/model/SamplingProcedure.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="773" y="428"/>    
+    <position height="-1" width="-1" x="935" y="400"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <association id="15">    
+  <class id="15" language="java" name="org.gesis.missy.model.LogicalDataSet" project="missy-model" 
+    file="/missy-model/src/main/java/org/gesis/missy/model/LogicalDataSet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="662" y="416"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="16">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="17">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="16" name="country">        
-        <position height="18" width="48" x="917" y="671"/>      
+      <attribute id="18" name="country">        
+        <position height="18" width="48" x="1079" y="643"/>      
       </attribute>      
-      <multiplicity id="17" minimum="0" maximum="1"/>    
+      <multiplicity id="19" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="18">    
+  <association id="20">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="19" name="weighting">        
-        <position height="18" width="61" x="896" y="567"/>      
+      <attribute id="21" name="targetSampleSize">        
+        <position height="18" width="92" x="712" y="748"/>      
       </attribute>      
-      <multiplicity id="20" minimum="0" maximum="1">        
-        <position height="16" width="25" x="973" y="583"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <association id="22">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="23" name="targetSampleSize">        
-        <position height="18" width="105" x="527" y="765"/>      
-      </attribute>      
-      <multiplicity id="24" minimum="0" maximum="2147483647">        
-        <position height="16" width="23" x="589" y="814"/>      
+      <multiplicity id="22" minimum="0" maximum="2147483647">        
+        <position height="16" width="21" x="767" y="808"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="26" name="samplingProcedure">        
-        <position height="18" width="115" x="653" y="550"/>      
-      </attribute>      
-      <multiplicity id="27" minimum="0" maximum="1">        
-        <position height="16" width="25" x="782" y="527"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="28">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="7"/>  
-  </generalization>  
-  <generalization id="29">    
+  <generalization id="23">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="30">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="31" name="modeOfCollection">        
-        <position height="18" width="106" x="406" y="720"/>      
+  <association id="24">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="25" name="targetSampleSizeType">        
+        <position height="18" width="115" x="783" y="846"/>      
       </attribute>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
+      <multiplicity id="26" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
+    <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="33">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="34" name="inGroup">        
-        <position height="18" width="52" x="425" y="245"/>      
-      </attribute>      
-      <multiplicity id="35" minimum="0" maximum="1">        
-        <position height="16" width="25" x="383" y="207"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="36">    
+  <generalization id="27">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="28">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="37" name="study">        
+      <attribute id="29" name="study">        
         <position height="18" width="37" x="544" y="621"/>      
       </attribute>      
-      <multiplicity id="38" minimum="0" maximum="2147483647">        
+      <multiplicity id="30" minimum="0" maximum="2147483647">        
         <position height="16" width="23" x="494" y="638"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="32" name="samplingProcedure">        
+        <position height="18" width="115" x="815" y="522"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="16" width="25" x="944" y="499"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="35">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="36" name="inGroup">        
+        <position height="18" width="52" x="425" y="245"/>      
+      </attribute>      
+      <multiplicity id="37" minimum="0" maximum="1">        
+        <position height="16" width="25" x="383" y="207"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="38">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
   <association id="39">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="40" name="dataAccessCondition">        
-        <position height="18" width="124" x="860" y="169"/>      
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="40" name="weighting">        
+        <position height="18" width="61" x="1058" y="539"/>      
       </attribute>      
       <multiplicity id="41" minimum="0" maximum="1">        
+        <position height="16" width="25" x="1135" y="555"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="42">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="43" name="modeOfCollection">        
+        <position height="18" width="92" x="593" y="720"/>      
+      </attribute>      
+      <multiplicity id="44" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="45">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="46" name="dataAccessCondition">        
+        <position height="18" width="124" x="860" y="169"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="1">        
         <position height="16" width="25" x="970" y="191"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="42">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <association id="43">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="44" name="targetSampleSizeType">        
-        <position height="18" width="132" x="680" y="879"/>      
-      </attribute>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
