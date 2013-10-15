@@ -28,7 +28,7 @@ public class Variable extends org.gesis.discovery.Variable
 	@Column
 	private String variableLabelLong;
 
-	@Column
+	@Column( columnDefinition = "bit default 0" )
 	private boolean derived;
 
 	@Column
