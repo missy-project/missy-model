@@ -35,7 +35,7 @@ public class SummaryStatisticsTest {
 	public void getDataFile() {
 		DataFile myDataFile = new DataFile();
 
-		List<DataFile> dataFiles = Lists.newArrayList();
+		List<DataFile> dataFiles = Lists.newArrayList( myDataFile );
 
 		this.summaryStatistics.setStatisticsDataFile( dataFiles );
 
