@@ -47,7 +47,7 @@ public class Vocabulary extends PersistableResource
 	@Column
 	private Boolean inMz = false;
 
-	@Column( name = "index_", length = 4 )
+	@Column( name = "index_", length = 8 )
 	private String index;
 
 	@Column( length = 32 )
