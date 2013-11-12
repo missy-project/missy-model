@@ -16,6 +16,8 @@ import org.slf4j.LoggerFactory;
 public class URNFactory
 {
 
+	public final static String urnDdiPrefix = "urn:ddi";
+
 	private final static Logger log = LoggerFactory.getLogger( URNFactory.class );
 
 	/**
@@ -283,12 +285,12 @@ public class URNFactory
 
 	public static String createURNPrefix( final Identification identification )
 	{
-		return identification.getAgencyID() + ":";
+		return urnDdiPrefix + ":" + identification.getAgencyID() + ":";
 	}
 
 	public static String createURNPrefix( final Identification identification, final String className )
 	{
-		return identification.getAgencyID() + ":" + className + "_";
+		return urnDdiPrefix + ":" + identification.getAgencyID() + ":" + className + "_";
 	}
 
 	public static String createURNSuffix( final Identification identification )
