@@ -23,7 +23,7 @@ public class URNFactoryTest
 	{
 		final String urn = URNFactory.createStudyURN( identification, "EU-SILC", "2002" );
 		assertNotNull( urn );
-		assertEquals( "de.gesis:study_EU-SILC-2002:1.2", urn );
+		assertEquals( "urn:ddi:de.gesis:study_EU-SILC-2002:1.2", urn );
 	}
 
 	@Test
@@ -31,7 +31,7 @@ public class URNFactoryTest
 	{
 		final String urn = URNFactory.createVariableURN( identification, "EU-SILC", "2002", "panel", "hhd", "2002-1", "DB060" );
 		assertNotNull( urn );
-		assertEquals( "de.gesis:variable_EU-SILC-2002-panel-hhd-2002-1-DB060:1.2", urn );
+		assertEquals( "urn:ddi:de.gesis:variable_EU-SILC-2002-panel-hhd-2002-1-DB060:1.2", urn );
 
 	}
 
@@ -40,7 +40,7 @@ public class URNFactoryTest
 	{
 		final String urn = URNFactory.createLogicalDataSetURN( identification, "EU-SILC", "2002", "panel", "hhd", "2002-1" );
 		assertNotNull( urn );
-		assertEquals( "de.gesis:logicalDataSet_EU-SILC-2002-panel-hhd-2002-1:1.2", urn );
+		assertEquals( "urn:ddi:de.gesis:logicalDataSet_EU-SILC-2002-panel-hhd-2002-1:1.2", urn );
 
 	}
 
@@ -49,7 +49,7 @@ public class URNFactoryTest
 	{
 		final String urn = URNFactory.createConceptURN( identification, 1 );
 		assertNotNull( urn );
-		assertEquals( "de.gesis:concept_1:1.2", urn );
+		assertEquals( "urn:ddi:de.gesis:concept_1:1.2", urn );
 	}
 
 	@Test
@@ -57,6 +57,6 @@ public class URNFactoryTest
 	{
 		final String urn = URNFactory.createConceptSchemeURN( identification, "PB100" );
 		assertNotNull( urn );
-		assertEquals( "de.gesis:conceptScheme_PB100:1.2", urn );
+		assertEquals( "urn:ddi:de.gesis:conceptScheme_PB100:1.2", urn );
 	}
 }
