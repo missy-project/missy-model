@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.gesis.missy.util.URNFactory;
+import org.gesis.rdfs.Resource;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,6 +17,40 @@ public class URNFactoryTest
 	public void init()
 	{
 		identification = Identification.create( "de.gesis", "1", "2" );
+	}
+
+	@Test
+	public void createUUIDURN()
+	{
+		String urn = URNFactory.createUUIDURN( identification );
+		assertNotNull( urn );
+
+		String[] urnParts = urn.split( ":" );
+		assertEquals( 5, urnParts.length );
+		assertEquals( "urn", urnParts[0] );
+		assertEquals( "ddi", urnParts[1] );
+		assertEquals( "de.gesis", urnParts[2] );
+		// urn is generic and cannot be tested on equality
+		assertNotNull( urnParts[3] );
+		assertEquals( "1.2", urnParts[4] );
+	}
+
+	@Test
+	public void createAndSetUUIDURN()
+	{
+		Resource resource = URNFactory.createAndSetUUIDURN( new Resource(), identification );
+		assertNotNull( resource );
+
+		String urn = resource.getURN();
+
+		String[] urnParts = urn.split( ":" );
+		assertEquals( 5, urnParts.length );
+		assertEquals( "urn", urnParts[0] );
+		assertEquals( "ddi", urnParts[1] );
+		assertEquals( "de.gesis", urnParts[2] );
+		// urn is generic and cannot be tested on equality
+		assertNotNull( urnParts[3] );
+		assertEquals( "1.2", urnParts[4] );
 	}
 
 	@Test

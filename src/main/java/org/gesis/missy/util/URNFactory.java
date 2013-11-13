@@ -22,8 +22,8 @@ public class URNFactory
 
 	/**
 	 * Creates a URN of this form:
-	 * <Agency-ID>:<Object-ID>:<Version-Release>.<Version-Minor>, with a freshly
-	 * created UUID as Object-ID.
+	 * "urn:ddi:Agency-ID:Object-ID:Version-Release.Version-Minor", with a
+	 * freshly created UUID as Object-ID.
 	 * 
 	 * @param identification
 	 * @return
@@ -44,7 +44,7 @@ public class URNFactory
 
 	/**
 	 * Creates a URN of this form:
-	 * <Agency-ID>:<Object-ID>:<Version-Release>.<Version-Minor>, where the
+	 * "urn:ddi:Agency-ID:Object-ID:Version-Release.Version-Minor", where the
 	 * Object-ID is set to the id of <i>persistableResource</i>. For example,
 	 * with the id being "1abc" of <i>persistableResource</i>, the URN will
 	 * become <AgencyID>:1abc:<Version-Release>.<Version-Minor>.
