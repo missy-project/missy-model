@@ -18,8 +18,8 @@ public class StudyGroup extends org.gesis.discovery.StudyGroup
 
 	// properties
 
-	@Column
-	private short dataVersionReleaseYear;
+	@Column( length = 4 )
+	private String dataVersionReleaseYear;
 
 	@Column
 	private String dataVersionVersionNumber;
@@ -59,12 +59,12 @@ public class StudyGroup extends org.gesis.discovery.StudyGroup
 
 	// getter / setter
 
-	public short getDataVersionReleaseYear()
+	public String getDataVersionReleaseYear()
 	{
 		return dataVersionReleaseYear;
 	}
 
-	public void setDataVersionReleaseYear( final short dataVersionReleaseYear )
+	public void setDataVersionReleaseYear( final String dataVersionReleaseYear )
 	{
 		this.dataVersionReleaseYear = dataVersionReleaseYear;
 	}
