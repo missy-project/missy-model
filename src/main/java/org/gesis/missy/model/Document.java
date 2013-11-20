@@ -16,8 +16,17 @@ public class Document extends PersistableResource
 	private String link;
 	
 	@Column 
+	private String storeType;
+	
+	@Column 
+	private String fileName;
+	
+	@Column 
 	@Lob
-	private Blob file;
+	private Blob fileContent;
+	
+	@Column 
+	private String fileType;
 	
 	@Column
 	private String name;
@@ -48,16 +57,6 @@ public class Document extends PersistableResource
 	public void setLink( String link )
 	{
 		this.link = link;
-	}
-
-	public Blob getFile()
-	{
-		return file;
-	}
-
-	public void setFile( Blob file )
-	{
-		this.file = file;
 	}
 
 	public String getName()
@@ -128,6 +127,46 @@ public class Document extends PersistableResource
 	public void setSeries( String series )
 	{
 		this.series = series;
+	}
+
+	public String getFileName()
+	{
+		return fileName;
+	}
+
+	public void setFileName( String fileName )
+	{
+		this.fileName = fileName;
+	}
+
+	public Blob getFileContent()
+	{
+		return fileContent;
+	}
+
+	public void setFileContent( Blob fileContent )
+	{
+		this.fileContent = fileContent;
+	}
+
+	public String getFileType()
+	{
+		return fileType;
+	}
+
+	public void setFileType( String fileType )
+	{
+		this.fileType = fileType;
+	}
+
+	public String getStoreType()
+	{
+		return storeType;
+	}
+
+	public void setStoreType( String storeType )
+	{
+		this.storeType = storeType;
 	}
 	
 }
