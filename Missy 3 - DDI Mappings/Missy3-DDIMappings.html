@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Missy 3 - DDI Mappings</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<link href="css/owl.css" rel="stylesheet" type="text/css" />
+		<link href="css/Primer.css" rel="stylesheet" type="text/css" />
+		<link href="http://www.w3.org/StyleSheets/TR/W3C-REC" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src='http://darobin.github.com/respec/builds/respec-w3c-common.js' class='remove'></script>
+		<script type="text/javascript" class='remove'>
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "unofficial",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "DDI Mappings",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          //subtitle   :  "Metamodel-based Model Transformations",
+
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2014-03-01",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          copyrightStart: "2014",
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          //edDraftURI:           "https://raw.github.com/linked-statistics/disco-spec/master/discovery.html",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Thomas Bosch", url: "http://boschthomas.blogspot.de/",
+                company: "GESIS - Leibniz Institute for the Social Sciences, Germany", companyURL: "http://www.gesis.org/" }
+          ],
+
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          authors:  [
+              { name: "Thomas Bosch", url: "http://boschthomas.blogspot.de/",
+                company: "GESIS - Leibniz Institute for the Social Sciences, Germany", companyURL: "http://www.gesis.org/" }
+          ],
+          
+          // If specified, defines an array of alternate formats in which document is available (e.g., XML, Postscript). The format of the array is:
+          // key description
+          //   uri    the relative or absolute URI to the alternate version.
+          //   label  the label to use for the version. 
+          //alternateFormats: [
+		  //    { uri: "Phd.pdf",
+		  //    label: "PDF" }
+		  //],
+
+		  // generates various RDFa attributes if set to true
+		  // set to false for test purposes
+		  doRDFa: false,
+          // name of the WG
+		  // Apparently, not used.
+          wg:           "DDI Alliance RDF Vocabularies Working Group",
+          
+          // URI of the public WG page
+		  // Apparently, not used.
+          wgURI:        "http://www.ddialliance.org/alliance/working-groups#RDF",
+          
+          // name (without the @w3c.org) of the public mailing to which comments are due
+		  // Apparently, this has to be a W3C address.
+		  // Apparently, not used.
+          wgPublicList: "ddi-rdf-vocabulary@googlegroups.com",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+//          wgPatentURI:  "",
+      };
+		</script>
+	</head>
+	<body>
+	
+		<section id='abstract'>
+		</section>
+    
+		<section id="sotd">
+		</section>
+		
+		<!-- generated table of figures -->
+		<!--
+		<section id="tof">
+		
+		</section>
+		-->
+
+		<section><h2>Introduction</h2>
+		
+<p>
+This document describes the mappings from the Missy 3 data models to different versions of the Data Documentation Initiative social science metadata standard.
+</p>
+		
+<div class="note">
+
+<ul>
+	<li>generic example XML documents</li>
+	<ul>
+		<li><a href="Missy3-Mapping-DDI3.2.xml">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+		
+		</section>
+
+		<section><h2>DDIInstance</h2>
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN (DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;UUID&gt;:&lt;release version&gt;.&lt;minor version&gt;
+</pre></div>
+
+        </section>
+		
+		<!-- +++++++++++++++ -->
+		
+		<section><h2>Series</h2>
+		
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>XPath Expression ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group[@time='T2']
+
+/DDIInstance/g:Group/r:Coverage/r:SpatialCoverage/r:Country
+--> geographical coverage
+</pre></div>
+
+<div class="note">
+
+<ul>
+	<li>geographical coverage</li>
+	<ul>
+		<li>contains all countries of series</li>
+	</ul>
+	<li>@time</li>
+	<ul>
+		<li>Indicates how all members of the group are related along the dimension of time</li>
+		<ul>
+			<li>"T0" No specified relationship</li>
+			<li>"T1" Single Occurrence</li>
+			<li>"T2" Multiple Occurrence: Regular Occurrence: Continuing	</li>
+			<li>"T3" Multiple Occurrence: Regular Occurrence: Limited time</li>
+			<li>"T4" Multiple Occurrence: Irregular Occurrence: Continuing</li>
+			<li>"T5" Multiple Occurrence: Irregular Occurrence: Limited time</li>
+		</ul>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/group_xsd/elements/Group.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+			
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;series ID&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+
+urn:ddi:de.gesis:study_EU-SILC:0.1
+--> example
+</pre></div>
+			
+
+			<section><h3>Mappings</h3>
+			
+				<section><h4>Descriptions</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>title</td>
+								<td>The title of the series in English</td>
+							</tr>
+							<tr>
+								<td>subtitle</td>
+								<td>Subtitle of the series in English.</td>
+							</tr>
+							<tr>
+								<td>release year</td>
+								<td>The year in which data were released irregardless of when data were collected. </td>
+							</tr>
+							<tr>
+								<td>version number	</td>
+								<td>The version number serves to distinguish multiple releases within one year from another.</td>
+							</tr>
+							<tr>
+								<td>data publisher</td>
+								<td>The legal entity responsible for authoring the data i.e. EUROSTAT</td>
+							</tr>
+							<tr>
+								<td>abstract</td>
+								<td>A short summary describing the purpose, nature, and scope of the series. </td>
+							</tr>
+							<tr>
+								<td>keywords</td>
+								<td>You can choose multiple keywords to describe the series.</td>
+							</tr>
+							<tr>
+								<td>geographical coverage</td>
+								<td>Information on the geographic coverage of the series. Includes the total geographic scope of the data. As the list of included countries will be computed automatically from the country specific information you do not have to list them out here.</td>
+							</tr>
+							<tr>
+								<td>organization</td>
+								<td>Details the organisation of the series and the responsibilities of involved parties.</td>
+							</tr>
+							<tr>
+								<td>universe</td>
+								<td>Definition of the universe.	</td>
+							</tr>
+							<tr>
+								<td>sampling</td>
+								<td>Details requirements regarding sampling. </td>
+							</tr>
+							<tr>
+								<td>data collection</td>
+								<td>Details requirements regarding data collection. </td>
+							</tr>
+							<tr>
+								<td>anonymization</td>
+								<td>Details the anonymisation procedures.</td>
+							</tr>
+							<tr>
+								<td>legal basis</td>
+								<td>Detail the legal norms on the basis of which the series is carried out.	</td>
+							</tr>
+							<tr>
+								<td>access conditions</td>
+								<td>Details the access conditions as issued by the data provider.</td>
+							</tr>
+							<tr>
+								<td>access form</td>
+								<td>Links to an (online)access form, with which data can be ordered.</td>
+							</tr>
+							<tr>
+								<td>access contact</td>
+								<td>Contact information regarding data access. Reference to specific persons should be avoided here and an institutional e-mail address should be provided.</td>
+							</tr>
+							<tr>
+								<td>comparability over time</td>
+								<td>Details breaks in continuity or methodology over time.</td>
+							</tr>
+							<tr>
+								<td>comparability over space</td>
+								<td>Details differences in data or data collection between countries. </td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td>Provide here any further pertinent information regarding the series that cannot be included in any other field. </td>
+							</tr>
+							<tr>
+								<td>citation</td>
+								<td>List all sources used for the documentation at the series level here. Please provide information on: Author (usually Institution)                                                         Title                                                                                                   Year of publication                                                                         Link to document (if available)</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+				
+				<section><h4>Data Model</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>data model</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>title</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>subtitle</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>release year</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>version number	</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>data publisher</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>abstract</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>keywords</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>geographical coverage</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>organization</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>universe</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>sampling</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>data collection</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>anonymization</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>legal basis</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>access conditions</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>access form</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>access contact</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>comparability over time</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>comparability over space</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>citation</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+			
+				<section><h4>DDI 3.2</h4>
+			
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th >XPath Expression</th>
+								<th>workaround ?</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>title</td>
+								<td><code>/DDIInstance/g:Group/r:SeriesStatement/r:SeriesName/r:String</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>subtitle</td>
+								<td><code>/DDIInstance/g:Group/r:SeriesStatement/r:SeriesDescription/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>release year</td>
+								<td><code>/DDIInstance/g:Group/r:Citation/r:PublicationDate/r:SimpleDate</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>version number</td>
+								<td><code>/DDIInstance/g:Group/r:Citation/dct:hasVersion</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>data publisher</td>
+								<td><code>/DDIInstance/g:Group/r:Citation/dc:publisher</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>abstract</td>
+								<td><code>/DDIInstance/g:Group/r:Abstract/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>keywords</td>
+								<td><code>/DDIInstance/g:Group/r:Coverage/r:TopicalCoverage/r:Subject</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>geographical coverage</td>
+								<td><code>/DDIInstance/g:Group/r:Coverage/r:SpatialCoverage/r:Description/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>organization</td>
+								<td><code>/DDIInstance/g:Group/r:Citation/dc:contributor</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>universe</td>
+								<td>
+definition: 
+<code>/DDIInstance/g:ResourcePackage/c:UniverseScheme/c:Universe/r:Description/r:Content</code><br/>
+dereferencing:
+<code>/DDIInstance/g:Group/r:UniverseReference[r:TypeOfObject='Universe']/r:URN</code>
+								</td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>sampling</td>
+								<td><code>/DDIInstance/g:Group/d:DataCollection/d:Methodology/d:SamplingProcedure/r:Description/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>data collection</td>
+								<td><code>/DDIInstance/g:Group/d:DataCollection/r:Description/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>anonymization</td>
+								<td><code>
+/DDIInstance/g:Group/r:Note[r:NoteSubject='anonymization (series)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='Archive']/r:NoteContent/r:Content<br/>
+/DDIInstance/g:Group/a:Archive
+								</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>legal basis</td>
+								<td><code>/DDIInstance/g:Group/r:AuthorizationSource/r:LegalMandate</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>access conditions</td>
+								<td><code>/DDIInstance/g:Group/a:Archive/a:ArchiveSpecific/a:Item/a:Access/a:AccessConditions/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>access form</td>
+								<td><code>/DDIInstance/g:Group/a:Archive/a:ArchiveSpecific/a:Item/a:Access/a:AccessPermission/r:URI</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>access contact</td>
+								<td>
+definition:
+<code>/DDIInstance/g:ResourcePackage/a:OrganizationScheme/a:Organization/a:ContactInformation/a:Email/r:InternetEmail</code><br/>
+dereferencing:
+<code>/DDIInstance/g:Group/a:Archive/a:ArchiveSpecific/a:Item/a:Access/a:ContactOrganizationReference[r:TypeOfObject='Organization']/r:URN</code>
+								</td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>comparability over time</td>
+								<td><code>/DDIInstance/g:Group/r:Note[r:NoteSubject='comparability over time (series)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='Group']/r:NoteContent/r:Content</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>comparability over space</td>
+								<td><code>/DDIInstance/g:Group/r:Note[r:NoteSubject='comparability over space (series)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='Group']/r:NoteContent/r:Content</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td><code>/DDIInstance/g:Group/r:Note[r:NoteSubject='notes (series)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='Group']/r:NoteContent/r:Content</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>citation</td>
+								<td><code>/DDIInstance/g:Group/r:Citation/dc:description</code></td>
+								<td>No</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+			
+			</section>
+
+        </section>
+		
+		<!-- +++++++++++++++ -->
+		<section><h2>Studies</h2>
+			
+			<section><h3>Studies with Multiple Countries</h3>
+				
+The studies 'EU-SILC 2009' and 'EU-LFS 2010' are divided into multiple countries.
+
+<br/><br/>
+
+<b>Studies (e.g. EU-SILC 2011) are represented as sub-groups of series (e.g. EU-SILC)</b>
+
+<br/><br/>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>XPath Expression ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group/g:SubGroup[@geography='G4']
+
+/DDIInstance/g:Group/g:SubGroup/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:SimpleDate
+--> temporal coverage
+</pre></div>
+
+<div class="note">
+
+ <ul>
+	<li>@geography</li>
+	<ul>
+		<li>Indicates how all members of the sub-group are related along the dimension of geography.</li>
+		<ul>
+			<li>"G0" No specified relationship</li>
+			<li>"G1" Single geography surveyed multiple times</li>
+			<li>"G2" Single geography surveyed once</li>
+			<li>"G3" Rolling geography</li>
+			<li>"G4" Different geography each survey</li>
+		</ul>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/group_xsd/elements/SubGroup.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+ 
+</div>
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+
+urn:ddi:de.gesis:study_EU-SILC-2009:0.1
+--> example
+</pre></div>
+			
+				<section><h4>Country-Specific StudyUnits</h4>
+					
+<b>StudyUnit representing study with information of all countries</b>
+
+<br/><br/>
+					
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>XPath Expression ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit
+
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Coverage/r:SpatialCoverage/r:Country
+--> geographical coverage
+</pre></div>
+
+<div class="note">
+
+ <ul>
+	<li>geographical coverage</li>
+	<ul>
+		<li>contains all countries of study</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance: </li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/studyunit_xsd/elements/StudyUnit.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+ 
+</div>
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;_ALL:&lt;release version&gt;.&lt;minor version&gt;
+
+
+urn:ddi:de.gesis:study_EU-SILC-2009_ALL:0.1
+--> example
+</pre></div>
+
+<b>StudyUnit representing study with information for specific countries</b>
+
+<br/><br/>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>XPath Expression ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit
+
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Coverage/r:SpatialCoverage/r:Country
+--> geographical coverage
+</pre></div>
+
+<div class="note">
+
+ <ul>
+	<li>geographical coverage</li>
+	<ul>
+		<li>contains specific country</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance: </li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/studyunit_xsd/elements/StudyUnit.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+ 
+</div>
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;_&lt;Country Code&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+
+urn:ddi:de.gesis:study_EU-SILC-2009_UK:0.1
+--> example
+</pre></div>
+					
+				</section>
+				
+				<section><h4>Mappings ( Study: General Description )</h4>
+			
+					<section><h5>Descriptions</h5>
+					
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>title</td>
+									<td class="l">The title of the study in English and its official date</td>
+								</tr>
+								<tr>
+									<td>subtitle</td>
+									<td class="l">Subtitle of the study</td>
+								</tr>
+								<tr>
+									<td>abstract</td>
+									<td class="l">Provide here any information that is pertinent to the specific study but not the series. For example you should mention here any ad-hoc modules implemented in the current study or alterations in study design. This information should be complementary to the information provided in the abstract at the series level. </td>
+								</tr>
+								<tr>
+									<td>keywords</td>
+									<td class="l">In addition to keywords at the series level you can assign additional keywords here which are specific to a given study (e.g. as they refer to an ad-hoc module).</td>
+								</tr>
+								<tr>
+									<td>geographical coverage</td>
+									<td class="l">Information on the geographic coverage of the study. Includes the total geographic scope of the data. As the list of included countries will be computed automatically from the country specific information you do not have to list them out here. </td>
+								</tr>
+								<tr>
+									<td>time period covered</td>
+									<td class="l">The time period the data refer to. This can be different points in time if for example retrospective questions are asked. </td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td class="l">Provide any information on the study here that you feel is important for researchers and that cannot be included in any other field</td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td class="l">List all sources used for the documentation at the series level here. Please provide information on: Author (usually Institution)                                                         Title                                                                                                   Year of publication                                                                         Link to document (if available)</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</section>
+				
+					<section><h5>Data Model</h5>
+					
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th>data model</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>title</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>subtitle</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>abstract</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>keywords</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>geographical coverage</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>time period covered</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</section>
+			
+					<section><h5>DDI 3.2</h5>
+				
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th >XPath Expression</th>
+									<th>workaround ?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>title</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Citation/r:Title/r:String
+									</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>subtitle</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Citation/r:SubTitle/r:String
+									</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>abstract</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Abstract/r:Content
+									</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>keywords</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Coverage/r:TopicalCoverage/r:Subject
+									</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>geographical coverage</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Coverage/r:SpatialCoverage/r:Country
+									</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>time period covered</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Coverage/r:TemporalCoverage <br/>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Note[r:NoteSubject='time period covered (study)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='TemporalCoverage']/r:NoteContent/r:Content
+									</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Note[r:NoteSubject='notes (study)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='StudyUnit']/r:NoteContent/r:Content
+									</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Citation/dc:description
+									</code></td>
+									<td>No</td>
+								</tr>
+							</tbody>
+						</table>
+						
+<div class="note">
+
+ <ul>
+	<li>StudyUnit</li>
+	<ul>
+		<li>represents study with information of all countries</li>
+	</ul>
+	<li>geographical coverage</li>
+	<ul>
+		<li>all countries</li>
+	</ul>
+</ul>
+ 
+</div>
+					
+					</section>
+			
+				</section>
+				
+				<section><h4>Mappings ( Study: Country-Specific Information )</h4>
+			
+					<section><h5>Descriptions</h5>
+					
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th>description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>corresponding national study</td>
+									<td>Provide here the alternative title of the study in the national context. If the study is carried out or published under a different title by the respective NSI provide the appropriate title here. </td>
+								</tr>
+								<tr>
+									<td>producer</td>
+									<td>The legal entity/entities responsible for carrying out the study. Normally this will be the national statistical institutes.</td>
+								</tr>
+								<tr>
+									<td>universe</td>
+									<td>Definition of the universe.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - sampling units</td>
+									<td>Sampling units used during sampling</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - minimum effective sample size</td>
+									<td>The minimum sample size required for this country. Usually defined as a requirement by Eurostat.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - actual sample size</td>
+									<td>Size of the drawn sample. Musst be larger or equal to the effective sample size. </td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - achieved sample size</td>
+									<td>Number of  interviews realized.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - size of design effect</td>
+									<td>The design effect corrects for bias that results from  applying complex sampling criteria (in comparison to a simple random sample).</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - effective sample size</td>
+									<td>Is calculted by dividing the achieved sample size through the design effect.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - sampling units</td>
+									<td>Sampling units used during sampling</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - minimum effective sample size</td>
+									<td>Requirments regarding the effective sample size in a country.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - actual sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - achieved sample size</td>
+									<td>Number of  interviews realized</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - size of design effect</td>
+									<td>The design effect corrects for bias that results from  applying complex sampling criteria (in comparison to a simple random sample)</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - effective sample size</td>
+									<td>Is calculted by dividing the achieved sample size through the design effect.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - sampling units</td>
+									<td>Sampling units used during sampling</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - minimum effective sample size</td>
+									<td>Requirments regarding the effective sample size in a country.</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - actual sample size</td>
+									<td>Size of the realized sample. Musst be larger or equal to the effective sample size. </td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - achieved sample size</td>
+									<td>Number of  interviews realized</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - size of design effect</td>
+									<td>The design effect corrects for bias that results from  applying complex sampling criteria (in comparison to a simple random sample)</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - effective sample size</td>
+									<td>Is calculted by dividing the achieved sample size through the design effect.</td>
+								</tr>
+								<tr>
+									<td>available data</td>
+									<td>Provides information on the different data types which are availble for a given year.</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - participation mandatory</td>
+									<td>Information on whether participation is compulsory or not.</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - source of sampling frame</td>
+									<td>Basis for drawing the sample. For example this might include census data or registers. </td>
+								</tr>
+								<tr>
+									<td>sampling procedure - sampling design</td>
+									<td>Specific information on the sampling design.</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - primary sampling units</td>
+									<td>In the case of a multi stage sample this field provides information on which sampling units are selected in the first step.</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - secondary sampling units</td>
+									<td>If a  multi stage sample  was used this field provides information on which sampling units are selected in the second step.</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - stratification criteria</td>
+									<td>If a stratified sample was used you should detail stratification criteria here.</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - sampling method</td>
+									<td>Additional information regarding sampling methodology that are not provided in the other fields. For example this could include special cases such as the represenativeness in regards to small subpopuations (e.g. over sea teritories)</td>
+								</tr>
+								<tr>
+									<td>number of rotational groups</td>
+									<td>Number of rotational groups. This also provides information on how often respondents are questioned in the panel.</td>
+								</tr>
+								<tr>
+									<td>units of observation</td>
+									<td>Describes the level at which data is collected. Selecting multiple options is possible.  </td>
+								</tr>
+								<tr>
+									<td>dates of data collection - start date</td>
+									<td>Timeframe in which data were collected.</td>
+								</tr>
+								<tr>
+									<td>dates of data collection - end date</td>
+									<td>Timeframe in which data were collected.</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - type of data source</td>
+									<td>Information from what kind of sources data were collected.</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (PAPI)</td>
+									<td>"Includes information on the different data collection modes used in the survey. Note that the sum of all fields must add up to 1000%.
+Please use a full stop to separate decimals. The following options exist: 
+PAPI: PaperAssistet Personal Interview
+CAPI: ComputerAssisted Personal Interview
+CATI: ComputerAssisted Telefon Interview
+Self-Administered: Self Administered Questionaire which is filled out without the assistance of an interviewer
+Websurvey: Survey filled out online without the assistance of an interviewer"</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (CAPI)</td>
+									<td>"Includes information on the different data collection modes used in the survey. Note that the sum of all fields must add up to 1000%.
+Please use a full stop to separate decimals. The following options exist: 
+PAPI: PaperAssistet Personal Interview
+CAPI: ComputerAssisted Personal Interview
+CATI: ComputerAssisted Telefon Interview
+Self-Administered: Self Administered Questionaire which is filled out without the assistance of an interviewer
+Websurvey: Survey filled out online without the assistance of an interviewer"</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (CATI)</td>
+									<td>"Includes information on the different data collection modes used in the survey. Note that the sum of all fields must add up to 1000%.
+Please use a full stop to separate decimals. The following options exist: 
+PAPI: PaperAssistet Personal Interview
+CAPI: ComputerAssisted Personal Interview
+CATI: ComputerAssisted Telefon Interview
+Self-Administered: Self Administered Questionaire which is filled out without the assistance of an interviewer
+Websurvey: Survey filled out online without the assistance of an interviewer"</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (self-administered)</td>
+									<td>"Includes information on the different data collection modes used in the survey. Note that the sum of all fields must add up to 1000%.
+Please use a full stop to separate decimals. The following options exist: 
+PAPI: PaperAssistet Personal Interview
+CAPI: ComputerAssisted Personal Interview
+CATI: ComputerAssisted Telefon Interview
+Self-Administered: Self Administered Questionaire which is filled out without the assistance of an interviewer
+Websurvey: Survey filled out online without the assistance of an interviewer"</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (WebSurvey)</td>
+									<td>"Includes information on the different data collection modes used in the survey. Note that the sum of all fields must add up to 1000%.
+Please use a full stop to separate decimals. The following options exist: 
+PAPI: PaperAssistet Personal Interview
+CAPI: ComputerAssisted Personal Interview
+CATI: ComputerAssisted Telefon Interview
+Self-Administered: Self Administered Questionaire which is filled out without the assistance of an interviewer
+Websurvey: Survey filled out online without the assistance of an interviewer"</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - percentage of proxy interviews</td>
+									<td>Percentage of interviews that were not filled in with information provided by the respondent personally but by a representative.</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Design Weight: Target</td>
+									<td>The initial design weights are used to assess the representativeness of the sample in regards to the universe. This field notes what level these initial design weights refer to.</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Design Weight: Method</td>
+									<td>Method on the base of which the initial design weighting is carried out.</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Non-Response: Method</td>
+									<td>Description of procedures undertaken to correct for bias from systematic non response.</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Calibration: Method</td>
+									<td>Description of calibration procedures undertaken to increase consistency with existing population statistics.</td>
+								</tr>
+								<tr>
+									<td>weighting - Weighting: Method</td>
+									<td>Information on methodology regarding weighting</td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td>Additional important country specific information not provided in any other field. </td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td>List all sources used for the documentation at the series level here. Please provide information on: Author (usually Institution)                                                         Title                                                                                                   Year of publication                                                                         Link to document (if available)</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</section>
+				
+					<section><h5>Data Model</h5>
+					
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th>data model</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>corresponding national study</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>producer</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>universe</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - sampling units</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - minimum effective sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - actual sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - achieved sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - size of design effect</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - effective sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - sampling units</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - minimum effective sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - actual sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - achieved sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - size of design effect</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - effective sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - sampling units</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - minimum effective sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - actual sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - achieved sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - size of design effect</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - effective sample size</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>available data</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - participation mandatory</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - source of sampling frame</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - sampling design</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - primary sampling units</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - secondary sampling units</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - stratification criteria</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>sampling procedure - sampling method</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>number of rotational groups</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>units of observation</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>dates of data collection - start date</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>dates of data collection - end date</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - type of data source</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (PAPI)</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (CAPI)</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (CATI)</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (self-administered)</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (WebSurvey)</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>mode of data collection - percentage of proxy interviews</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Design Weight: Target</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Design Weight: Method</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Non-Response: Method</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Calibration: Method</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>weighting - Weighting: Method</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</section>
+			
+					<section><h5>DDI 3.2</h5>
+				
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th >XPath Expression</th>
+									<th>workaround ?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>corresponding national study</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Citation/r:AlternateTitle/r:String</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>producer</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Citation/dc:creator</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>universe</td>
+									<td>
+definition: 
+<code>/DDIInstance/g:ResourcePackage/c:UniverseScheme/c:Universe/r:Description/r:Content </code><br/>
+dereferencing: 
+<code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:UniverseReference/r:URN</code>
+									</td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - sampling units</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (cross-sectional) - sampling units'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - minimum effective sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (cross-sectional) - minimum effective sample size'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - actual sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/d:ProcessingEvent/d:DataAppraisalInformation/d:ResponseRate[r:Description/r:Content='Target Sample Size (cross-sectional)']/d:SampleSize</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - achieved sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/d:ProcessingEvent/d:DataAppraisalInformation/d:ResponseRate[r:Description/r:Content='Target Sample Size (cross-sectional)']/d:NumberOfResponses</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - size of design effect</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (cross-sectional) -size of design effect'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (cross-sectional) - effective sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (cross-sectional) - effective sample size'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - sampling units</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (longitudinal) - sampling units'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - minimum effective sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (longitudinal) - minimum effective sample size'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - actual sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/d:ProcessingEvent/d:DataAppraisalInformation/d:ResponseRate[r:Description/r:Content='Target Sample Size (longitudinal)']/d:SampleSize</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - achieved sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/d:ProcessingEvent/d:DataAppraisalInformation/d:ResponseRate[r:Description/r:Content='Target Sample Size (longitudinal)']/d:NumberOfResponses</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - size of design effect</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (longitudinal) -size of design effect'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (longitudinal) - effective sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (longitudinal) - effective sample size'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - sampling units</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (ad-hoc Module) - sampling units'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - minimum effective sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (ad-hoc Module) - minimum effective sample size'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - actual sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/d:ProcessingEvent/d:DataAppraisalInformation/d:ResponseRate[r:Description/r:Content='Target Sample Size (ad-hoc Module)']/d:SampleSize</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - achieved sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/d:ProcessingEvent/d:DataAppraisalInformation/d:ResponseRate[r:Description/r:Content='Target Sample Size (ad-hoc Module)']/d:NumberOfResponses</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - size of design effect</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (ad-hoc Module) -size of design effect'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>Target Sample Size (ad-hoc Module) - effective sample size</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/d:ProcessingEventScheme/r:Note[r:NoteSubject='Target Sample Size (ad-hoc Module) - effective sample size'][r:Relationship/r:RelatedToReference/r:TypeOfObject='ProcessingEvent']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>available data</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Note/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='availableDataCross-sectional']/r:AttributeValue <br/>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Note/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='availableDataLongitudinal']/r:AttributeValue
+									</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - participation mandatory</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-ParticipationMandatory']/r:AttributeValue</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - source of sampling frame</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='sampling procedure - source of sampling frame'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - sampling design</td>
+									<td><code>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-Probability']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-Random']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-Systematic']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-Other']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-Stratified']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-NonStratified']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-OneStage']/r:AttributeValue
+</br>
+/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SamplingDesign-MultiStage']/r:AttributeValue
+									</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - primary sampling units</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-PrimarySamplingUnits']/r:AttributeValue</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - secondary sampling units</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingProcedure-SecondarySamplingUnits']/r:AttributeValue</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - stratification criteria</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='sampling procedure - stratification criteria'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>sampling procedure - sampling method</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='sampling procedure - sampling method'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>number of rotational groups</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Note[r:NoteSubject='number of rotational groups'][r:Relationship/r:RelatedToReference/r:TypeOfObject='StudyUnit']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>units of observation</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:AnalysisUnit</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>dates of data collection - start date</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='dates of data collection - start date'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>dates of data collection - end date</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='dates of data collection - end date'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - type of data source</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='ModeOfDataCollection-TypeOfDataSource']/r:AttributeValue</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (PAPI)</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='mode of data collection - interview mode (PAPI)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (CAPI)</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='mode of data collection - interview mode (CAPI)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (CATI)</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='mode of data collection - interview mode (CATI)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (self-administered)</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='mode of data collection - interview mode (self-administered)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - interview mode (WebSurvey)</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='mode of data collection - interview mode (WebSurvey)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>mode of data collection - percentage of proxy interviews</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='mode of data collection - percentage of proxy interviews'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Design Weight: Target</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='Wighting-InitialDesignWeight-Target']/r:AttributeValue
+									</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Design Weight: Method</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='Wighting-InitialDesignWeight-Method']/r:AttributeValue
+									</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Non-Response: Method</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='weighting - Initial Non-Response: Method'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>weighting - Initial Calibration: Method</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='weighting - Initial Calibration: Method'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>weighting - Weighting: Method</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/d:DataCollection/r:Note[r:NoteSubject='weighting - Weighting: Method'][r:Relationship/r:RelatedToReference/r:TypeOfObject='DataCollection']/r:NoteContent/r:Content</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Note[r:NoteSubject='notes'][r:Relationship/r:RelatedToReference/r:TypeOfObject='StudyUnit']/r:NoteContent/r:Content</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Citation/dc:description</code></td>
+									<td>No</td>
+								</tr>
+							</tbody>
+						</table>
+						
+<div class="note">
+
+ <ul>
+	<li>universe</li>
+	<ul>
+		<li>1 universe for each study and country</li>
+		<li>1 universe for each study and all countries</li>
+	</ul>
+	<li>available data</li>
+	<ul>
+		<li>availableDataCross-sectional: Yes | No</li>
+		<li>availableDataLongitudinal: Yes | No</li>
+	</ul>
+	<li>sampling procedure - sampling design</li>
+	<ul>
+		<li>SamplingProcedure-SamplingDesign-Probability: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-Random: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-Systematic: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-Other: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-Stratified: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-NonStratified: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-OneStage: Yes | No</li>
+		<li>SamplingProcedure-SamplingDesign-MultiStage: Yes | No</li>
+	</ul>
+	<li>mode of data collection - type of data source</li>
+	<ul>
+		<li>ModeOfDataCollection-TypeOfDataSource: Register | Survey</li>
+	</ul>
+</ul>
+ 
+</div>
+					
+					</section>
+			
+				</section>
+				
+			</section>
+				
+			<section><h3>Studies with One Country</h3>
+				
+The study 'german microcensus 2010' is not divided into multiple countries.
+
+<br/>
+<br/>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>XPath Expression ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group/s:StudyUnit
+
+/DDIInstance/g:Group/s:StudyUnit/r:Coverage/r:TemporalCoverage/r:ReferenceDate/r:SimpleDate
+--> temporal coverage
+</pre></div>
+
+<div class="note">
+
+ <ul>
+	<li>links to official DDI documentation of the DDI Alliance: </li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/studyunit_xsd/elements/StudyUnit.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+ 
+</div>
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+
+urn:ddi:de.gesis:study_MZ-2009:0.1
+--> example
+</pre></div>
+
+				<section><h4>Mappings</h4>
+			
+					<section><h5>DDI 3.2</h5>
+				
+						<table class="separated">
+							<thead>
+								<tr>
+									<th>field</th>
+									<th >XPath Expression</th>
+									<th>workaround ?</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>title</td>
+									<td><code>/DDIInstance/g:Group/s:StudyUnit/r:Citation/r:Title/r:String</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>subtitle</td>
+									<td><code>/DDIInstance/g:Group/s:StudyUnit/r:Citation/r:SubTitle/r:String</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>abstract</td>
+									<td><code>/DDIInstance/g:Group/s:StudyUnit/r:Abstract/r:Content</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>keywords</td>
+									<td><code>/DDIInstance/g:Group/s:StudyUnit/r:Coverage/r:TopicalCoverage/r:Subject</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>geographical coverage</td>
+									<td><code>/DDIInstance/g:Group/g:SubGroup/s:StudyUnit/r:Coverage/r:SpatialCoverage/r:Country</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>time period covered</td>
+									<td><code>
+/DDIInstance/g:Group/s:StudyUnit/r:Coverage/r:TemporalCoverage <br/>
+/DDIInstance/g:Group/s:StudyUnit/r:Note[r:NoteSubject='time period covered (study)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='TemporalCoverage']/r:NoteContent/r:Content
+									</code></td>
+									<td>Yes</td>
+								</tr>
+								<tr>
+									<td>notes</td>
+									<td><code>/DDIInstance/g:Group/s:StudyUnit/r:Note[r:NoteSubject='notes (study)'][r:Relationship/r:RelatedToReference/r:TypeOfObject='StudyUnit']/r:NoteContent/r:Content</code></td>
+									<td>No</td>
+								</tr>
+								<tr>
+									<td>citation</td>
+									<td><code>/DDIInstance/g:Group/s:StudyUnit/r:Citation/dc:description</code></td>
+									<td>No</td>
+								</tr>
+							</tbody>
+						</table>
+					
+					</section>
+			
+				</section>
+				
+			</section>
+			
+			</section>
+		
+		</section>
+		
+		<!-- +++++++++++++++ -->
+		<section><h2>Data Sets</h2>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:ResourcePackage/l:LogicalProduct
+</pre></div>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Dereferencing ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group/g:SubGroup/r:LogicalProductReference[r:TypeOfObject='LogicalProduct']/r:URN
+--> study with multiple countries
+
+/DDIInstance/g:Group/s:StudyUnit/r:LogicalProductReference[r:TypeOfObject='LogicalProduct']/r:URN
+--> study with one country
+</pre></div>
+
+<div class="note">
+
+<ul>
+	<li>definition</li>
+	<ul>
+		<li>1 RP containing datasets of specific study</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/logicalproduct_xsd/elements/LogicalProduct.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:logicalDataSet_&lt;study title&gt;-&lt;study year&gt;-&lt;data set type&gt;-&lt;data set sub type&gt;-&lt;data set version&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+urn:ddi:de.gesis:logicalDataSet_EU-SILC-2010-cross-sec-p-data-2010_rev3:0.1
+--> example
+</pre></div>
+
+			<section><h3>Mappings</h3>
+			
+				<section><h4>Descriptions</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<tr>
+								<td>title</td>
+								<td>Name of the dataset in English.</td>
+							</tr>
+							<tr>
+								<td>weighting</td>
+								<td>Provide here any specific information in regards to weighting (e.g. when this differs from the methodology as documented at the study level ). </td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td>Additional information regarding the dataset which are not documented elsewhere. </td>
+							</tr>
+							<tr>
+								<td>citation</td>
+								<td>List all sources used for the documentation at the series level here. Please provide information on: Author (usually Institution)                                                         Title                                                                                                   Year of publication                                                                         Link to document (if available)</td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+				
+				<section><h4>Data Model</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>data model</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>title</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>weighting</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>citation</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+			
+				<section><h4>DDI 3.2</h4>
+			
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th >XPath Expression</th>
+								<th>workaround ?</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>title</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:LogicalProduct/r:Label/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>weighting</td>
+								<td><code>/DDIInstance/g:ResourcePackage/d:ProcessingEventScheme/d:ProcessingEvent/d:Weighting/r:Description/r:Content</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>notes</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:LogicalProduct/r:Note[r:NoteSubject='notes'][r:Relationship/r:RelatedToReference/r:TypeOfObject='LogicalProduct']/r:NoteContent/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>citation</td>
+								<td><code>/DDIInstance/g:ResourcePackage/r:Citation/dc:description</code></td>
+								<td>Yes</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+				
+<div class="note">
+
+<ul>
+	<li>weighting</li>
+	<ul>
+		<li>1 ProcessingEventScheme and 1 contained Weighting element for each data set</li>
+	</ul>
+	<li>citation</li>
+	<ul>
+		<li>1 Citation element for each data set</li>
+	</ul>
+</ul>
+
+</div>
+			
+			</section>
+			
+		</section>
+		
+		<!-- ++++++++++++++++ -->
+		
+		<section><h2>Variables</h2>
+		
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable
+</pre></div>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Dereferencing ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:ResourcePackage/l:LogicalProduct/l:VariableScheme/r:VariableReference[r:TypeOfObject='Variable']/r:URN
+</pre></div>
+
+<div class="note">
+
+<ul>
+	<li>definition</li>
+	<ul>
+		<li>1 RP containing variables for each data set</li>
+	</ul>
+	<li>dereferencing</li>
+	<ul>
+		<li>within LogicalProduct representing data set</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/logicalproduct_xsd/elements/Variable.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>		
+
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:variable_&lt;study title&gt;-&lt;study year&gt;-&lt;data set type&gt;-&lt;data set sub type&gt;-&lt;data set version&gt;-&lt;variable name&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1
+--> example
+</pre></div>
+
+			<section><h3>Comparison</h3>
+
+<p>
+Variables are comparable over multiple years, if they are assigned to the same topical concept using the thematic classification.
+The Comparison Module is used to implement comparison of variables.
+</p>
+
+<div class="issue">
+
+<ul>
+	<li>further description</li>
+</ul>
+
+<p>
+Die thematische Gliederung (dargestellt durch DDI Concepts) ist die zentrale Basis des Vergleichs. Man könnte noch zusätzliche Informationen auf Ebene der Fragen oder Variablen festhalten in Comparison, wo ein Itemvergleich möglich ist. Es kann beschrieben werden, ob etwas identisch ist oder nur ähnlich, eine Beschreibung der Ähnlichkeit oder Verschiedenheit und auch eine numerische Darstellung davon.
+Dies ist nur dann wichtig, wenn Informationen für Zwecke der Vergleichbarkeit zusätzlich zur thematischen Gliederung angeboten werden sollen; z.B. wenn Variablen aus zwei verschiedenen Jahren Bezug zum gleichen Concept haben, aber nicht total identisch sind. 
+</p>
+
+</div>	
+		
+			</section>
+		
+			<section><h3>Mappings</h3>
+			
+				<section><h4>Descriptions</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>variable name</td>
+								<td>Variable name (taken from SPSS-Dataset). Serves as primary identifier of variables over time and thus can not be altered.</td>
+							</tr>
+							<tr>
+								<td>variable label</td>
+								<td>Variable label (taken from SPSS-Dataset) . As SPSS allows only a maximum of 120 characters, shortend labels can be completed here or can be systematically replaced via an external Excel-File. Please note that the field "description of target variable" is intended for an extensive description. </td>
+							</tr>
+							<tr>
+								<td>classification</td>
+								<td>If the variable is based on a classification this can be documented here.</td>
+							</tr>
+							<tr>
+								<td>reference period</td>
+								<td>The reference period defines the time period the variable refers to.</td>
+							</tr>
+							<tr>
+								<td>description target variable</td>
+								<td>Eurostat's definition of the target variable. Instruction from Eurostat for the national agencies how the variable should be get.</td>
+							</tr>
+							<tr>
+								<td>country specific comments</td>
+								<td>Country specific information regarding the collection or preparation of a variable in a country. This pertains specifically to issues that might influence comparability.</td>
+							</tr>
+							<tr>
+								<td>other comments</td>
+								<td>Provide here any further information on the variable that can not be displayed in one of the other fields.</td>
+							</tr>
+							<tr>
+								<td>thematic classification (series)</td>
+								<td>Each variable must be assigned an entry in the thematic classification of the study. The distinct classification of variables is among other things the basis for the variable-timepoint matrix.</td>
+							</tr>
+							<tr>
+								<td>unit of observation</td>
+								<td>The level at which data is collected. </td>
+							</tr>
+							<tr>
+								<td>filter [sub-universes (series)]</td>
+								<td>If the variable is only collected for a sub group of respondents the rules on the base of which this selection is made are documented here.</td>
+							</tr>
+							<tr>
+								<td>is ad-hoc module variable</td>
+								<td>This option should be selected if the variable is not part of the basic program but part of a year specific special data collection.</td>
+							</tr>
+							<tr>
+								<td>is derived variable type</td>
+								<td>Select this option if the variable in question was not collected directly (either via questionaire or register) but was generated retrospectively (e.g. calculated on the basis of a number of variables).</td>
+							</tr>
+							<tr>
+								<td>sub sample</td>
+								<td>information if variable is available only for the sub sample</td>
+							</tr>
+							<tr>
+								<td>sampling fraction</td>
+								<td>information how much percent of the population gets in the sample respective sub sample </td>
+							</tr>
+							<tr>
+								<td>participation mandatory</td>
+								<td> is the answer to the question mandatory?</td>
+							</tr>
+							<tr>
+								<td>interviewer handbook number</td>
+								<td>number of instruction in interviewer handbook</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+				
+				<section><h4>Data Model</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>data model</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>variable name</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>variable label</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>classification</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>reference period</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>description target variable</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>country specific comments</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>other comments</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>thematic classification (series)</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>unit of observation</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>filter [sub-universes (series)]</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>is ad-hoc module variable</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>is derived variable type</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>sub sample</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>sampling fraction</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>participation mandatory</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>interviewer handbook number</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+			
+				<section><h4>DDI 3.2</h4>
+			
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th >XPath Expression</th>
+								<th>workaround ?</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>variable name</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/l:VariableName/r:String</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>variable label</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/r:Label/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>classification</td>
+								<td>dereferencing:<code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/l:RepresentedVariableReference[r:TypeOfObject='RepresentedVariable']/r:URN</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>reference period</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/l:VariableRepresentation/r:ContentDateOffset</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>description target variable</td>
+								<td><code></code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>country specific comments</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/r:Note[r:NoteSubject='country specific comments'][r:Relationship/r:RelatedToReference/r:TypeOfObject='Variable']/r:NoteContent/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>other comments</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/r:Note[r:NoteSubject='other comments'][r:Relationship/r:RelatedToReference/r:TypeOfObject='Variable']/r:NoteContent/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>thematic classification (series)</td>
+								<td><code>/DDIInstance/g:Group/c:ConceptualComponent/r:ConceptSchemeReference[r:TypeOfObject='ConceptScheme']/r:URN</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>unit of observation</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/r:AnalysisUnit</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>filter [sub-universes (series)]</td>
+								<td>
+definition: 
+<code>/DDIInstance/g:ResourcePackage/c:UniverseScheme/c:Universe/r:Description/r:Content</code><br/>
+dereferencing:
+<code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/r:UniverseReference/r:URN</code>
+								</td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>is ad-hoc module variable</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:VariableGroup</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>is derived variable type</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:VariableGroup</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>sub sample</td>
+								<td>
+<code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:VariableGroup</code> <br/>
+<code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:VariableGroup/r:Description/r:Content = group for sub sample &lt;field&gt;</code>
+								</td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>sampling fraction</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='Variable']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='SamplingFraction']/r:AttributeValue</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>participation mandatory</td>
+								<td><code>/DDIInstance/g:ResourcePackage/l:VariableScheme/r:Note[r:Relationship/r:RelatedToReference/r:TypeOfObject='Variable']/r:ProprietaryInfo/r:ProprietaryProperty[r:AttributeKey='ParticipationMandatory']/r:AttributeValue</code></td>
+								<td>Yes</td>
+							</tr>
+							<tr>
+								<td>interviewer handbook number</td>
+								<td>
+<code>/DDIInstance/g:ResourcePackage/l:VariableScheme/l:Variable/r:QuestionReference</code> <br/>
+<code>/DDIInstance/g:ResourcePackage/d:ControlConstructScheme/d:QuestionConstruct/r:QuestionReference</code> <br/>
+<code>/DDIInstance/g:ResourcePackage/d:ControlConstructScheme/d:QuestionConstruct/d:InterviewerInstructionReference</code> <br/>
+<code>/DDIInstance/g:ResourcePackage/d:InterviewerInstructionScheme/d:Instruction/d:InstructionName/r:String</code> <br/>
+								</td>
+								<td>Yes</td>
+							</tr>
+						</tbody>
+					</table>
+					
+<div class="note">
+
+<ul>
+	<li>thematic classification (series)</li>
+	<ul>
+		<li>dereferenced ConceptScheme represents all levels of thematic classification for specific series</li>
+	</ul>
+	<li>filter</li>
+	<ul>
+		<li>sub-universe of series</li>
+	</ul>
+	<li>is ad-hoc module variable</li>
+	<ul>
+		<li>1 VariableGroup containing references to variables</li>
+		<li>the purpose of the grouping is defined in the VariableGroup</li>
+	</ul>
+	<li>is derived variable type</li>
+	<ul>
+		<li>1 VariableGroup containing references to variables</li>
+		<li>the purpose of the grouping is defined in the VariableGroup</li>
+	</ul>
+	<li>sub sample</li>
+	<ul>
+		<li>1 VariableGroup containing references to variables</li>
+		<li>the purpose of the grouping is defined in the VariableGroup</li>
+	</ul>
+</ul>
+
+</div>
+				
+				</section>
+			
+			</section>
+		
+		</section>
+		
+		<section><h2>Questions, Questionnaires, and Interviewer Instructions</h2>
+		
+			<section><h3>Questions</h3>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:ResourcePackage/d:QuestionScheme/d:QuestionItem
+</pre></div>
+		
+<div class="note">
+
+<ul>
+	<li>resource package</li>
+	<ul>
+		<li>1 resource package containing questions for each data set</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/datacollection_xsd/elements/QuestionItem.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+
+			</section>
+			
+			<section><h3>Questionnaires</h3>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:ResourcePackage/d:InstrumentScheme/d:Instrument/r:Label/r:Content
+</pre></div>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Dereferencing ( DDI 3.2 )</b></span></div><pre>
+/DDIInstance/g:Group/g:SubGroup/d:DataCollection/r:InstrumentSchemeReference/r:URN
+--> study with multiple countries
+
+/DDIInstance/g:Group/s:StudyUnit/d:DataCollection/r:InstrumentSchemeReference/r:URN
+--> study with one country
+</pre></div>
+		
+<div class="note">
+
+<ul>
+	<li>definition</li>
+	<ul>
+		<li>1 InstrumentScheme for each study</li>
+		<li>1 Instrument for each questionnaire of a specific study</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/datacollection_xsd/elements/Instrument.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+		
+			</section>
+			
+			<section><h3>Interviewer Instructions</h3>
+			
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+&lt;!-- interviewer instructions --&gt;
+&lt;!-- 1 RP --&gt;
+&lt;g:ResourcePackage&gt;
+	&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+
+	&lt;!-- 1 InterviewerInstructionScheme for each study and interviewer handbook --&gt;
+	&lt;d:InterviewerInstructionScheme&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+		
+		&lt;!-- interviewer instruction --&gt;
+		&lt;d:Instruction&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			
+			&lt;!-- interviewer handbook number --&gt;
+			&lt;d:InstructionName&gt;
+				&lt;r:String&gt;51a&lt;/r:String&gt;
+			&lt;/d:InstructionName&gt;
+			
+			&lt;!-- instruction text --&gt;
+			&lt;d:InstructionText&gt;
+				&lt;d:LiteralText&gt;
+					&lt;d:Text&gt;&lt;/d:Text&gt;
+				&lt;/d:LiteralText&gt;
+			&lt;/d:InstructionText&gt;
+			
+		&lt;/d:Instruction&gt;
+		
+	&lt;/d:InterviewerInstructionScheme&gt;
+	
+&lt;/g:ResourcePackage&gt;
+</pre></div>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Dereferencing ( DDI 3.2 )</b></span></div><pre>
+&lt;!-- 1 ControlConstructScheme for each questionnaire --&gt;
+&lt;d:ControlConstructScheme&gt;
+	&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+
+	&lt;d:QuestionConstruct&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+		
+		&lt;!-- interviewer instruction [reference] --&gt;
+		&lt;d:InterviewerInstructionReference&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:TypeOfObject&gt;ExternalInterviewerInstruction&lt;/r:TypeOfObject&gt;
+		&lt;/d:InterviewerInstructionReference&gt;
+		
+		&lt;!-- question [reference] --&gt;
+		&lt;r:QuestionReference&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:TypeOfObject&gt;QuestionItem&lt;/r:TypeOfObject&gt;
+		&lt;/r:QuestionReference&gt;
+		
+	&lt;/d:QuestionConstruct&gt;
+	
+&lt;/d:ControlConstructScheme&gt;
+</pre></div>
+
+<div class="note">
+
+<ul>
+	<li>definition</li>
+	<ul>
+		<li>1 resource package</li>
+		<li>1 InterviewerInstructionScheme for each study and interviewer handbook</li>
+	</ul>
+	<li>dereferencing</li>
+	<ul>
+		<li>ControlConstructSchemes in resource packages containing all questionnaires</li>
+		<li>1 ControlConstructScheme for each questionnaire</li>
+		<li>interviewer instruction [reference]</li>
+		<li>question [reference]</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/datacollection_xsd/elements/Instruction.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>		
+			
+			</section>
+
+			<section><h3>Mappings</h3>
+			
+				<section><h4>Descriptions</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>question number></td>
+								<td>number of question in questionnaire</td>
+							</tr>
+							<tr>
+								<td>question text</td>
+								<td>Here you can insert the question text from the original questionnaire.  The following options are available: [Icon add] Via this symbol you can insert an additional input field for a question wording. [Open Icon] With this option you can add additional fields next to the one for the english question wording.</td>
+							</tr>
+							<tr>
+								<td>comment (question)</td>
+								<td>Here you can add additional comments regarding the question wording, especially in regards to changes in question wording over time.</td>
+							</tr>
+							<tr>
+								<td>explanations to the question in the appendix of the questionnaire</td>
+								<td>explanations to the question in the appendix of the questionnaire</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+				
+				<section><h4>Data Model</h4>
+				
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th>data model</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>question number></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>question text</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>comment (question)</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>explanations to the question in the appendix of the questionnaire</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+			
+				<section><h4>DDI 3.2</h4>
+			
+					<table class="separated">
+						<thead>
+							<tr>
+								<th>field</th>
+								<th >XPath Expression</th>
+								<th>workaround ?</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>question number</td>
+								<td><code>/DDIInstance/g:ResourcePackage/d:QuestionScheme/d:QuestionItem/d:QuestionItemName/r:String</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>question text</td>
+								<td><code>/DDIInstance/g:ResourcePackage/d:QuestionScheme/d:QuestionItem/d:QuestionText/d:LiteralText/d:Text</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>comment (question)</td>
+								<td><code>/DDIInstance/g:ResourcePackage/d:QuestionScheme/r:Note[r:NoteSubject='question comment'][r:Relationship/r:RelatedToReference/r:TypeOfObject='QuestionItem']/r:NoteContent/r:Content</code></td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>explanations to the question in the appendix of the questionnaire</td>
+								<td><code>/DDIInstance/g:ResourcePackage/d:QuestionScheme/r:Note[r:NoteSubject='explanations to the question in the appendix of the questionnaire'][r:Relationship/r:RelatedToReference/r:TypeOfObject='QuestionItem']/r:NoteContent/r:Content</code></td>
+								<td>Yes</td>
+							</tr>
+						</tbody>
+					</table>
+				
+				</section>
+			
+			</section>
+		
+		</section>
+		
+		<section><h2>Thematic Classification</h2>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+&lt;!-- thematic classification --&gt;
+&lt;!-- 1 RP for each series --&gt;
+&lt;g:ResourcePackage&gt;
+	&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+	
+	&lt;!-- all levels --&gt;
+	&lt;!-- 1 ConceptScheme representing all levels of thematic classification for specific series --&gt;
+	&lt;c:ConceptScheme&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+	
+		&lt;!-- level 1 --&gt;
+		&lt;!-- 1 ConceptGroup for each level --&gt;
+		&lt;c:ConceptGroup&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;c:TypeOfConceptGroup&gt;level 1&lt;/c:TypeOfConceptGroup&gt;
+			&lt;!-- short label --&gt;
+			&lt;r:Label&gt;
+				&lt;r:Content&gt;Demographie und Bevölkerung&lt;/r:Content&gt;
+			&lt;/r:Label&gt;
+			&lt;!-- definition --&gt;
+			&lt;r:Description&gt;
+				&lt;r:Content&gt;Demographie und Bevölkerung&lt;/r:Content&gt;
+			&lt;/r:Description&gt;
+
+			&lt;!-- level 2 [reference] --&gt;
+			&lt;c:ConceptGroupReference&gt;
+				&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+				&lt;r:TypeOfObject&gt;ConceptGroup&lt;/r:TypeOfObject&gt;
+			&lt;/c:ConceptGroupReference&gt;
+			
+		&lt;/c:ConceptGroup&gt;
+		
+		&lt;!-- level 2 --&gt;
+		&lt;c:ConceptGroup&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;c:TypeOfConceptGroup&gt;level 2&lt;/c:TypeOfConceptGroup&gt;
+			&lt;r:Label&gt;
+				&lt;r:Content&gt;Daten zur Person&lt;/r:Content&gt;
+			&lt;/r:Label&gt;
+			&lt;r:Description&gt;
+				&lt;r:Content&gt;Daten zur Person&lt;/r:Content&gt;
+			&lt;/r:Description&gt;
+			
+			&lt;!-- level 3 [reference] --&gt;
+			&lt;c:ConceptGroupReference&gt;
+				&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+				&lt;r:TypeOfObject&gt;ConceptGroup&lt;/r:TypeOfObject&gt;
+			&lt;/c:ConceptGroupReference&gt;
+			
+		&lt;/c:ConceptGroup&gt;
+		
+		&lt;!-- level 3 --&gt;
+		&lt;c:ConceptGroup&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;c:TypeOfConceptGroup&gt;level 3&lt;/c:TypeOfConceptGroup&gt;
+			&lt;r:Label&gt;
+				&lt;r:Content&gt;Alter&lt;/r:Content&gt;
+			&lt;/r:Label&gt;
+			&lt;r:Description&gt;
+				&lt;r:Content&gt;Alter&lt;/r:Content&gt;
+			&lt;/r:Description&gt;
+			
+			&lt;!-- concepts [reference] --&gt;
+			&lt;!-- references to concepts if current level is leaf level --&gt;
+			&lt;r:ConceptReference&gt;
+				&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+				&lt;r:TypeOfObject&gt;ConceptScheme&lt;/r:TypeOfObject&gt;
+			&lt;/r:ConceptReference&gt;
+			
+		&lt;/c:ConceptGroup&gt;
+		
+	&lt;/c:ConceptScheme&gt;
+	
+	&lt;!-- concepts (for leaf level) --&gt;
+	&lt;!-- 1 ConceptScheme for each level containing individual concepts --&gt;
+	&lt;c:ConceptScheme&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+		
+		&lt;!-- concept --&gt;
+		&lt;c:Concept&gt; 
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:Label&gt;
+				&lt;r:Content&gt;Alter&lt;/r:Content&gt;
+			&lt;/r:Label&gt;
+		&lt;/c:Concept&gt;
+		
+		&lt;!-- concept --&gt;
+		&lt;c:Concept&gt; 
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:Label&gt;
+				&lt;r:Content&gt;Alter: Haushaltsbezugsp.&lt;/r:Content&gt;
+			&lt;/r:Label&gt;
+		&lt;/c:Concept&gt;
+		
+	&lt;/c:ConceptScheme&gt;
+	
+&lt;/g:ResourcePackage&gt;
+</pre></div>
+		
+<div class="note">
+
+<ul>
+	<li>resource package</li>
+	<ul>
+		<li>1 RP for each series</li>
+	</ul>
+	<li>all levels</li>
+	<ul>
+		<li>1 ConceptScheme representing all levels of thematic classification for specific series</li>
+	</ul>
+	<li>individual levels</li>
+	<ul>
+		<li>1 ConceptGroup for each level</li>
+		<li>short label</li>
+		<li>long description</li>
+		<li>references to lower levels</li>
+		<li>references to concepts if current level is leaf level</li>
+	</ul>
+	<li>concepts (for leaf level)</li>
+	<ul>
+		<li>1 ConceptScheme for each level containing individual concepts</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/conceptualcomponent_xsd/elements/ConceptScheme.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+		
+		</section>
+		
+		<section><h2>Universes</h2>
+		
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+&lt;!-- universes --&gt;
+&lt;!-- 1 RP containing all universes --&gt;
+&lt;g:ResourcePackage&gt;
+	&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+	
+	&lt;c:UniverseScheme&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+		
+		&lt;!-- universe (series) --&gt;
+		&lt;!-- 1 universe for each series --&gt;
+		&lt;c:Universe&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:Description&gt;
+				&lt;r:Content&gt;universe (series)&lt;/r:Content&gt;
+			&lt;/r:Description&gt;
+			
+			&lt;!-- sub-universes (series) [reference] --&gt;
+			&lt;c:SubUniverseClass&gt;
+				&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+				&lt;r:UniverseReference&gt;
+					&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+					&lt;r:TypeOfObject&gt;Universe&lt;/r:TypeOfObject&gt;
+				&lt;/r:UniverseReference&gt;
+			&lt;/c:SubUniverseClass&gt;
+			
+		&lt;/c:Universe&gt;
+		
+		&lt;!-- sub-universe (series) --&gt;
+		&lt;c:Universe&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:Description&gt;
+				&lt;r:Content&gt;sub-universe&lt;/r:Content&gt;
+			&lt;/r:Description&gt;
+		&lt;/c:Universe&gt;
+		
+		&lt;!-- 1 universe for each study and country--&gt;
+		&lt;!-- 1 universe for each study and all countries --&gt;
+		&lt;c:Universe&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;r:Description&gt;
+				&lt;r:Content&gt;Persons aged 16+ living in Slovenia.&lt;/r:Content&gt;
+			&lt;/r:Description&gt;
+		&lt;/c:Universe&gt;
+		
+	&lt;/c:UniverseScheme&gt;
+	
+&lt;/g:ResourcePackage&gt;	
+</pre></div>
+
+<div class="note">
+
+<ul>
+	<li>resource package</li>
+	<ul>
+		<li>1 resource package containing all universes</li>
+	</ul>
+	<li>universe (series)</li>
+	<ul>
+		<li>1 universe for each series</li>
+		<li>references to sub-universes in universe of series</li>
+	</ul>
+	<li>sub-universes (series)</li>
+	<li>universes for studies with multiple countries</li>
+	<ul>
+		<li>1 universe for each study and country</li>
+		<li>1 universe for each study and all countries</li>
+	</ul>
+	<li>links to official DDI documentation of the DDI Alliance</li>
+	<ul>
+		<li><a href="http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/FieldLevelDocumentation/schemas/conceptualcomponent_xsd/elements/Universe.html">DDI 3.2</a></li>
+	</ul>
+</ul>
+
+</div>
+		
+		</section>
+		
+		<section><h2>Statistics</h2>
+
+<div class="issue">
+
+<ul>
+	<li>further description</li>
+</ul>
+
+</div>	
+		
+		</section>
+		
+		<section><h2>Classifications</h2>
+
+<div class="ddi32xml"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI 3.2 )</b></span></div><pre>
+&lt;g:ResourcePackage&gt;
+	&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+	
+	&lt;l:RepresentedVariableScheme&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+		
+		&lt;!-- 1 RepresentedVariable for each classification --&gt;
+		&lt;!-- independent from study --&gt;
+		&lt;l:RepresentedVariable&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			
+			&lt;l:RepresentedVariableName&gt;
+				&lt;r:String&gt;NUTS II&lt;/r:String&gt;
+			&lt;/l:RepresentedVariableName&gt;
+			
+			&lt;r:CodeRepresentation&gt;
+				&lt;r:CodeListReference&gt;
+					&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+					&lt;r:TypeOfObject&gt;CodeList&lt;/r:TypeOfObject&gt;
+				&lt;/r:CodeListReference&gt;
+			&lt;/r:CodeRepresentation&gt;
+			
+		&lt;/l:RepresentedVariable&gt;
+		
+	&lt;/l:RepresentedVariableScheme&gt;
+	
+	&lt;l:CodeListScheme&gt;
+		&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+		
+		&lt;!-- 1 CodeList for each classification --&gt;
+		&lt;l:CodeList&gt;
+			&lt;r:URN&gt;urn:ddi:de.gesis:UUID:0.1&lt;/r:URN&gt;
+			&lt;l:CodeListName&gt;
+				&lt;r:String&gt;NUTS II&lt;/r:String&gt;
+			&lt;/l:CodeListName&gt;
+		&lt;/l:CodeList&gt;
+		
+	&lt;/l:CodeListScheme&gt;
+	
+&lt;/g:ResourcePackage&gt;	
+</pre></div>
+		
+<div class="note">
+
+<ul>
+	<li>1 RP for all classifications</li>
+	<li>examples: NUTS II, ISCED</li>
+	<li>1 RepresentedVariable for each classification</li>
+	<li>1 CodeList for each classification</li>
+</ul>
+
+</div>
+		
+		</section>
+		
+		<section class='appendix'><h2>Acknowledgements</h2>
+		</section>
+    
+		<section id="references" class="appendix"><h2>References</h2>
+        
+            <section><h3>Normative references</h3>
+            </section>
+            
+            <section><h3>Informative references</h3>
+            </section>
+			
+		</section>
+        
+    </body>
+	
+</html>  

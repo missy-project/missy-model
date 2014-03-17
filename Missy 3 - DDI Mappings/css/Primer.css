@@ -1,0 +1,117 @@
+/* define a class "noprint" for sections which don't get printed */  
+.noprint { display: none; }
+
+/* our syntax menu for switching */
+div.syntaxmenu {
+  border: 1px dotted black;
+  padding:0.5em;
+  margin: 1em; 
+}
+
+@media print {
+   div.syntaxmenu { display:none; }
+}
+
+/* use tab-like headers for syntax examples */
+div.exampleheader {
+  font-size: 90%;
+  float: left;
+  background: #F9F9F9;
+  color: #2F6FAB;
+  border: 1px dashed #2F6FAB;
+  border-bottom: 0px;
+  padding-top: 2px;
+}
+
+div.exampleheader span.exampleheader {
+  background: #F9F9F9;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 3px;
+  padding-top: 0px;
+}
+
+/* Also copy MediaWiki style here, so it will not look different when exported */
+div.fssyntax pre, div.rdfxml pre, div.owlxml pre, div.turtle pre, div.manchester pre  {
+  background-color: #F9F9F9;
+  border: 1px dashed #2F6FAB;
+  color: black;
+  line-height: 1.1em;
+  padding: 1em;
+  clear: both;
+  margin-left: 0em;
+}
+/* (further styles directly embedded in header template) */
+
+div.ddi32xml pre, div.ddi32urn pre, div.owl2 pre, div.xsd2owl2 pre {
+  background-color: #F9F9F9;
+  border: 1px dashed #2F6FAB;
+  color: black;
+  line-height: 1.1em;
+  padding: 1em;
+  clear: both;
+  margin-left: 0em;
+}
+
+/* --- EXAMPLES --- */
+div.example-title {
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.example-title span {
+    text-transform: uppercase;   
+}
+aside.example, div.example, div.illegal-example {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+div.illegal-example { color: red }
+div.illegal-example p { color: black }
+aside.example, div.example {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+    border-color: #e0cb52;
+    background: #fcfaee;    
+}
+aside.example div.example {
+    border-left-width: .1em;
+    border-color: #999;
+    background: #fff;
+}
+aside.example div.example div.example-title {
+    color: #999;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+.separated { border-collapse:collapse; }
+.separated thead tr th { border:1px solid black; text-align: center; padding: .2em; }
+.separated tbody tr td { border:1px solid black; text-align: left; padding: .2em; }
+.separated tbody tr td.r { text-align: right; padding: .5em; }
+.separated td.l { text-align: left; padding: .5em; }

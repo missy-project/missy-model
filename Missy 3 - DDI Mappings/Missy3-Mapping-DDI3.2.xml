@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DDIInstance 
+	xmlns="ddi:instance:3_2"
+	xmlns:a="ddi:archive:3_2"
+	xmlns:c="ddi:conceptualcomponent:3_2"
+	xmlns:cm="ddi:comparative:3_2"
+	xmlns:d="ddi:datacollection:3_2"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dce="ddi:dcelements:3_2"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:ds="ddi:dataset:3_2"
+	xmlns:g="ddi:group:3_2"
+	xmlns:l="ddi:logicalproduct:3_2"
+	xmlns:m1="ddi:physicaldataproduct/ncube/normal:3_2"
+	xmlns:m2="ddi:physicaldataproduct/ncube/tabular:3_2"
+	xmlns:m3="ddi:physicaldataproduct/ncube/inline:3_2"
+	xmlns:o="ddi:organizations:3_2"
+	xmlns:pd="ddi:physicaldataproduct:3_2"
+	xmlns:pi="ddi:physicalinstance:3_2"
+	xmlns:pr="ddi:profile:3_2"
+	xmlns:r="ddi:reusable:3_2"
+	xmlns:s="ddi:studyunit:3_2"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="ddi:instance:3_2 http://www.ddialliance.org/Specification/DDI-Lifecycle/3.2/XMLSchema/instance.xsd">
+
+	<!-- URN (DDIInstance) --> 
+	<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+	
+	<!-- series -->
+	<!-- @time -->
+	<!-- - Indicates how all members of the group are related along the dimension of time -->
+	<!-- - "T2" Multiple Occurrence: Regular Occurrence: Continuing -->
+	<g:Group time="T2">
+		<!-- URN (series) -->
+	    <r:URN>urn:ddi:de.gesis:study_EU-SILC:0.1</r:URN>
+	    
+		<!-- notes (series) -->
+		<r:Note>
+			<r:NoteSubject>notes (series)</r:NoteSubject>
+			<r:Relationship>
+				<r:RelatedToReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>Group</r:TypeOfObject>
+				</r:RelatedToReference>
+			</r:Relationship>
+			<r:NoteContent>
+				<r:Content>notes (series)</r:Content>
+			</r:NoteContent>
+		</r:Note>
+		
+		<!-- anonymization (series) -->
+		<r:Note>
+			<r:NoteSubject>anonymization (series)</r:NoteSubject>
+			<r:Relationship>
+				<r:RelatedToReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>Archive</r:TypeOfObject>
+				</r:RelatedToReference>
+			</r:Relationship>
+			<r:NoteContent>
+				<r:Content>‘anonymised microdata’ shall mean individual statistical records which have been modified in order to minimize, in accordance with current best practice, the risk of identification of the statistical units to which they relate (Page 1, Article 2: Definitions).</r:Content>
+			</r:NoteContent>
+		</r:Note>
+		
+		<!-- comparability over time (series) -->
+		<r:Note>
+			<r:NoteSubject>comparability over time (series)</r:NoteSubject>
+			<r:Relationship>
+				<r:RelatedToReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>Group</r:TypeOfObject>
+				</r:RelatedToReference>
+			</r:Relationship>
+			<r:NoteContent>
+				<r:Content>comparability over time (series)</r:Content>
+			</r:NoteContent>
+		</r:Note>
+		
+		<!-- comparability over space (series) -->
+		<r:Note>
+			<r:NoteSubject>comparability over space (series)</r:NoteSubject>
+			<r:Relationship>
+				<r:RelatedToReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>Group</r:TypeOfObject>
+				</r:RelatedToReference>
+			</r:Relationship>
+			<r:NoteContent>
+				<r:Content>comparability over space (series)</r:Content>
+			</r:NoteContent>
+		</r:Note>
+
+		<r:Citation>
+			<!-- release year (series) -->
+			<r:PublicationDate>
+				<r:SimpleDate>2011</r:SimpleDate>
+			</r:PublicationDate>
+			<!-- organization (series) -->
+			<dc:contributor>The EU-SILC is published by Eurostat, however data collection is in the hands of the National Statistical institutes. In many cases data collection relies on existing data sources, such as national surveys or registeres. Eurostat defines guidlines in which target variables are specified, however how these data are collected is up to the respective NSI.</dc:contributor>
+			<!-- version number (series) -->
+			<dct:hasVersion>Rev_4</dct:hasVersion>
+			<!-- data publisher (series) -->
+			<dc:publisher>Eurostat</dc:publisher>
+			<!-- citation (series) -->
+			<dc:description>citation (series)</dc:description>
+		</r:Citation>
+		
+		<!-- abstract (series) -->
+		<r:Abstract>
+			<r:Content>abstract (series)</r:Content>
+		</r:Abstract>
+		
+		<r:AuthorizationSource>
+			<!-- legal basis (series) -->
+			<r:LegalMandate>legal basis (series)</r:LegalMandate>
+		</r:AuthorizationSource>
+		
+		<!-- universe (series) -->
+		<r:UniverseReference>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			<r:TypeOfObject>Universe</r:TypeOfObject>
+		</r:UniverseReference>
+		
+		<r:SeriesStatement>
+			<r:SeriesName>
+				<!-- title (series) -->
+				<r:String>EU-SILC (European Union Statistics on Income and Living Conditions)</r:String>
+			</r:SeriesName>
+			<r:SeriesDescription>
+				<!-- subtitle (series) -->
+				<r:Content>EU-SILC (European Union Statistics on Income and Living Conditions)</r:Content>
+			</r:SeriesDescription>
+		</r:SeriesStatement>
+		
+		<r:Coverage>
+		
+			<!-- keywords (series) -->
+			<r:TopicalCoverage>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Subject>Economic Policy</r:Subject>
+				<r:Subject>Economic Systems and Development</r:Subject>
+			</r:TopicalCoverage>
+			
+			<!-- geographical coverage (series) -->
+			<r:SpatialCoverage>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Description>
+					<r:Content>Series XY aims to cover the entire European Union.</r:Content>
+				</r:Description>
+			</r:SpatialCoverage>
+		
+		</r:Coverage>
+		
+		<!-- thematic classification (series) [reference] -->
+		<c:ConceptualComponent>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			<r:ConceptSchemeReference>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:TypeOfObject>ConceptScheme</r:TypeOfObject>
+			</r:ConceptSchemeReference>
+		</c:ConceptualComponent>
+		
+		<d:DataCollection>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- data collection (series) -->
+			<r:Description>
+				<r:Content>Data Collection is
+handled differently from country to country. While a number of countries employ
+mixed modes of data collection employing both survey and register data, others
+rely soley on surveys. Also survey methods vary widely between countries, with CAPI
+being the most widely used survey instrument…</r:Content>
+			</r:Description>
+			
+			<d:Methodology>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- sampling (series) -->
+				<d:SamplingProcedure>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:Description>
+						<r:Content>sampling (series)</r:Content>
+					</r:Description>
+				</d:SamplingProcedure>
+				
+			</d:Methodology>
+			
+		</d:DataCollection>
+		
+		<a:Archive>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			<a:ArchiveSpecific>
+				<a:Item>
+					<a:Access>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						
+						<!-- access form (series) -->
+						<a:AccessPermission>
+							<r:URI>access form (series)</r:URI>
+						</a:AccessPermission>
+						
+						<!-- access conditions (series) -->
+						<a:AccessConditions>
+							<r:Content>access conditions (series)</r:Content>
+						</a:AccessConditions>
+						
+						<!-- access contact [reference] -->
+						<a:ContactOrganizationReference>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<r:TypeOfObject>Organization</r:TypeOfObject>
+						</a:ContactOrganizationReference>
+						
+					</a:Access>
+				</a:Item>
+			</a:ArchiveSpecific>
+		</a:Archive>
+		
+		<!-- study (multiple countries) -->
+		<!-- @geography -->
+		<!-- Indicates how all members of the sub-group are related along the dimension of geography. -->
+		<!-- "G4" Different geography each survey -->
+		<g:SubGroup geography="G4">
+			<r:URN>urn:ddi:de.gesis:study_EU-SILC-2009:0.1</r:URN>
+			
+			<r:Coverage>
+				<r:TemporalCoverage>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:ReferenceDate>
+					<r:SimpleDate>2009</r:SimpleDate>
+				</r:ReferenceDate>
+				</r:TemporalCoverage>
+			</r:Coverage>
+			
+			<d:DataCollection>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- questionnaire (study [reference] -->
+				<r:InstrumentSchemeReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>InstrumentScheme</r:TypeOfObject>
+				</r:InstrumentSchemeReference>
+				
+			</d:DataCollection>
+			
+			<!-- data set [reference] -->
+			<r:LogicalProductReference>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:TypeOfObject>LogicalProduct</r:TypeOfObject>
+			</r:LogicalProductReference>
+					
+			<!-- study (all countries) -->
+			<s:StudyUnit>
+				<r:URN>urn:ddi:de.gesis:study_EU-SILC-2009_ALL:0.1</r:URN>
+				
+				<!-- notes (study) -->
+				<r:Note>
+					<r:Relationship>
+						<r:RelatedToReference>
+							<r:URN>urn:ddi:de.gesis:study_EU-SILC-2010:0.1</r:URN>
+							<r:TypeOfObject>StudyUnit</r:TypeOfObject>
+						</r:RelatedToReference>
+					</r:Relationship>
+					<r:NoteContent>
+						<r:Content>notes (study)</r:Content>
+					</r:NoteContent>
+				</r:Note>
+				
+				<!-- time period covered (study) -->
+				<r:Note>
+					<r:NoteSubject>time period covered (study)</r:NoteSubject>
+					<r:Relationship>
+						<r:RelatedToReference>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<r:TypeOfObject>TemporalCoverage</r:TypeOfObject>
+						</r:RelatedToReference>
+					</r:Relationship>
+					<r:NoteContent>
+						<r:Content>The income reference period is 2006. Other data refer to the time of the interview.</r:Content>
+					</r:NoteContent>
+				</r:Note>
+				
+				<r:Citation>
+					<!-- title (study) -->
+					<r:Title>
+						<r:String>EU-SILC 2009</r:String>
+					</r:Title>
+					<!-- subtitle (study) -->
+					<r:SubTitle>
+						<r:String>subtitle</r:String>
+					</r:SubTitle>
+					<!-- citation (study) -->
+					<dc:description>citation (study)</dc:description>
+				</r:Citation>
+				
+				<!-- abstract (study) -->
+				<r:Abstract>
+					<r:Content>abstract</r:Content>
+				</r:Abstract>
+				
+				<r:Coverage>
+		
+					<!-- keywords (study) -->
+					<r:TopicalCoverage>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:Subject>Economic Policy</r:Subject>
+						<r:Subject>Economic Systems and Development</r:Subject>
+					</r:TopicalCoverage>
+					
+					<!-- geographical coverage (study) -->
+					<r:SpatialCoverage>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:Country>AT</r:Country>
+						<r:Country>DE</r:Country>
+						<r:Country>UK</r:Country>
+					</r:SpatialCoverage>
+					
+					<!-- time period covered (study) -->
+					<r:TemporalCoverage>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					</r:TemporalCoverage>
+					
+				</r:Coverage>
+				
+			</s:StudyUnit>
+			
+			<!-- study (country) -->
+			<s:StudyUnit>
+				<r:URN>urn:ddi:de.gesis:study_EU-SILC-2009_DE:0.1</r:URN>
+				
+				<r:Coverage>
+					<r:SpatialCoverage>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:Country>DE</r:Country>
+					</r:SpatialCoverage>
+				</r:Coverage>
+				
+			</s:StudyUnit>
+			
+			<!-- study (country) -->
+			<s:StudyUnit>
+				<r:URN>urn:ddi:de.gesis:study_EU-SILC-2009_UK:0.1</r:URN>
+				
+				<!-- available data (study and country) -->
+				<r:Note>
+					<r:Relationship>
+						<r:RelatedToReference>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<r:TypeOfObject>StudyUnit</r:TypeOfObject>
+						</r:RelatedToReference>
+					</r:Relationship>
+					<r:ProprietaryInfo>
+						<r:ProprietaryProperty>
+							<r:AttributeKey>availableDataCross-sectional</r:AttributeKey>
+							<r:AttributeValue>Yes</r:AttributeValue>
+						</r:ProprietaryProperty>
+						<r:ProprietaryProperty>
+							<r:AttributeKey>availableDataLongitudinal</r:AttributeKey>
+							<r:AttributeValue>No</r:AttributeValue>
+						</r:ProprietaryProperty>
+					</r:ProprietaryInfo>
+				</r:Note>
+				
+				<!-- number of rotational groups (study and country) -->
+				<r:Note>
+					<r:NoteSubject>number of rotational groups</r:NoteSubject>
+					<r:Relationship>
+						<r:RelatedToReference>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<r:TypeOfObject>StudyUnit</r:TypeOfObject>
+						</r:RelatedToReference>
+					</r:Relationship>
+					<r:NoteContent>
+						<r:Content>4</r:Content>
+					</r:NoteContent>
+				</r:Note>
+				
+				<!-- notes (study and country) -->
+				<r:Note>
+					<r:NoteSubject>notes</r:NoteSubject>
+					<r:Relationship>
+						<r:RelatedToReference>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<r:TypeOfObject>StudyUnit</r:TypeOfObject>
+						</r:RelatedToReference>
+					</r:Relationship>
+					<r:NoteContent>
+						<r:Content>notes</r:Content>
+					</r:NoteContent>
+				</r:Note>
+				
+				<r:Citation>
+					<!-- corresponding national study (study and country) -->
+					<r:AlternateTitle>
+						<r:String>Central Register of Population</r:String>
+					</r:AlternateTitle>
+					<!-- producer (study and country) -->
+					<dc:creator>Statistical Office of the Republic of Slovenia</dc:creator>
+					<!-- citation (study and country) -->
+					<dc:description>citation</dc:description>
+				</r:Citation>
+				
+				<!-- universe [reference] -->
+				<!-- 1 universe for each study and country -->
+				<!-- 1 universe for each study and all countries -->
+				<r:UniverseReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>Universe</r:TypeOfObject>
+				</r:UniverseReference>
+				
+				<r:Coverage>
+					<r:SpatialCoverage>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:Country>UK</r:Country>
+					</r:SpatialCoverage>
+				</r:Coverage>
+				
+				<!-- units of observation (study and country)-->
+				<r:AnalysisUnit>household</r:AnalysisUnit>
+		
+				<d:DataCollection>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					
+					<!-- sampling procedure- participation mandatory (study and country) -->
+					<r:Note>
+						<r:Relationship>
+							<r:RelatedToReference>
+								<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+								<r:TypeOfObject>DataCollection</r:TypeOfObject>
+							</r:RelatedToReference>
+						</r:Relationship>
+						<r:ProprietaryInfo>
+							<r:ProprietaryProperty>
+								<r:AttributeKey>SamplingProcedure-ParticipationMandatory</r:AttributeKey>
+								<r:AttributeValue>No</r:AttributeValue>
+							</r:ProprietaryProperty>
+						</r:ProprietaryInfo>
+					</r:Note>
+					
+					<!-- sampling procedure - source of sampling frame -->
+					<r:Note>
+						<r:NoteSubject>sampling procedure - source of sampling frame</r:NoteSubject>
+						<r:Relationship>
+							<r:RelatedToReference>
+								<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+								<r:TypeOfObject>DataCollection</r:TypeOfObject>
+							</r:RelatedToReference>
+						</r:Relationship>
+						<r:NoteContent>
+							<r:Content>The basis for the sampling frame is the Central Register of Population (CRP), which is linked to the Register of Territorial Units.</r:Content>
+						</r:NoteContent>
+					</r:Note>
+					
+					<!-- sampling procedure- sampling design (study and country) -->
+					<r:Note>
+						<r:Relationship>
+							<r:RelatedToReference>
+								<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+								<r:TypeOfObject>DataCollection</r:TypeOfObject>
+							</r:RelatedToReference>
+						</r:Relationship>
+						<r:ProprietaryInfo>
+							<r:ProprietaryProperty>
+								<r:AttributeKey>SamplingProcedure-SamplingDesign-Probability</r:AttributeKey>
+								<r:AttributeValue>No</r:AttributeValue>
+							</r:ProprietaryProperty>
+						</r:ProprietaryInfo>
+					</r:Note>
+					
+					<!-- dates of data collection - start date (study and country) -->
+					<r:Note>
+						<r:NoteSubject>dates of data collection - start date</r:NoteSubject>
+						<r:Relationship>
+							<r:RelatedToReference>
+								<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+								<r:TypeOfObject>DataCollection</r:TypeOfObject>
+							</r:RelatedToReference>
+						</r:Relationship>
+						<r:NoteContent>
+							<r:Content>February 2005</r:Content>
+						</r:NoteContent>
+					</r:Note>
+					
+					<!-- dates of data collection - end date (study and country) -->
+					<r:Note>
+						<r:NoteSubject>dates of data collection - end date</r:NoteSubject>
+						<r:Relationship>
+							<r:RelatedToReference>
+								<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+								<r:TypeOfObject>DataCollection</r:TypeOfObject>
+							</r:RelatedToReference>
+						</r:Relationship>
+						<r:NoteContent>
+							<r:Content>June 2005</r:Content>
+						</r:NoteContent>
+					</r:Note>
+					
+					<d:Methodology>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						
+						<!-- data collection (study and country) -->
+						<d:DataCollectionMethodology>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<r:Description>
+								<r:Content></r:Content>
+							</r:Description>
+						</d:DataCollectionMethodology>
+						
+					</d:Methodology>
+					
+					<d:ProcessingEventScheme>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						
+						<r:Note>
+							<r:NoteSubject>Target Sample Size (cross-sectional) - sampling units</r:NoteSubject>
+							<r:Relationship>
+								<r:RelatedToReference>
+									<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+									<r:TypeOfObject>ProcessingEvent</r:TypeOfObject>
+								</r:RelatedToReference>
+							</r:Relationship>
+							<r:NoteContent>
+								<r:Content>Persons</r:Content>
+							</r:NoteContent>
+						</r:Note>
+						
+						<r:Note>
+							<r:NoteSubject>Target Sample Size (cross-sectional) - minimum effective sample size</r:NoteSubject>
+							<r:Relationship>
+								<r:RelatedToReference>
+									<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+									<r:TypeOfObject>ProcessingEvent</r:TypeOfObject>
+								</r:RelatedToReference>
+							</r:Relationship>
+							<r:NoteContent>
+								<r:Content>6750</r:Content>
+							</r:NoteContent>
+						</r:Note>
+						
+						<r:Note>
+							<r:NoteSubject>Target Sample Size (cross-sectional) - size of design effect</r:NoteSubject>
+							<r:Relationship>
+								<r:RelatedToReference>
+									<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+									<r:TypeOfObject>ProcessingEvent</r:TypeOfObject>
+								</r:RelatedToReference>
+							</r:Relationship>
+							<r:NoteContent>
+								<r:Content>1.1</r:Content>
+							</r:NoteContent>
+						</r:Note>
+						
+						<r:Note>
+							<r:NoteSubject>Target Sample Size (cross-sectional) - effective sample size</r:NoteSubject>
+							<r:Relationship>
+								<r:RelatedToReference>
+									<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+									<r:TypeOfObject>ProcessingEvent</r:TypeOfObject>
+								</r:RelatedToReference>
+							</r:Relationship>
+							<r:NoteContent>
+								<r:Content>7885</r:Content>
+							</r:NoteContent>
+						</r:Note>
+						
+						<d:ProcessingEvent>
+							<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+							<d:DataAppraisalInformation>
+							
+								<!-- Target Sample Size (cross-sectional) -->
+								<d:ResponseRate>
+									
+									<!-- actual sample size -->
+									<d:SampleSize>13496</d:SampleSize>
+								
+									<!-- achieved sample size -->
+									<d:NumberOfResponses>8287</d:NumberOfResponses>
+									
+									<r:Description>
+										<r:Content>Target Sample Size (cross-sectional)</r:Content>
+									</r:Description>									
+								</d:ResponseRate>
+								
+								<!-- Target Sample Size (longitudinal) -->
+								<d:ResponseRate>
+									<r:Description>
+										<r:Content>Target Sample Size (longitudinal)</r:Content>
+									</r:Description>
+								</d:ResponseRate>
+								
+								<!-- Target Sample Size (ad-hoc Module) -->
+								<d:ResponseRate>
+									<r:Description>
+										<r:Content>Target Sample Size (ad-hoc Module)</r:Content>
+									</r:Description>
+								</d:ResponseRate>
+								
+							</d:DataAppraisalInformation>
+						</d:ProcessingEvent>
+					</d:ProcessingEventScheme>
+				
+				</d:DataCollection>
+				
+			</s:StudyUnit>
+			
+		</g:SubGroup>
+		
+	</g:Group>
+	
+	<!-- series -->
+	<g:Group time="T2">
+		<!-- URN (series) -->
+	    <r:URN>urn:ddi:de.gesis:study_MZ:0.1</r:URN>
+	    
+	    <r:Coverage>
+			
+			<!-- geographical coverage (series) -->
+			<r:SpatialCoverage>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Country>DE</r:Country>
+			</r:SpatialCoverage>
+		
+		</r:Coverage>
+	    
+	    <!-- study -->
+		<s:StudyUnit>
+			<r:URN>urn:ddi:de.gesis:study_MZ-2010:0.1</r:URN>
+			
+			<r:Coverage>
+				<r:TemporalCoverage>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:ReferenceDate>
+					<r:SimpleDate>2010</r:SimpleDate>
+				</r:ReferenceDate>
+				</r:TemporalCoverage>
+			</r:Coverage>
+			
+			<d:DataCollection>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+
+				<!-- questionnaire (study [reference] -->
+				<r:InstrumentSchemeReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>InstrumentScheme</r:TypeOfObject>
+				</r:InstrumentSchemeReference>
+				
+			</d:DataCollection>
+			
+			<!-- data set [reference] -->
+			<r:LogicalProductReference>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:TypeOfObject>LogicalProduct</r:TypeOfObject>
+			</r:LogicalProductReference>
+			
+		</s:StudyUnit>
+	    
+	</g:Group>
+
+	<!-- data sets of specific study (e.g. EU-SILC 2010) -->
+	<!-- 1 RP containing data sets of specific study -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<!-- citation (data set) -->
+		<!-- 1 Citation element for each data set -->
+		<r:Citation>
+			<dc:description>citation</dc:description>
+		</r:Citation>
+		
+		<!-- data set -->
+		<!-- e.g. EU-SILC-2010-cross-sec-p-data-2010_rev3 -->
+		<l:LogicalProduct>
+			<r:URN>urn:ddi:de.gesis:logicalDataSet_EU-SILC-2010-cross-sec-p-data-2010_rev3:0.1</r:URN>
+			
+			<!-- notes (data set) -->
+			<r:Note>
+				<r:NoteSubject>notes</r:NoteSubject>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>LogicalProduct</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:NoteContent>
+					<r:Content>notes</r:Content>
+				</r:NoteContent>
+			</r:Note>
+			
+			<!-- title (data set) -->
+			<r:Label>
+				<r:Content>EU-SILC-2010-cross-sec-p-data-2010_rev3</r:Content>
+			</r:Label>
+			
+			<!-- variables [references] -->
+			<l:VariableScheme>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- variable [reference] -->
+				<r:VariableReference>
+					<r:URN>urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1</r:URN>
+					<r:TypeOfObject>Variable</r:TypeOfObject>
+				</r:VariableReference>
+				
+			</l:VariableScheme>
+			
+		</l:LogicalProduct>
+
+		<l:LogicalProduct>
+			<r:URN>urn:ddi:de.gesis:logicalDataSet_EU-SILC-2010-panel-p-data-2010_rev4:0.1</r:URN>
+		</l:LogicalProduct>
+		
+		<!-- 1 ProcessingEventScheme and 1 contained Weighting element for each data set -->
+		<d:ProcessingEventScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			<d:ProcessingEvent>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<d:Weighting>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:Description>
+						<r:Content>weighting</r:Content>
+					</r:Description>
+				</d:Weighting>
+			</d:ProcessingEvent>
+		</d:ProcessingEventScheme>
+		
+		<!-- 1 Weighting element for each data set -->
+		<d:ProcessingEventScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			<d:ProcessingEvent>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<d:Weighting>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:Description>
+						<r:Content>weighting</r:Content>
+					</r:Description>
+				</d:Weighting>
+			</d:ProcessingEvent>
+		</d:ProcessingEventScheme>
+		
+	</g:ResourcePackage>
+
+	<!-- organizations -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+
+		<a:OrganizationScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<a:Organization>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- access contact (series) -->
+				<a:ContactInformation>
+					<a:Email>
+						<r:InternetEmail>estat-microdata-access@ec.europa.eu</r:InternetEmail>
+					</a:Email>
+				</a:ContactInformation>
+			</a:Organization>
+			
+		</a:OrganizationScheme>
+		
+	</g:ResourcePackage>	
+	
+	<!-- interviewer instructions -->
+	<!-- 1 RP -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+
+		<!-- 1 InterviewerInstructionScheme for each study and interviewer handbook -->
+		<d:InterviewerInstructionScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- interviewer instruction -->
+			<d:Instruction>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- interviewer handbook number -->
+				<d:InstructionName>
+					<r:String>51a</r:String>
+				</d:InstructionName>
+				
+				<!-- instruction text -->
+				<d:InstructionText>
+					<d:LiteralText>
+						<d:Text></d:Text>
+					</d:LiteralText>
+				</d:InstructionText>
+				
+			</d:Instruction>
+			
+		</d:InterviewerInstructionScheme>
+		
+	</g:ResourcePackage>
+	
+	<!-- questionnaires -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<!-- 1 ControlConstructScheme for each questionnaire -->
+		<d:ControlConstructScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+
+			<d:QuestionConstruct>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- interviewer instruction [reference] -->
+				<d:InterviewerInstructionReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>ExternalInterviewerInstruction</r:TypeOfObject>
+				</d:InterviewerInstructionReference>
+				
+				<!-- question [reference] -->
+				<r:QuestionReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>QuestionItem</r:TypeOfObject>
+				</r:QuestionReference>
+				
+			</d:QuestionConstruct>
+			
+		</d:ControlConstructScheme>
+		
+		<!-- 1 InstrumentScheme for each study -->
+		<d:InstrumentScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- 1 Instrument for each questionnaire of a specific study -->
+			<d:Instrument>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Label>
+					<r:Content>Fragebogen zum Ad-hoc-Modul</r:Content>
+				</r:Label>
+			</d:Instrument>
+			
+		</d:InstrumentScheme>
+		
+	</g:ResourcePackage>
+	
+	<!-- variables (of specific data set) -->
+	<!-- 1 RP containing variables for each data set -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<!-- variables -->
+		<l:VariableScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- country specific comments (variable) -->
+			<r:Note>
+				<r:NoteSubject>country specific comments</r:NoteSubject>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>Variable</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:NoteContent>
+					<r:Content>country specific comments</r:Content>
+				</r:NoteContent>
+			</r:Note>
+			
+			<!-- comment (variable) -->
+			<r:Note>
+				<r:NoteSubject>other comments</r:NoteSubject>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>Variable</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:NoteContent>
+					<r:Content>other comments</r:Content>
+				</r:NoteContent>
+			</r:Note>
+			
+			<!-- sampling fraction (variable) -->
+			<r:Note>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>Variable</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:ProprietaryInfo>
+					<r:ProprietaryProperty>
+						<r:AttributeKey>SamplingFraction</r:AttributeKey>
+						<r:AttributeValue>0,45%</r:AttributeValue>
+					</r:ProprietaryProperty>
+				</r:ProprietaryInfo>
+			</r:Note>
+			
+			<!-- participation mandatory (variable) -->
+			<r:Note>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>Variable</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:ProprietaryInfo>
+					<r:ProprietaryProperty>
+						<r:AttributeKey>ParticipationMandatory</r:AttributeKey>
+						<r:AttributeValue>No</r:AttributeValue>
+					</r:ProprietaryProperty>
+				</r:ProprietaryInfo>
+			</r:Note>
+			
+			<!-- variable -->
+			<l:Variable>
+				<r:URN>urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1</r:URN>
+				
+				<!-- variable name (variable) -->
+				<l:VariableName>
+					<r:String>PA010</r:String>
+				</l:VariableName>
+				
+				<!-- variable label (variable) -->
+				<r:Label>
+					<r:Content>Year of the Survey</r:Content>
+				</r:Label>
+				
+				<!-- classification (variable) [reference] -->
+				<l:RepresentedVariableReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>RepresentedVariable</r:TypeOfObject>
+				</l:RepresentedVariableReference>
+				
+				<!-- filter (variable) | sub-universe (series) [reference] -->
+				<r:UniverseReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>Universe</r:TypeOfObject>
+				</r:UniverseReference>
+				
+				<!-- question [reference] -->
+				<r:QuestionReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>QuestionItem</r:TypeOfObject>
+				</r:QuestionReference>
+				
+				<!-- unit of observation (variable) -->
+				<r:AnalysisUnit>household</r:AnalysisUnit>
+				
+				<l:VariableRepresentation>
+					<!-- reference period (variable) -->
+					<r:ContentDateOffset>constant</r:ContentDateOffset>
+				</l:VariableRepresentation>
+				
+			</l:Variable>
+			
+			<!-- is derived variable type (variable) -->
+			<l:VariableGroup>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- purpose of grouping -->
+				<r:Description>
+					<r:Content>grouping of derived variables</r:Content>
+				</r:Description>
+				
+				<!-- variable [reference] -->
+				<r:VariableReference>
+					<r:URN>urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1</r:URN>
+					<r:TypeOfObject>Variable</r:TypeOfObject>
+				</r:VariableReference>
+				
+			</l:VariableGroup>
+			
+			<!-- is ad-hoc module variable -->
+			<l:VariableGroup>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- purpose of grouping -->
+				<r:Description>
+					<r:Content>grouping of ad-hoc variables</r:Content>
+				</r:Description>
+				
+				<!-- variable [reference] -->
+				<r:VariableReference>
+					<r:URN>urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1</r:URN>
+					<r:TypeOfObject>Variable</r:TypeOfObject>
+				</r:VariableReference>
+				
+			</l:VariableGroup>
+			
+			<!-- sub sample (variable) -->
+			<l:VariableGroup>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- purpose of grouping -->
+				<r:Description>
+					<r:Content>group for sub sample EF6=2</r:Content>
+				</r:Description>
+				
+				<!-- variable [reference] -->
+				<r:VariableReference>
+					<r:URN>urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1</r:URN>
+					<r:TypeOfObject>Variable</r:TypeOfObject>
+				</r:VariableReference>
+				
+			</l:VariableGroup>
+			
+		</l:VariableScheme>
+		
+	</g:ResourcePackage>
+	
+	<!-- questions -->
+	<!-- 1 RP containing questions for each data set -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<d:QuestionScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- comment (question) -->
+			<r:Note>
+				<r:NoteSubject>question comment</r:NoteSubject>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>QuestionItem</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:NoteContent>
+					<r:Content>comment (question)</r:Content>
+				</r:NoteContent>
+			</r:Note>
+			
+			<!-- explanations to the question in the appendix of the questionnaire -->
+			<r:Note>
+				<r:NoteSubject>explanations to the question in the appendix of the questionnaire</r:NoteSubject>
+				<r:Relationship>
+					<r:RelatedToReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>QuestionItem</r:TypeOfObject>
+					</r:RelatedToReference>
+				</r:Relationship>
+				<r:NoteContent>
+					<r:Content>explanations to the question in the appendix of the questionnaire</r:Content>
+				</r:NoteContent>
+			</r:Note>
+			
+			<!-- question --> 
+			<d:QuestionItem>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<!-- question number -->
+				<d:QuestionItemName>
+					<r:String>F45</r:String>
+				</d:QuestionItemName>
+				
+				<!-- question text -->
+				<d:QuestionText>
+					<d:LiteralText>
+						<d:Text>question text</d:Text>
+					</d:LiteralText>
+				</d:QuestionText>
+			</d:QuestionItem>
+			
+		</d:QuestionScheme>
+		
+	</g:ResourcePackage>
+	
+	<!-- thematic classification -->
+	<!-- 1 RP for each series -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<!-- all levels -->
+		<!-- 1 ConceptScheme representing all levels of thematic classification for specific series -->
+		<c:ConceptScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+			<!-- level 1 -->
+			<!-- 1 ConceptGroup for each level -->
+			<c:ConceptGroup>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<c:TypeOfConceptGroup>level 1</c:TypeOfConceptGroup>
+				<!-- short label -->
+				<r:Label>
+					<r:Content>Demographie und Bevölkerung</r:Content>
+				</r:Label>
+				<!-- definition -->
+				<r:Description>
+					<r:Content>Demographie und Bevölkerung</r:Content>
+				</r:Description>
+
+				<!-- level 2 [reference] -->
+				<c:ConceptGroupReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>ConceptGroup</r:TypeOfObject>
+				</c:ConceptGroupReference>
+				
+			</c:ConceptGroup>
+			
+			<!-- level 2 -->
+			<c:ConceptGroup>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<c:TypeOfConceptGroup>level 2</c:TypeOfConceptGroup>
+				<r:Label>
+					<r:Content>Daten zur Person</r:Content>
+				</r:Label>
+				<r:Description>
+					<r:Content>Daten zur Person</r:Content>
+				</r:Description>
+				
+				<!-- level 3 [reference] -->
+				<c:ConceptGroupReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>ConceptGroup</r:TypeOfObject>
+				</c:ConceptGroupReference>
+				
+			</c:ConceptGroup>
+			
+			<!-- level 3 -->
+			<c:ConceptGroup>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<c:TypeOfConceptGroup>level 3</c:TypeOfConceptGroup>
+				<r:Label>
+					<r:Content>Alter</r:Content>
+				</r:Label>
+				<r:Description>
+					<r:Content>Alter</r:Content>
+				</r:Description>
+				
+				<!-- concepts [reference] -->
+				<!-- references to concepts if current level is leaf level -->
+				<r:ConceptReference>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:TypeOfObject>ConceptScheme</r:TypeOfObject>
+				</r:ConceptReference>
+				
+			</c:ConceptGroup>
+			
+		</c:ConceptScheme>
+		
+		<!-- concepts (for leaf level) -->
+		<!-- 1 ConceptScheme for each level containing individual concepts -->
+		<c:ConceptScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- concept -->
+			<c:Concept> 
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Label>
+					<r:Content>Alter</r:Content>
+				</r:Label>
+			</c:Concept>
+			
+			<!-- concept -->
+			<c:Concept> 
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Label>
+					<r:Content>Alter: Haushaltsbezugsp.</r:Content>
+				</r:Label>
+			</c:Concept>
+			
+		</c:ConceptScheme>
+		
+	</g:ResourcePackage>
+	
+	<!-- classifications -->
+	<!-- 1 RP for all classifications -->
+	<!-- classification examples: NUTS II, ISCED -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<l:RepresentedVariableScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- 1 RepresentedVariable for each classification -->
+			<!-- independent from study -->
+			<l:RepresentedVariable>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<l:RepresentedVariableName>
+					<r:String>NUTS II</r:String>
+				</l:RepresentedVariableName>
+				
+				<r:CodeRepresentation>
+					<r:CodeListReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>CodeList</r:TypeOfObject>
+					</r:CodeListReference>
+				</r:CodeRepresentation>
+				
+			</l:RepresentedVariable>
+			
+			<l:RepresentedVariable>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				
+				<l:RepresentedVariableName>
+					<r:String>ISCED</r:String>
+				</l:RepresentedVariableName>
+				
+				<r:CodeRepresentation>
+					<r:CodeListReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>CodeList</r:TypeOfObject>
+					</r:CodeListReference>
+				</r:CodeRepresentation>
+				
+			</l:RepresentedVariable>
+			
+		</l:RepresentedVariableScheme>
+		
+		<l:CodeListScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- 1 CodeList for each classification -->
+			<l:CodeList>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<l:CodeListName>
+					<r:String>NUTS II</r:String>
+				</l:CodeListName>
+			</l:CodeList>
+			
+			<l:CodeList>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<l:CodeListName>
+					<r:String>ISCED</r:String>
+				</l:CodeListName>
+			</l:CodeList>
+			
+		</l:CodeListScheme>
+		
+	</g:ResourcePackage>
+	
+	<!-- universes -->
+	<!-- 1 RP containing all universes -->
+	<g:ResourcePackage>
+		<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+		
+		<c:UniverseScheme>
+			<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+			
+			<!-- universe (series) -->
+			<!-- 1 universe for each series -->
+			<c:Universe>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Description>
+					<r:Content>universe (series)</r:Content>
+				</r:Description>
+				
+				<!-- sub-universes (series) [reference] -->
+				<c:SubUniverseClass>
+					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+					<r:UniverseReference>
+						<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+						<r:TypeOfObject>Universe</r:TypeOfObject>
+					</r:UniverseReference>
+				</c:SubUniverseClass>
+				
+			</c:Universe>
+			
+			<!-- sub-universe (series) -->
+			<c:Universe>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Description>
+					<r:Content>sub-universe</r:Content>
+				</r:Description>
+			</c:Universe>
+			
+			<!-- 1 universe for each study and country-->
+			<!-- 1 universe for each study and all countries -->
+			<c:Universe>
+				<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
+				<r:Description>
+					<r:Content>Persons aged 16+ living in Slovenia.</r:Content>
+				</r:Description>
+			</c:Universe>
+			
+		</c:UniverseScheme>
+		
+	</g:ResourcePackage>	
+	
+</DDIInstance> 
