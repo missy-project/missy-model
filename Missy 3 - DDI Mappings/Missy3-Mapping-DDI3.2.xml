@@ -918,6 +918,11 @@ being the most widely used survey instrument…</r:Content>
 					<r:Content>Year of the Survey</r:Content>
 				</r:Label>
 				
+				<!-- description target variable (variable)-->
+				<r:Description>
+					<r:Content>description target variable</r:Content>
+				</r:Description>
+				
 				<!-- classification (variable) [reference] -->
 				<l:RepresentedVariableReference>
 					<r:URN>urn:ddi:de.gesis:UUID:0.1</r:URN>
