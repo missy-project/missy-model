@@ -44,7 +44,7 @@ div.fssyntax pre, div.rdfxml pre, div.owlxml pre, div.turtle pre, div.manchester
 }
 /* (further styles directly embedded in header template) */
 
-div.ddi32xml pre, div.ddi32urn pre, div.owl2 pre, div.xsd2owl2 pre {
+div.ddi32xml pre, div.ddi-rdf pre, div.ddi32urn pre, div.ddi-rdf-iri pre, div.owl2 pre, div.xsd2owl2 pre {
   background-color: #F9F9F9;
   border: 1px dashed #2F6FAB;
   color: black;

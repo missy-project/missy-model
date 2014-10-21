@@ -6,7 +6,8 @@
 		<link href="css/owl.css" rel="stylesheet" type="text/css" />
 		<link href="css/Primer.css" rel="stylesheet" type="text/css" />
 		<link href="http://www.w3.org/StyleSheets/TR/W3C-REC" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src='http://darobin.github.com/respec/builds/respec-w3c-common.js' class='remove'></script>
+		<!--<script type="text/javascript" src='http://darobin.github.com/respec/builds/respec-w3c-common.js' class='remove'></script>-->
+		<script type="text/javascript" src='respec/respec-w3c-common.js' class='remove'></script>
 		<script type="text/javascript" class='remove'>
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -166,15 +167,28 @@ urn:ddi:&lt;agency ID&gt;:&lt;UUID&gt;:&lt;release version&gt;.&lt;minor version
 </ul>
 
 </div>
-			
-<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
-urn:ddi:&lt;agency ID&gt;:&lt;series ID&gt;:&lt;release version&gt;.&lt;minor version&gt;
 
-
-urn:ddi:de.gesis:study_EU-SILC:0.1
---> example
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# StudyGroup
+# ----------
+&lt;urn:ddi:de.gesis:e2a6197e-a541-44f7-8423-a5f042e9131c:0.1&gt;
+	a disco:StudyGroup ;
+	skos:prefLabel "EU-LFS"@en .
 </pre></div>
 			
+<div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
+urn:ddi:&lt;agency ID&gt;:&lt;UUID&gt;:&lt;release version&gt;.&lt;minor version&gt;
+
+example:
+urn:ddi:de.gesis:e2a6197e-a541-44f7-8423-a5f042e9131c:0.1
+</pre></div>
+
+<div class="ddi-rdf-iri"><div class="exampleheader"><span class="exampleheader"><b>IRI ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:&lt;agency ID&gt;:&lt;UUID&gt;:&lt;release version&gt;.&lt;minor version&gt;&gt;
+
+example:
+&lt;urn:ddi:de.gesis:e2a6197e-a541-44f7-8423-a5f042e9131c:0.1&gt;
+</pre></div>
 
 			<section><h3>Mappings</h3>
 			
@@ -556,12 +570,66 @@ The studies 'EU-SILC 2009' and 'EU-LFS 2010' are divided into multiple countries
  
 </div>
 
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# Study
+# -----
+&lt;urn:ddi:de.gesis:study_EU-SILC-2005:0.1&gt;
+    a disco:Study ;
+    dcterms:title "EU-SILC 2005"@en ; # Study title
+    skos:prefLabel "2005"@en ; # Study label
+    dcterms:spatial # countries of the Study
+        &lt;http://sws.geonames.org/2782113&gt; ,
+        &lt;http://sws.geonames.org/2629691&gt; ,
+        &lt;http://sws.geonames.org/453733&gt; ,
+        &lt;http://sws.geonames.org/2802361&gt; ,
+        &lt;http://sws.geonames.org/597427&gt; ,
+        &lt;http://sws.geonames.org/390903&gt; ,
+        &lt;http://sws.geonames.org/458258&gt; ,
+        &lt;http://sws.geonames.org/3175395&gt; ,
+        &lt;http://sws.geonames.org/3190538&gt; ,
+        &lt;http://sws.geonames.org/660013&gt; ,
+        &lt;http://sws.geonames.org/2623032&gt; ,
+        &lt;http://sws.geonames.org/2510769&gt; ,
+        &lt;http://sws.geonames.org/146669&gt; ,
+        &lt;http://sws.geonames.org/798544&gt; ,
+        &lt;http://sws.geonames.org/2963597&gt; ,
+        &lt;http://sws.geonames.org/3077311&gt; ,
+        &lt;http://sws.geonames.org/3017382&gt; ,
+        &lt;http://sws.geonames.org/719819&gt; ,
+        &lt;http://sws.geonames.org/3144096&gt; ,
+        &lt;http://sws.geonames.org/2264397&gt; ,
+        &lt;http://sws.geonames.org/2661886&gt; ,
+        &lt;http://sws.geonames.org/2960313&gt; ,
+        &lt;http://sws.geonames.org/3057568&gt; ,
+        &lt;http://sws.geonames.org/2921044&gt; ,
+        &lt;http://sws.geonames.org/2750405&gt; ;
+    dcterms:temporal &lt;urn:ddi:de.gesis:0ba9b4f3-ec22-4471-8ffa-a38e8ada187a:0.1&gt; ; # the year of the Study
+    disco:product # datasets of the Study
+        &lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-p-data-2005:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-p-reg-2005:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-hh-data-2005:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-hh-reg-2005:0.1&gt; .
+		
+# Temporal Coverages of Studies and Study Groups
+# ----------------------------------------------
+&lt;urn:ddi:de.gesis:0ba9b4f3-ec22-4471-8ffa-a38e8ada187a:0.1&gt;
+	a disco:PeriodOfTime ;
+	disco:startDate "Jan 1, 2005 12:00:00 AM"^^xsd:date .
+</pre></div>
+
 <div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
 urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;:&lt;release version&gt;.&lt;minor version&gt;
 
 
 urn:ddi:de.gesis:study_EU-SILC-2009:0.1
 --> example
+</pre></div>
+
+<div class="ddi-rdf-iri"><div class="exampleheader"><span class="exampleheader"><b>IRI ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;:&lt;release version&gt;.&lt;minor version&gt;&gt;
+
+example:
+&lt;urn:ddi:de.gesis:study_EU-SILC-2005:0.1&gt;
 </pre></div>
 			
 				<section><h4>Country-Specific StudyUnits</h4>
@@ -1598,12 +1666,37 @@ The study 'german microcensus 2010' is not divided into multiple countries.
  
 </div>
 
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# Study
+# -----
+&lt;urn:ddi:de.gesis:study_MZ-2009:0.1&gt;
+    a disco:Study ;
+    dcterms:title "MZ 2009"@en ; # Study title
+    skos:prefLabel "2009"@en ; # Study label
+    dcterms:spatial &lt;http://sws.geonames.org/2750405&gt; ; # countries of the Study
+    dcterms:temporal &lt;urn:ddi:de.gesis:46da497b-0ba4-458c-88e4-9e19154f6e60:0.1&gt; ;  # the year of the Study
+    disco:product  # datasets of the Study
+        &lt;urn:ddi:de.gesis:logicalDataSet_MZ-2009---2009:0.1&gt; .
+		
+# Temporal Coverages of Studies and Study Groups
+# ----------------------------------------------
+&lt;urn:ddi:de.gesis:46da497b-0ba4-458c-88e4-9e19154f6e60:0.1&gt;
+	a disco:PeriodOfTime ;
+	disco:startDate "Jan 1, 2009 12:00:00 AM"^^xsd:date .
+</pre></div>
+
 <div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
 urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;:&lt;release version&gt;.&lt;minor version&gt;
 
-
+example:
 urn:ddi:de.gesis:study_MZ-2009:0.1
---> example
+</pre></div>
+
+<div class="ddi-rdf-iri"><div class="exampleheader"><span class="exampleheader"><b>IRI ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:&lt;agency ID&gt;:&lt;study ID&gt;:&lt;release version&gt;.&lt;minor version&gt;&gt;
+
+example:
+&lt;urn:ddi:de.gesis:study_MZ-2009:0.1&gt;
 </pre></div>
 
 				<section><h4>Mappings</h4>
@@ -1705,11 +1798,30 @@ urn:ddi:de.gesis:study_MZ-2009:0.1
 
 </div>
 
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# Dataset
+# -------
+&lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-p-data-2005:0.1&gt;
+    a disco:LogicalDataSet ; 
+    disco:variable
+        &lt;urn:ddi:de.gesis:variable_EU-SILC-2005-cross-sec-p-data-2005-PB010:0.1&gt;  ,
+        &lt;urn:ddi:de.gesis:variable_EU-SILC-2005-cross-sec-p-data-2005-PB020:0.1&gt;  ,
+        ...
+        &lt;urn:ddi:de.gesis:variable_EU-SILC-2005-cross-sec-p-data-2005-PX010:0.1&gt;  .
+</pre></div>
+
 <div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
 urn:ddi:&lt;agency ID&gt;:logicalDataSet_&lt;study title&gt;-&lt;study year&gt;-&lt;data set type&gt;-&lt;data set sub type&gt;-&lt;data set version&gt;:&lt;release version&gt;.&lt;minor version&gt;
 
 urn:ddi:de.gesis:logicalDataSet_EU-SILC-2010-cross-sec-p-data-2010_rev3:0.1
 --> example
+</pre></div>
+
+<div class="ddi-rdf-iri"><div class="exampleheader"><span class="exampleheader"><b>IRI ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:&lt;agency ID&gt;:logicalDataSet_&lt;study title&gt;-&lt;study year&gt;-&lt;data set type&gt;-&lt;data set sub type&gt;-&lt;data set version&gt;:&lt;release version&gt;.&lt;minor version&gt;&gt;
+
+example:
+&lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-p-data-2005:0.1&gt;
 </pre></div>
 
 			<section><h3>Mappings</h3>
@@ -1862,7 +1974,15 @@ urn:ddi:de.gesis:logicalDataSet_EU-SILC-2010-cross-sec-p-data-2010_rev3:0.1
 	</ul>
 </ul>
 
-</div>		
+</div>	
+
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:de.gesis:variable_EU-SILC-2005-cross-sec-p-data-2005-PB010:0.1&gt;
+    skos:notation "PB010" ; # variable name
+    skos:prefLabel "Year of the Survey"@en ; # variable label
+    skos:concept &lt;urn:ddi:de.gesis:3e4b7be6-9e53-4ad1-9256-a58855506416:0.1&gt; ; # variable concept
+    a disco:Variable .
+</pre></div>
 
 <div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
 urn:ddi:&lt;agency ID&gt;:variable_&lt;study title&gt;-&lt;study year&gt;-&lt;data set type&gt;-&lt;data set sub type&gt;-&lt;data set version&gt;-&lt;variable name&gt;:&lt;release version&gt;.&lt;minor version&gt;
@@ -1870,6 +1990,13 @@ urn:ddi:&lt;agency ID&gt;:variable_&lt;study title&gt;-&lt;study year&gt;-&lt;da
 urn:ddi:de.gesis:variable_EU-SILC-2010-cross-sec-p-data-2010_rev3-PA010:0.1
 --> example
 </pre></div>
+
+<div class="ddi-rdf-iri"><div class="exampleheader"><span class="exampleheader"><b>IRI ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:&lt;agency ID&gt;:variable_&lt;study title&gt;-&lt;study year&gt;-&lt;data set type&gt;-&lt;data set sub type&gt;-&lt;data set version&gt;-&lt;variable name&gt;:&lt;release version&gt;.&lt;minor version&gt;&gt;
+
+example:
+&lt;urn:ddi:de.gesis:variable_EU-SILC-2005-cross-sec-p-data-2005-PB010:0.1&gt;
+</pre></div>	
 
 			<section><h3>Comparison</h3>
 
@@ -2586,6 +2713,10 @@ Danach hatte ich nun verstanden, dass alle Variablen bei EU-SILC Target Variable
 </ul>
 
 </div>
+
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+
+</pre></div>
 		
 		</section>
 		
