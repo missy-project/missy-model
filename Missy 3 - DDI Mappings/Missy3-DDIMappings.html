@@ -602,7 +602,8 @@ The studies 'EU-SILC 2009' and 'EU-LFS 2010' are divided into multiple countries
         &lt;http://sws.geonames.org/2960313&gt; ,
         &lt;http://sws.geonames.org/3057568&gt; ,
         &lt;http://sws.geonames.org/2921044&gt; ,
-        &lt;http://sws.geonames.org/2750405&gt; ;
+        &lt;http://sws.geonames.org/2750405&gt; ,
+        :AllCountriesOfStudy ;
     dcterms:temporal &lt;urn:ddi:de.gesis:0ba9b4f3-ec22-4471-8ffa-a38e8ada187a:0.1&gt; ; # the year of the Study
     disco:product # datasets of the Study
         &lt;urn:ddi:de.gesis:logicalDataSet_EU-SILC-2005-cross-sec-p-data-2005:0.1&gt; ,
@@ -615,6 +616,13 @@ The studies 'EU-SILC 2009' and 'EU-LFS 2010' are divided into multiple countries
 &lt;urn:ddi:de.gesis:0ba9b4f3-ec22-4471-8ffa-a38e8ada187a:0.1&gt;
 	a disco:PeriodOfTime ;
 	disco:startDate "Jan 1, 2005 12:00:00 AM"^^xsd:date .
+	
+# Spatial Coverage of Studies and Study Groups
+# --------------------------------------------
+:AllCountriesOfStudy
+   a dcterms:Location , missy:Country;
+   rdfs:label "all countries of study";
+   missy:code "" .
 </pre></div>
 
 <div class="ddi32urn"><div class="exampleheader"><span class="exampleheader"><b>URN ( DDI 3.2 )</b></span></div><pre>
@@ -1998,6 +2006,64 @@ example:
 &lt;urn:ddi:de.gesis:variable_EU-SILC-2005-cross-sec-p-data-2005-PB010:0.1&gt;
 </pre></div>	
 
+			<section><h3>Representation</h3>
+			
+				<div class="figure">
+					<img src="images/categoryStatistics.jpg" alt="Variable Representation"/>
+				</div>
+
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# valid codes and categories
+# --------------------------
+missy:1
+  a skos:Concept ;
+  skos:notation "1" ;
+  skos:prefLabel "January,February,March" ;
+  disco:isValid true .
+missy:2
+  a skos:Concept ;
+  skos:notation "2" ;
+  skos:prefLabel "April, May, June" ;
+  disco:isValid true .
+missy:3
+  a skos:Concept ;
+  skos:notation "3" ;
+  skos:prefLabel "July, August, September" ;
+  disco:isValid true .
+missy:4
+  a skos:Concept ;
+  skos:notation "4" ;
+  skos:prefLabel "October, November, December" ;
+  disco:isValid true .
+  
+# invalid codes and categories
+# ----------------------------
+missy:Missing
+  a skos:Concept ;
+  skos:notation "M" ;
+  skos:prefLabel "Missing" ;
+  disco:isValid false . 
+  
+# variable pointing to variable representation
+# -----------------------
+missy:PB100
+    a disco:Variable , missy:Variable ;
+	disco:representation :representationPB100 .
+
+# variable representation
+# -----------------------
+:representationPB100 
+    a disco:Representation , skos:OrderedCollection ;
+    skos:memberList ( 
+        missy:1 
+        missy:2 
+        missy:3 
+        missy:4
+        missy:Missing ) .
+</pre></div>
+			
+			</section>
+
 			<section><h3>Comparison</h3>
 
 <p>
@@ -2358,6 +2424,20 @@ Danach hatte ich nun verstanden, dass alle Variablen bei EU-SILC Target Variable
 
 </div>
 
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+:question
+    a disco:Question ;
+    skos:prefLabel "question label"@en ;
+    disco:questionText "question text"@en .
+</pre></div>
+
+<div class="ddi-rdf-iri"><div class="exampleheader"><span class="exampleheader"><b>IRI ( DDI-RDF )</b></span></div><pre>
+&lt;urn:ddi:&lt;agency ID&gt;:&lt;UUID&gt;:&lt;release version&gt;.&lt;minor version&gt;&gt;
+
+example:
+&lt;urn:ddi:de.gesis:e2a6197e-a541-44f7-8423-a5f042e9131c:0.1&gt;
+</pre></div>
+
 			</section>
 			
 			<section><h3>Questionnaires</h3>
@@ -2715,7 +2795,38 @@ Danach hatte ich nun verstanden, dass alle Variablen bei EU-SILC Target Variable
 </div>
 
 <div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# Thematic Classifications Hierarchy for Study Group
+# --------------------------------------------------
+&lt;urn:ddi:de.gesis:7bb54a91-4b26-4f6e-a1b7-be48cb58be24:0.1&gt;
+    a skos:ConceptScheme ;    # the ConceptScheme that holds all top Concepts
+    skos:hasTopConcept
+        &lt;urn:ddi:de.gesis:e31ba125-89c3-4700-afb8-70e748ced052:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:929b0ce5-37d3-4077-990e-91fe18eb1839:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:41c22f5a-51a4-43bc-88bf-536ef7040325:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:50af0af9-9278-428b-b477-d4714f425116:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:b04a51d1-04bd-44db-8065-eb0f5d6a8c0e:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:c1b791d3-45e3-4d53-b726-a6bab6058614:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:ca7f3561-5fda-415b-855f-098f552f641c:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:3a0edb8a-9966-486e-b428-0bb7b2918f2b:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:d98cb3d0-2388-4ca4-80c6-a739eaa8bf4b:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:5535dd11-743d-48df-b8ce-9dbb1159b5f6:0.1&gt; .
 
+# concepts and relationships to narrower concepts
+# -----------------------------------------------
+&lt;urn:ddi:de.gesis:e31ba125-89c3-4700-afb8-70e748ced052:0.1&gt;
+    a skos:Concept ;
+    skos:notation "Demographic background"@en ;
+    skos:narrower
+        &lt;urn:ddi:de.gesis:861185a6-d866-43fc-ba9c-2633a42743b5:0.1&gt; ,
+        &lt;urn:ddi:de.gesis:451cba20-6be9-4b82-a400-6730e25dcb4c:0.1&gt; .
+
+# relationships from variables to concepts
+# ----------------------------------------
+&lt;urn:ddi:de.gesis:variable_EU-SILC-2008-cross-sec-p-data-2008_rev3-PL120:0.1&gt;
+    a disco:Variable ;
+    skos:notation "PL120" ;    
+    skos:prefLabel "Reason for working less than 30 hours"@en ;    
+    skos:concept &lt;urn:ddi:de.gesis:be81a0e7-8589-4e3a-baba-d2c21ed8e420:0.1&gt; .
 </pre></div>
 		
 		</section>
@@ -2800,7 +2911,7 @@ Danach hatte ich nun verstanden, dass alle Variablen bei EU-SILC Target Variable
 		
 		</section>
 		
-		<section><h2>Statistics</h2>
+		<section><h2>Descriptive Statistics</h2>
 
 <div class="issue">
 
@@ -2809,6 +2920,289 @@ Danach hatte ich nun verstanden, dass alle Variablen bei EU-SILC Target Variable
 </ul>
 
 </div>	
+
+	<section><h3>Summary Statistics</h3>
+	
+		<div class="figure">
+			<img src="images/summaryStatistics.jpg" alt="Summary Statistics"/>
+		</div>
+		
+		<div class="figure">
+			<img src="images/categoryStatistics.jpg" alt="Summary Statistics"/>
+		</div>
+		
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# variable pointing to summary statistics
+# ---------------------------------------
+missy:PB100
+    a disco:variable , missy:Variable ;
+    missy:summaryStatistics ( 
+        missy:Minimum 
+        missy:Minimum_DE
+        missy:Maximum
+        missy:Maximum_DE
+        missy:Mean
+        missy:Mean_DE
+        missy:StandardDeviation
+        missy:StandardDeviation_DE		
+        missy:ValidCases
+        missy:ValidCases_DE
+        missy:PercentOfValidCases
+        missy:PercentOfValidCases_DE
+        missy:InvalidCases
+        missy:InvalidCases_DE
+        missy:PercentOfInvalidCases
+        missy:PercentOfInvalidCases_DE
+        missy:TotalCases ) .
+
+# minimum
+# -------
+missy:Minimum
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:Minimum;
+  rdf:value "1".
+missy:Minimum_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:Minimum;
+  rdf:value "2".  
+  
+# maximum
+# -------
+missy:Maximum
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:Maximum;
+  rdf:value "4".
+missy:Maximum_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:Maximum;
+  rdf:value "3".
+
+# arithmentic mean
+# ----------------
+missy:Mean
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:ArithmeticMean;
+  rdf:value "2.17".
+missy:Mean_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:ArithmeticMean;
+  rdf:value "2.64".
+
+# standard deviation
+# ------------------
+missy:StandardDeviation
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:StandardDeviation;	
+  rdf:value "0.9061".
+missy:StandardDeviation_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:StandardDeviation;	
+  rdf:value "0.4795".
+  
+# valid cases
+# -----------
+missy:ValidCases
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100 ;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:ValidCases;
+  rdf:value "470950".
+missy:ValidCases_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100 ;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:ValidCases;
+  rdf:value "23832".
+
+# percent of valid cases
+# ----------------------
+missy:PercentOfValidCases
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:PercentOfValidCases;
+  rdf:value "99.1".
+missy:PercentOfValidCases_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:PercentOfValidCases;
+  rdf:value "100.0".
+
+# invalid cases
+# -------------
+missy:InvalidCases
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:InvalidCases;
+  rdf:value "4195".
+missy:InvalidCases_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:InvalidCases;
+  rdf:value "0".
+
+# percent of invalid cases  
+# ------------------------
+missy:PercentOfInvalidCases
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100 ;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:PercentOfInvalidCases ;
+  rdf:value "0.9" .
+missy:PercentOfInvalidCases_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100 ;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:PercentOfInvalidCases ;
+  rdf:value "0" .
+  
+# total cases
+# -----------
+missy:TotalCases
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country :AllCountriesOfStudy;
+  disco:summaryStatisticType ddicv-sumstats:NumberOfCases;
+  rdf:value "475145".
+missy:TotalCases_DE
+  a disco:SummaryStatistics , missy:SummaryStatistics;
+  disco:statisticsVariable missy:PB100;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:summaryStatisticType ddicv-sumstats:NumberOfCases;
+  rdf:value "23832".
+  
+# spatial coverage of study
+# -------------------------
+:AllCountriesOfStudy
+   a dcterms:Location , missy:Country;
+   rdfs:label "all countries of study";
+   missy:code "" .
+</pre></div>
+	
+	</section>
+
+	<section><h3>Category Statistics</h3>
+	
+		<div class="figure">
+			<img src="images/categoryStatistics.jpg" alt="Category Statistics"/>
+		</div>
+		
+<div class="ddi-rdf"><div class="exampleheader"><span class="exampleheader"><b>Definition ( DDI-RDF )</b></span></div><pre>
+# valid cases
+# -----------
+missy:1
+  a skos:Concept , missy:Concept ;
+  skos:notation "1" ;
+  skos:prefLabel "January,February,March" ;
+  disco:isValid true ;
+  missy:categoryStatistics ( missy:CS_1_AllCountries ) .
+missy:CS_1_AllCountries
+  a disco:CategoryStatistics , missy:CategoryStatistics ;
+  disco:statisticsCategory missy:1 ;
+  missy:country :AllCountriesOfStudy;
+  disco:frequency 102710 ;
+  disco:percentage 21.6 ;
+  disco:cumulativePercentage 21.8 ;
+  disco:computationBase "valid" .
+  
+missy:2
+  a skos:Concept , missy:Concept ;
+  skos:notation "2" ;
+  skos:prefLabel "April, May, June" ;
+  disco:isValid true ;
+  missy:categoryStatistics ( missy:CS_2_AllCountries missy:CS_2_DE ) .
+missy:CS_2_AllCountries
+  a disco:CategoryStatistics , missy:CategoryStatistics ;
+  disco:statisticsCategory missy:2 ;
+  missy:country :AllCountriesOfStudy;
+  disco:frequency 243708 ;
+  disco:percentage 51.3 ;
+  disco:cumulativePercentage 51.7 ;
+  disco:computationBase "valid" .
+missy:CS_2_DE
+  a disco:CategoryStatistics , missy:CategoryStatistics ;
+  disco:statisticsCategory missy:2 ;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:frequency 8539 ;
+  disco:percentage 35.8 ;
+  disco:cumulativePercentage 35.8 ;
+  disco:computationBase "valid" .
+  
+missy:3
+  a skos:Concept , missy:Concept ;
+  skos:notation "3" ;
+  skos:prefLabel "July, August, September" ;
+  disco:isValid true ;
+  missy:categoryStatistics ( missy:CS_3_AllCountries missy:CS_3_DE ) .
+missy:CS_3_AllCountries
+  a disco:CategoryStatistics , missy:CategoryStatistics ;
+  disco:statisticsCategory missy:3 ;
+  missy:country :AllCountriesOfStudy;
+  disco:frequency 66927 ;
+  disco:percentage 14.1 ;
+  disco:cumulativePercentage 14.2 ;
+  disco:computationBase "valid" .
+missy:CS_3_DE
+  a disco:CategoryStatistics , missy:CategoryStatistics ;
+  disco:statisticsCategory missy:3 ;
+  missy:country &lt;http://sws.geonames.org/2921044&gt;;
+  disco:frequency 15293 ;
+  disco:percentage 64.2 ;
+  disco:cumulativePercentage 64.2 ;
+  disco:computationBase "valid" .
+  
+missy:4
+  a skos:Concept , missy:Concept ;
+  skos:notation "4" ;
+  skos:prefLabel "October, November, December" ;
+  disco:isValid true ;
+  missy:categoryStatistics ( missy:CS_3_AllCountries ) .
+missy:CS_4_AllCountries
+  a disco:CategoryStatistics , missy:CategoryStatistics ;
+  disco:statisticsCategory missy:4 ;
+  missy:country :AllCountriesOfStudy;
+  disco:frequency 57605 ;
+  disco:percentage 12.1 ;
+  disco:cumulativePercentage 12.2 ;
+  disco:computationBase "valid" .
+  
+# invalid cases 
+# -------------
+missy:Missing
+  a skos:Concept , missy:Concept ;
+  skos:notation "M" ;
+  skos:prefLabel "Missing" ;
+  disco:isValid false ;
+  missy:categoryStatistics ( missy:CS_M_AllCountries ) .
+missy:CS_M_AllCountries
+  a disco:CategoryStatistics ;
+  disco:statisticsCategory missy:Missing ;
+  missy:country :AllCountriesOfStudy;
+  disco:frequency 4195 ;
+  disco:percentage 0.9 ;
+  disco:computationBase "invalid" . 
+</pre></div>
+	
+	</section>
 		
 		</section>
 		
